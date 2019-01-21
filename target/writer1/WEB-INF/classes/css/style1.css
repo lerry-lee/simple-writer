@@ -1,0 +1,17 @@
+.form{
+    background-color: gainsboro;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.input{
+    width:auto;
+    height:50%;
+    font-size:24px;
+    color: darkslategrey;
+}
+
+.btn{
+    color: aqua;
+    font-size: 30px;
+}
