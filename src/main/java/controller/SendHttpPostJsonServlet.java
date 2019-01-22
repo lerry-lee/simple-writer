@@ -16,15 +16,18 @@ public class SendHttpPostJsonServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         try {
+            httpServletRequest.setCharacterEncoding("utf-8");
             String param_json = httpServletRequest.getParameter(PARAM_JSON);
+            System.out.println(param_json);
             String resoult = sendJsonHttpPost(URL, param_json);
             //form表单方式
-            httpServletRequest.setAttribute("rst", resoult);
-            httpServletRequest.getRequestDispatcher("main.jsp").forward(httpServletRequest, httpServletResponse);
-           //ajax方式
-            /* PrintWriter out = httpServletResponse.getWriter();
+            /*httpServletRequest.setAttribute("rst", resoult);
+            httpServletRequest.getRequestDispatcher("feedback.jsp").forward(httpServletRequest, httpServletResponse);*/
+           //jquery提交ajax方式
+            PrintWriter out = httpServletResponse.getWriter();
             out.write(resoult);
-            out.close();*/
+            out.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
