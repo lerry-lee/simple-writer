@@ -14,47 +14,27 @@
 </head>
 <body>
 <div class="form">
-    <span style="">txt:<textarea class="input" id="txt">When I kept adjusting how I'd normally ask questions in day to day life, it felt exhausting because I had to put more energy into not only know what questions to ask but also how and when to ask those questions.</textarea></span><br/>
-    <span>action:<input class="input" id="action" value="fetch"></input></span><br/>
+    <span style="">txt:<textarea class="input" id="txt">When I kept adjusting how I'd normally ask questions in day to day life, it felt exhausting because I had to put more energy into not only know what questions to ask but also how and when to ask those questions.</textarea></span>
+    <span>action:<input class="input" id="action" value="fetch"></span>
     <span>extra:</span>
     <div id="extra" class="div1">
-        <span>feedbackOpt:<input class="input" id="feedbackOpt" value="r_01" readonly></input></span><br/>
-        <span>grammar:<select id="grammar">
-            <option>reflective</option>
+        <span style="padding-left: 20px;width: 480px">feedbackOpt:<input class="input" id="feedbackOpt" value="r_01" readonly></span>
+        <span style="padding-left: 20px;width: 480px">grammar:<select id="grammar">
             <option>analytical</option>
-            </select></span><br/>
-        <span>feature:<input class="input" id="feature" value="7"/></span>
+            <option>reflective</option>
+            </select></span>
+        <span style="padding-left: 20px;width: 480px">feature:<input class="input" id="feature" value="7"/></span>
     </div>
-    <span>type:<input class="input" id="type" value="manual" readonly></input></span><br/>
+    <span>type:<input class="input" id="type" value="manual" readonly></span>
     <button class="btn" id="send" onmouseover="this.className='style2'" onmouseout="this.className='btn'">提交</button>
     <br/>
 </div>
 
-<span id="rst"></span>
+<span style="display: inline-block;margin: 10px" id="rst"></span>
 <%--jquery提交ajax请求方式--%>
 <script src="js/jquery.min.js"></script>
-<script>
-    var data = "{\n"
-        + "\"txt\":" + "\"" + $("#txt").val() + "\"" + ",\n"
-        + "\"action\":" + "\"" + $("#action").val() + "\"" + ",\n"
-        + "\"extra\":{" + "\"feedbackOpt\":" + "\"" + $("#feedbackOpt").val() + "\"" + "," + "\"grammar\":" + "\"" + $("#grammar").find("option:selected").text() + "\"" + "," + "\"feature\":" + $("#feature").val() + "}" + ",\n"
-        + "\"type\":" + "\"" + $("#type").val() + "\"\n"
-        + "}\n";
-    $(function () {
-        $("#send").click(function () {
-            var url = "sendHttpPostJson";
-            // alert(data);
-            $.post(
-                url,
-                {"param_json": data},
-                function (result) {
-                    $("#rst").html(result);
-                }
-            );
-        });
+<script type="text/javascript" src="js/jquery.post.js"></script>
 
-    });
-</script>
 </body>
 </html>
 

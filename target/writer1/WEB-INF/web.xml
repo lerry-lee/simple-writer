@@ -8,7 +8,7 @@
   <display-name>Archetype Created Web Application</display-name>
   
   <welcome-file-list>
-    <welcome-file>main.jsp</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
   </welcome-file-list>
 
 

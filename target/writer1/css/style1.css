@@ -1,5 +1,5 @@
 
-ul#nav{ align-items:center;width:100%; height:60px; background:#00A2CA;margin:0 auto;padding-left: 100px}
+ul#nav{ align-items:center;width:100%; height:60px; background:#00A2CA;margin:0 auto;padding-left: 100px;margin: 10px}
 ul#nav li{display:inline; height:60px}
 ul#nav li a{display:inline-block; padding:0 20px; height:60px; line-height:60px;
             color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:20px;text-decoration: none}
@@ -14,6 +14,7 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
     font-size:20px;
 }
 .form span{
+    margin: 5px;
     display:block;
     width: 500px;
     border:1px solid gray;
@@ -52,12 +53,13 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
 }
 
 .foot {
-    margin: 0;
+    margin: 10px;
     bottom: 2px;
     width: 100%;
+    height: 60px;
     z-index: 999;
-    position: fixed;
     background-color: grey;
+    padding-top: 10px;
     text-align: center;
     font-size: 18px;
     color:lightgray;

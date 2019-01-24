@@ -1,5 +1,10 @@
 package controller;
 
+import dao.impl.HttpRequestDaoImpl;
+import entity.HttpResultInfo;
+import utils.Log;
+import utils.ToJson;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +23,25 @@ public class SendHttpPostJsonServlet extends HttpServlet {
         try {
             httpServletRequest.setCharacterEncoding("utf-8");
             String param_json = httpServletRequest.getParameter(PARAM_JSON);
-            System.out.println(param_json);
-            String resoult = sendJsonHttpPost(URL, param_json);
-            //form表单方式
-            /*httpServletRequest.setAttribute("rst", resoult);
-            httpServletRequest.getRequestDispatcher("feedback.jsp").forward(httpServletRequest, httpServletResponse);*/
-           //jquery提交ajax方式
+            //测试后端能否正常获取参数
+//            System.out.println(param_json);
+
+           /* HttpRequestDaoImpl hrdi=new HttpRequestDaoImpl();
+            hrdi.insert(Log.httpRequestLog(httpServletRequest,httpServletResponse));*/
+
+            String result = sendJsonHttpPost(URL, param_json);
+            String rst="";
+            httpServletResponse.setCharacterEncoding("utf-8");
+            if(null!=result){
+                rst=ToJson.toJson(new HttpResultInfo(0,result,"成功"));
+            }
+            else{
+                rst=ToJson.toJson(new HttpResultInfo(1,null,"失败"));
+            }
+           //jquery提交ajax
+//            System.out.println(rst);
             PrintWriter out = httpServletResponse.getWriter();
-            out.write(resoult);
+            out.write(rst);
             out.close();
 
         } catch (Exception e) {
