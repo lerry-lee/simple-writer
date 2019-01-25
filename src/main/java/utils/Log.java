@@ -12,28 +12,34 @@ public class Log extends HttpServlet {
     public static HttpRequestInfo httpRequestLog(HttpServletRequest request, HttpServletResponse response,long t){
         //获取当前时间
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println("date:"+sdf.format(new Date()));
+        String date=sdf.format(new Date());
+        System.out.println("date:"+date);
         //获取ip
-        System.out.println("ip: "+"#ip");
+        String ip="#ip" ;
+        System.out.println("ip: "+ip);
         //获取请求方法get/post
-        System.out.println("method:"+request.getMethod());
+        String method=request.getMethod();
+        System.out.println("method:"+method);
         //获取请求的url
-        System.out.println("url:"+request.getRequestURL());
+        String url= String.valueOf(request.getRequestURL());
+        System.out.println("url:"+url);
         //获取请求参数
-        System.out.println("params:"+request.getRequestURI());
+        String params=request.getQueryString();
+        System.out.println("params:"+params);
         //获取响应时间
         System.out.println("timeConsuming:"+t+"ms");
         //获取状态码
-        System.out.println("status:"+response.getStatus());
+        int status=response.getStatus();
+        System.out.println("status:"+status);
 
         HttpRequestInfo httpRequestInfo=new HttpRequestInfo();
-        httpRequestInfo.setDate(sdf.format(new Date()));
-        httpRequestInfo.setIp("#ip");//ip等待获取
-        httpRequestInfo.setMethod(request.getMethod());
-        httpRequestInfo.setParam(request.getRequestURI());
-        httpRequestInfo.setStatus(response.getStatus());
+        httpRequestInfo.setDate(date);
+        httpRequestInfo.setIp(ip);//ip等待获取
+        httpRequestInfo.setMethod(method);
+        httpRequestInfo.setParam(params);
+        httpRequestInfo.setStatus(status);
         httpRequestInfo.setTimeConsuming(t);
-        httpRequestInfo.setUrl(String.valueOf(request.getRequestURL()));
+        httpRequestInfo.setUrl(url);
 
         return httpRequestInfo;
     }

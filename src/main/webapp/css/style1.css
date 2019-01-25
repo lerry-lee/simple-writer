@@ -14,11 +14,13 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
     font-size:20px;
 }
 .form span{
-    margin: 5px;
     display:block;
     width: 500px;
-    border:1px solid gray;
-    background-color: gainsboro;
+    margin-bottom: 10px;
+
+}
+.form span select{
+    margin-left: 5px;
 }
 .div1{
 
@@ -29,25 +31,27 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
 }
 
 .input{
-    margin: 5px;
+    margin-top: 5px;
     border:1px solid #CCC;
     padding-left: 5px;
-    color: gray;
-    width:auto;
-    padding-right: 0;
-    height:auto;
+    padding-right: 5px;
+    color: black;
+    width:666px;
+    height:188px;
     font-size:18px;
 }
 
 .btn{
-    boder:1px solid;
+
+    border:0;
     background-color: #00A2CA;
     font-size: 22px;
     color:#FFF;
 }
 
 .style2{
-    background-color: cyan;
+    border:0;
+    background-color: darkseagreen;
     font-size:22px;
     color:#FFF;
 }
@@ -63,4 +67,16 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
     text-align: center;
     font-size: 18px;
     color:lightgray;
+}
+
+.fdiv{
+    align-items: center;
+    margin: 10px;
+}
+
+.fdiv div{
+    margin-bottom: 10px;
+}
+.fdiv table{
+    margin-bottom: 10px;
 }

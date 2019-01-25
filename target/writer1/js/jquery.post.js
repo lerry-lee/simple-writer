@@ -1,12 +1,12 @@
 var data = JSON.stringify({
     'txt': $("#txt").val(),
-    'action': $("#action").val(),
+    'action': 'fetch',
     'extra': {
-        'feedbackOpt': $("#feedbackOpt").val(),
+        'feedbackOpt': 'r_01',
         'grammar': $("#grammar").find("option:selected").text(),
-        'feature': $("#feature").val()
+        'feature': 7
     },
-    'type': $("#type").val()
+    'type': 'manual'
 });
 $(function () {
     $("#send").click(function () {
@@ -15,11 +15,10 @@ $(function () {
         $.post(
             url,
             {"param_json": data},
-            function (result) {
-                var objectJson=JSON.parse(result);
-                var formatJson=JSON.stringify(objectJson,null,4);
-                alert("HTTP请求返回结果：\n"+formatJson);
-                $("#rst").html(formatJson);
+            function () {
+                // var objectJson=JSON.parse(result);
+                // var formatJson=JSON.stringify(objectJson,null,4);
+                $("#rst").html("成功，查看结果请点击导航栏Feedback和Tips");
             }
         );
     });
