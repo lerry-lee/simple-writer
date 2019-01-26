@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ExtractJsonUsefulField {
+public class ExtractJson {
     public static List<String> extract(String json){
         JSONObject jsonObject= (JSONObject) JSONObject.parse(json);
         String tabs=jsonObject.getString("tabs");

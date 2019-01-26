@@ -11,11 +11,11 @@ var data = JSON.stringify({
 $(function () {
     $("#send").click(function () {
         var url = "sendHttpPostJson";
-        // alert(data);
         $.post(
             url,
             {"param_json": data},
             function () {
+                //格式化json
                 // var objectJson=JSON.parse(result);
                 // var formatJson=JSON.stringify(objectJson,null,4);
                 $("#rst").html("成功，查看结果请点击导航栏Feedback和Tips");

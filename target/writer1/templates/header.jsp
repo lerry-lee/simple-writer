@@ -17,6 +17,7 @@
     <li><a href="analyse.jsp">Analyse</a></li>
     <li><a href="feedback.jsp">Feedback</a></li>
     <li><a href="tips.jsp">Tips</a></li>
+    <li><a id="chart" href="echarts.jsp">Chart</a></li>
 </ul>
 </body>
 </html>

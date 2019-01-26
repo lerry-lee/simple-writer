@@ -27,7 +27,7 @@ public class HttpRequestDaoImpl implements HttpRequestDao {
 
             int rs=pst.executeUpdate();
             if(rs>0)
-                System.out.println("插入成功\n");
+                System.out.println("HttpRequestInfo表插入成功\n");
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {

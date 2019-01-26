@@ -1,6 +1,6 @@
 package controller;
 
-import utils.ExtractJsonUsefulField;
+import utils.ExtractJson;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +28,7 @@ public class SendHttpPostJsonServlet extends HttpServlet {
 //            System.out.println(param_json);
 
             String result = sendJsonHttpPost(URL, param_json);
-            List<String> flist=ExtractJsonUsefulField.extract(result);
+            List<String> flist= ExtractJson.extract(result);
 
             StringBuffer feedbackBuffer=new StringBuffer();
             feedbackBuffer.append(flist.get(0));
