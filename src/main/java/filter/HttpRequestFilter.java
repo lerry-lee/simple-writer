@@ -1,7 +1,6 @@
 package filter;
 
 import dao.impl.HttpRequestInfoDaoImpl;
-import dao.impl.HttpRequestTimesDaoImpl;
 import utils.Log;
 
 import javax.servlet.*;
@@ -43,10 +42,6 @@ public class HttpRequestFilter implements Filter {
             //将url请求信息写入数据库
             HttpRequestInfoDaoImpl hrdi = new HttpRequestInfoDaoImpl();
             hrdi.insert(Log.httpRequestLog(httpServletRequest, httpServletResponse, t2 - t1));
-
-            String url= String.valueOf(httpServletRequest.getRequestURL());
-            HttpRequestTimesDaoImpl httpRequestTimesDaoImpl=new HttpRequestTimesDaoImpl();
-            httpRequestTimesDaoImpl.updateOrInsert(url);
 
         }else{
             filterChain.doFilter(request,response);

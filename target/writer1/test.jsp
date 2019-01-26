@@ -13,25 +13,25 @@
     <title>test</title>
 </head>
 <body>
-<%--<table id="table_id" class="display">--%>
-    <%--<thead>--%>
-    <%--<tr>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-        <%--<th>xxx</th>--%>
-    <%--</tr>--%>
-    <%--</thead>--%>
-    <%--<tbody>--%>
-    <%--</tbody>--%>
-<%--</table>--%>
+<table id="table_id" class="display">
+    <thead>
+    <tr>
+        <th>xxx</th>
+        <th>xxx</th>
+        <th>xxx</th>
+        <th>xxx</th>
+        <th>xxx</th>
+        <th>xxx</th>
+        <th>xxx</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
-<%--<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>--%>
-<%--<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>--%>
-<%--<script type="text/javascript" charset="utf8" src="pages/table.crud.js"></script>--%>
+<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="pages/test.CRUD.js"></script>
 </body>
 </html>
 

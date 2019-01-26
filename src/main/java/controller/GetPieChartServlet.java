@@ -1,7 +1,7 @@
 package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import service.HttpRequestTimesService;
+import service.HttpRequestInfoService;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/requestTimesPieChart")
-public class RequestTimesPieChartServlet extends HttpServlet {
+@WebServlet("/getPieChart")
+public class GetPieChartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
         String json= null;
         try {
-            json = HttpRequestTimesService.getAll();
+            json = HttpRequestInfoService.getUrlCount();
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
