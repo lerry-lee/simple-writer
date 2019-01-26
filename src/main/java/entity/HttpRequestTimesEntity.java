@@ -1,12 +1,12 @@
 package entity;
 
-public class HttpRequestTimes {
+public class HttpRequestTimesEntity {
     private String url;
     private Integer times;
 
-    public HttpRequestTimes() {
+    public HttpRequestTimesEntity() {
     }
-    public HttpRequestTimes(String url, Integer times){
+    public HttpRequestTimesEntity(String url, Integer times){
         this.url=url;
         this.times=times;
     }

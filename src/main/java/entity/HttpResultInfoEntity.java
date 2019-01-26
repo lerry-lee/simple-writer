@@ -1,11 +1,11 @@
 package entity;
 
-public class HttpResultInfo {
+public class HttpResultInfoEntity {
     private Integer status;
     private String data;
     private String msg;
 
-    public HttpResultInfo(Integer status, String data, String msg) {
+    public HttpResultInfoEntity(Integer status, String data, String msg) {
         this.status = status;
         this.data = data;
         this.msg = msg;

@@ -2,7 +2,8 @@ package entity;
 
 import java.util.Date;
 
-public class HttpRequestInfo {
+public class HttpRequestInfoEntity {
+    private int id;
     private String date;
     private String url;
     private String ip;
@@ -11,7 +12,15 @@ public class HttpRequestInfo {
     private String method;
     private Integer status;
 
-    public HttpRequestInfo(){}
+    public HttpRequestInfoEntity(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setStatus(Integer status) {
         this.status = status;
@@ -68,7 +77,8 @@ public class HttpRequestInfo {
     public String getUrl() {
         return url;
     }
-    public HttpRequestInfo(String date, String url, String ip, String param, long timeConsuming, String method, Integer status){
+    public HttpRequestInfoEntity(int id,String date, String url, String ip, String param, String method, Integer status,long timeConsuming){
+        this.id=id;
         this.date=date;
         this.ip=ip;
         this.method=method;

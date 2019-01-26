@@ -1,9 +1,8 @@
 package filter;
 
-import dao.impl.HttpRequestDaoImpl;
+import dao.impl.HttpRequestInfoDaoImpl;
 import dao.impl.HttpRequestTimesDaoImpl;
 import utils.Log;
-import utils.PrintHttpRequestTimes;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -11,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 @WebFilter("/*")
 public class HttpRequestFilter implements Filter {
@@ -24,11 +21,13 @@ public class HttpRequestFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest=(HttpServletRequest)request;
         HttpServletResponse httpServletResponse=(HttpServletResponse)response;
-
+        //统一request和response编码格式为utf-8
+        request.setCharacterEncoding("utf-8");
+        httpServletResponse.setCharacterEncoding("utf-8");
         //过滤掉静态资源请求
         String spath=httpServletRequest.getServletPath();
 
-        String[] urls={"/js/","/css/"};
+        String[] urls={"/pages/","/css/","/plugins/"};
         boolean flag=true;
         for(String str:urls){
             if(spath.indexOf(str)!=-1){
@@ -42,28 +41,10 @@ public class HttpRequestFilter implements Filter {
             filterChain.doFilter(request, response);
             long t2 = System.currentTimeMillis();
             //将url请求信息写入数据库
-            HttpRequestDaoImpl hrdi = new HttpRequestDaoImpl();
+            HttpRequestInfoDaoImpl hrdi = new HttpRequestInfoDaoImpl();
             hrdi.insert(Log.httpRequestLog(httpServletRequest, httpServletResponse, t2 - t1));
 
             String url= String.valueOf(httpServletRequest.getRequestURL());
-            ServletContext servletContext=httpServletRequest.getSession().getServletContext();
-            //保存url访问次数的map容器
-            Map<String,Integer> urlcount= (Map<String, Integer>) servletContext.getAttribute("urlcount");
-            if(urlcount==null){
-                urlcount=new HashMap<>();
-                servletContext.setAttribute("urlcount",urlcount);
-            }
-            //从容器中更新当前url的访问次数
-            Integer count=urlcount.get(url);
-            if(count==null){
-                count=1;
-                urlcount.put(url,count);
-            }
-            else{
-                count++;
-                urlcount.put(url,count);
-            }
-            PrintHttpRequestTimes.printRequestTimes(urlcount);
             HttpRequestTimesDaoImpl httpRequestTimesDaoImpl=new HttpRequestTimesDaoImpl();
             httpRequestTimesDaoImpl.updateOrInsert(url);
 

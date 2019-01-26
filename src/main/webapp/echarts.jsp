@@ -13,13 +13,21 @@
     <title>echarts</title>
 </head>
 <body>
-<button class="btn" id="getChart">生成报表</button>
-<div class="chartDiv" id="echarts" style="width: 900px;height:600px;"></div>
-<div class="chartDiv" id="test"></div>
 
-<script src="js/echarts.common.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/echarts.request.js"></script>
+<div class="chartDiv" id="echarts" style="width: 900px;height:600px;"></div>
+
+<div class="chartDiv">
+    <table id="tb" class="hovertable">
+        <tr>
+            <th>id</th><th>date</th><th>url</th><th>method</th><th>ip</th><th>param</th><th>status</th><th>timeConsuming</th>
+        </tr>
+    </table>
+</div>
+
+<script src="plugins/echarts.common.min.js"></script>
+<script src="plugins/jquery.min.js"></script>
+<script type="text/javascript" src="pages/echarts.getPieChart.js"></script>
+<script type="text/javascript" src="pages/echarts.getTable.js"></script>
 
 </body>
 </html>

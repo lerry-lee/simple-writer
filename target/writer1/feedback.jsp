@@ -8,8 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="templates/header.jsp" %>
 
-<script src="js/jquery.min.js"></script>
-
 <html>
 <head>
     <title>feedback</title>

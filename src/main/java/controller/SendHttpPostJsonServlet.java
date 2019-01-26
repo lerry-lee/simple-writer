@@ -23,39 +23,27 @@ public class SendHttpPostJsonServlet extends HttpServlet {
 
             httpServletRequest.setCharacterEncoding("utf-8");
             String param_json = httpServletRequest.getParameter(PARAM_JSON);
-
             //测试后端能否正常获取参数
-//            System.out.println(param_json);
+//          System.out.println(param_json);
 
-            String result = sendJsonHttpPost(URL, param_json);
-            List<String> flist= ExtractJson.extract(result);
-
-            StringBuffer feedbackBuffer=new StringBuffer();
-            feedbackBuffer.append(flist.get(0));
-            feedbackBuffer.append(flist.get(1));
-            feedbackBuffer.append(flist.get(2));
-            StringBuffer tipsBuffer=new StringBuffer();
-            tipsBuffer.append(flist.get(3));
+            List<StringBuffer> list = sendJsonHttpPost(URL, param_json);
+            //将buffer存到session中
             HttpSession session=httpServletRequest.getSession();
+            //每次新的请求，清除上次的值
             session.removeAttribute("f1");
             session.removeAttribute("t1");
-            httpServletRequest.getSession().setAttribute("f1",feedbackBuffer);
-            httpServletRequest.getSession().setAttribute("t1",tipsBuffer);
+            httpServletRequest.getSession().setAttribute("f1",list.get(0));
+            httpServletRequest.getSession().setAttribute("t1",list.get(1));
 
             //统一请求返回格式
-            /*String rst="";
-            httpServletResponse.setCharacterEncoding("utf-8");
-            if(null!=result){
-                rst=ToJson.toJson(new HttpResultInfo(0,result,"成功"));
-            }
-            else{
-                rst=ToJson.toJson(new HttpResultInfo(1,null,"失败"));
-            }*/
-           //jquery提交ajax
-//            System.out.println(result);
-            PrintWriter out = httpServletResponse.getWriter();
-            out.write(result);
-            out.close();
+//            String rst="";
+//            httpServletResponse.setCharacterEncoding("utf-8");
+//            if(null!=result){
+//                rst=ToJson.toJson(new HttpResultInfoEntity(0,result,"成功"));
+//            }
+//            else{
+//                rst=ToJson.toJson(new HttpResultInfoEntity(1,null,"失败"));
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();

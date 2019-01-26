@@ -2,7 +2,7 @@ package dao.impl;
 
 import dao.BaseDao;
 import dao.HttpRequestTimesDao;
-import entity.HttpRequestTimes;
+import entity.HttpRequestTimesEntity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,28 +38,28 @@ public class HttpRequestTimesDaoImpl implements HttpRequestTimesDao {
         }
 
         if(flag){
-            String sql_="UPDATE HttpRequestTimes SET Times=Times+1 WHERE Url=?";
+            String sql_="UPDATE HttpRequestTimes SET times=times+1 WHERE url=?";
             try{
                 pst1=conn.prepareStatement(sql_);
                 pst1.setString(1,url);
                 int rs=pst1.executeUpdate();
-                if(rs>0){
+                /*if(rs>0){
                     System.out.println("Http请求次数更新,HttpRequestTimes表更新成功\n");
-                }
+                }*/
                 pst1.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }else {
-            String sql_="INSERT INTO HttpRequestTimes(Url,Times) VALUES(?,?)";
+            String sql_="INSERT INTO HttpRequestTimes(url,times) VALUES(?,?)";
             try{
                 pst2=conn.prepareStatement(sql_);
                 pst2.setString(1,url);
                 pst2.setInt(2,1);
                 int rs=pst2.executeUpdate();
-                if(rs>0){
+               /* if(rs>0){
                     System.out.println("新的Http请求，HttpRequestTimes表插入成功\n");
-                }
+                }*/
                 pst2.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -69,18 +69,18 @@ public class HttpRequestTimesDaoImpl implements HttpRequestTimesDao {
     }
 
     @Override
-    public List<HttpRequestTimes> query() {
+    public List<HttpRequestTimesEntity> query() {
         conn=BaseDao.getconn();
         String sql="SELECT * FROM HttpRequestTimes";
-        List<HttpRequestTimes> list=new ArrayList<>();
+        List<HttpRequestTimesEntity> list=new ArrayList<>();
         try{
             pst=conn.prepareStatement(sql);
             ResultSet rs=pst.executeQuery();
             while(rs.next()){
                 String url=rs.getString(2);
                 Integer times=rs.getInt(3);
-                HttpRequestTimes httpRequestTimes=new HttpRequestTimes(url,times);
-                list.add(httpRequestTimes);
+                HttpRequestTimesEntity httpRequestTimesEntity =new HttpRequestTimesEntity(url,times);
+                list.add(httpRequestTimesEntity);
             }
         } catch (SQLException e) {
             e.printStackTrace();
