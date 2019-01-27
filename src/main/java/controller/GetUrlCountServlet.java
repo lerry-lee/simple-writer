@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/getPieChart")
-public class GetPieChartServlet extends HttpServlet {
+@WebServlet("/getUrlCount")
+public class GetUrlCountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
         String json= null;
         try {

@@ -1,5 +1,10 @@
 package entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class HttpResultInfoEntity {
     private Integer status;
     private String data;
@@ -8,30 +13,6 @@ public class HttpResultInfoEntity {
     public HttpResultInfoEntity(Integer status, String data, String msg) {
         this.status = status;
         this.data = data;
-        this.msg = msg;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public void setMsg(String msg) {
         this.msg = msg;
     }
 

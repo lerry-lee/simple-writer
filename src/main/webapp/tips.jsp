@@ -13,7 +13,7 @@
     <title>tips</title>
 </head>
 <body>
-<div class="fdiv">
+<div class="div-feedback">
    ${t1}
 </div>
 

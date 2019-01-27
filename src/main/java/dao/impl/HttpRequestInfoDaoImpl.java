@@ -44,7 +44,7 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     @Override
     public List<HttpRequestInfoEntity> query() {
         conn=BaseDao.getconn();
-        String sql="SELECT * FROM HttpRequestInfo";
+        String sql="SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo";
         List<HttpRequestInfoEntity> list=new ArrayList<>();
         try{
             pst=conn.prepareStatement(sql);

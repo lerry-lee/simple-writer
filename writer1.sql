@@ -13,9 +13,3 @@ create table HttpRequestInfo(
   Status int,
   TimeConsuming int
 );
-
-create table HttpRequestTimes(
-  Id int primary key auto_increment,
-  Url varChar(200),
-  times int
-);

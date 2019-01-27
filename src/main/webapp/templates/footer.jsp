@@ -13,7 +13,7 @@
 </head>
 <body>
 <div></div>
-<div class="foot">
+<div class="div-footer">
     <p>Hands-on AcaWriter: Developing students’ reflective writing with automated feedback</p>
 </div>
 </body>

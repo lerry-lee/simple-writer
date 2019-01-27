@@ -1,21 +1,31 @@
 package dao;
 
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Properties;
 
 
 public final class BaseDao {
 
     public static Connection getconn(){
         Connection conn=null;
-
-        String USERNAME="root";
-        String PASSWORD="root";
-        String URL="jdbc:mysql://localhost:3306/writer1?useSSL=false";
-        String DRIVER="com.mysql.jdbc.Driver";
-
+        Properties properties=new Properties();
+        InputStream inputStream=BaseDao.class.getClassLoader().getResourceAsStream("db.properties");
+        try {
+            properties.load(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String USERNAME=properties.getProperty("USERNAME");
+        String PASSWORD=properties.getProperty("PASSWORD");
+        String DRIVER=properties.getProperty("DRIVER");
+        String URL=properties.getProperty("URL");
         try{
             Class.forName(DRIVER);
             conn= DriverManager.getConnection(URL,USERNAME,PASSWORD);

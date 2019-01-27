@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="fdiv">
+<div class="div-feedback">
     ${f1}
 </div>
 

@@ -1,63 +1,72 @@
 
-ul#nav{ align-items:center;width:100%; height:60px; background:#00A2CA;margin:0 auto;padding-left: 100px;}
-ul#nav li{display:inline; height:60px}
-ul#nav li a{display:inline-block; padding:0 20px; height:60px; line-height:60px;
-            color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:20px;text-decoration: none}
-ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的背景颜色*/
+ul#nav {
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: #00A2CA;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+ul#nav li {
+    display: inline;
+    height: 60px
+}
+ul#nav li a {
+    display: inline-block;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    color: #FFF;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    font-size: 20px;
+    text-decoration: none
+}
+ul#nav li a:hover {
+    background: #0095BB
+}
 
-
-.form{
+.div-analyse {
     display: inline-block;
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-    font-size:20px;
+    font-size: 20px;
 }
-.form span{
-    display:block;
+.div-analyse span {
+    display: block;
     width: 500px;
     margin-bottom: 10px;
-
 }
-.form span select{
+.div-analyse span select {
     margin-left: 5px;
 }
-.div1{
-
+.div-analyse span textarea{
+    margin-top: 5px;
+    border: 1px solid #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    width: 666px;
+    height: 188px;
+    font-size: 18px;
 }
-.div2{
+
+
+.div-home {
     display: block;
     text-align: center;
 }
 
-.input{
-    margin-top: 5px;
-    border:1px solid #CCC;
-    padding-left: 5px;
-    padding-right: 5px;
-    color: black;
-    width:666px;
-    height:188px;
-    font-size:18px;
-}
 
-.btn{
+.btn {
     margin-top: 10px;
-    border:0;
+    border: 0;
     background-color: #00A2CA;
     font-size: 22px;
-    color:#FFF;
+    color: #FFF;
 }
 
-.style2{
-    margin-top: 10px;
-    border:0;
-    background-color: darkseagreen;
-    font-size:22px;
-    color:#FFF;
-}
-
-.foot {
+.div-footer {
     bottom: 2px;
     width: 100%;
     height: 60px;
@@ -66,46 +75,46 @@ ul#nav li a:hover{background:#0095BB}/*设置鼠标滑过或悬停时变化的�
     padding-top: 8px;
     text-align: center;
     font-size: 18px;
-    color:lightgray;
+    color: lightgray;
 }
 
-.fdiv{
+.div-feedback {
     align-items: center;
     margin: 10px;
 }
-
-.fdiv div{
+.div-feedback div {
     margin-bottom: 10px;
 }
-.fdiv table{
+.div-feedback table {
     margin-bottom: 10px;
 }
 
-.chartDiv{
+.div-echarts {
     padding-bottom: 20px;
     align-items: center;
 }
 
-table.hovertable{
+.div-echarts table{
+    margin-left: 5%;
     width: 802.233px;
     margin-top: 10px;
-    font-size:11px;
+    font-size: 11px;
     color: #333333;
     border-width: 1px;
     border-color: #999999;
     border-collapse: collapse;
 }
-table.hovertable th{
+.div-echarts table th {
     background-color: #c3dde0;
     border-width: 1px;
     padding: 8px;
     border-style: solid;
     border-color: #a9c6c9;
 }
-table.hovertable tr{
+.div-echarts table tr {
     background-color: #d4e3e5;
 }
-table.hovertable td{
+.div-echarts table td {
     border-width: 1px;
     padding: 8px;
     border-style: solid;

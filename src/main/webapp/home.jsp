@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div class="div2">
+<div class="div-home">
     <p>The UTS 2027 strategy will continue to emphasise the importance of authentic learning for students. Internships, work placements, community service, overseas exchanges and role play team simulations are all contexts in which students experience something of the complexity of real world professional practice.</p>
     <p>The question is what and how do students learn from these experiences? One of the most established methods is to ask students to reflect on this in writing. Done well, this can be extremely powerful, but done poorly, it is often experienced as a superficial, meaningless ‘diary’ that is written by students out of obligation.</p>
     <p>Now clearly, there’s nothing as valuable as detailed instruction on reflective writing, and then receiving feedback from a good mentor. But this is (i) a scarce skillset and (ii) it’s very labour-intensive. The practical consequence is that many students do not understand what good reflective writing is, and do not receive good feedback on their work. For these reasons, there’s growing interest in the potential of automated techniques to relieve some of the load.</p>

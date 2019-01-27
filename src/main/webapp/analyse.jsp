@@ -13,20 +13,20 @@
     <title>analyse</title>
 </head>
 <body>
-<div class="form">
-    <span>Txt:<textarea class="input" id="txt">When I kept adjusting how I'd normally ask questions in day to day life, it felt exhausting because I had to put more energy into not only know what questions to ask but also how and when to ask those questions.</textarea></span>
+<div class="div-analyse">
+    <span>Txt:<textarea id="txt">When I kept adjusting how I'd normally ask questions in day to day life, it felt exhausting because I had to put more energy into not only know what questions to ask but also how and when to ask those questions.</textarea></span>
 
-    <span>Grammar:<select id="grammar">
+    <span>Grammar:
+        <select id="grammar">
             <option>analytical</option>
             <option>reflective</option>
-            </select>
+        </select>
     </span>
 
-    <button class="btn" id="send" onmouseover="this.className='style2'" onmouseout="this.className='btn'">提交</button>
+    <button class="btn" id="send" onmouseover="this.style.backgroundColor='#8fbc8f'" onmouseout="this.style.backgroundColor='#00A2CA'">提交</button>
     <br/>
     <span style="color:red;margin-top: 5px" id="rst"></span>
 </div>
-
 
 
 <%--jquery提交ajax请求方式--%>

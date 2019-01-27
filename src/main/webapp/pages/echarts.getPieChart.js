@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $.get(
-        "getPieChart",
+        "getUrlCount",
         {},
         function (map) {
             var objectJson = JSON.parse(map);

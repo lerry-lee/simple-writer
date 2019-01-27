@@ -14,10 +14,10 @@
 </head>
 <body>
 
-<div class="chartDiv" id="echarts" style="width: 900px;height:600px;"></div>
+<div class="div-echarts" id="echarts" style="width: 900px;height:600px;"></div>
 
-<div class="chartDiv">
-    <table id="tb" class="hovertable">
+<div class="div-echarts">
+    <table id="tb">
         <tr>
             <th>id</th><th>date</th><th>url</th><th>method</th><th>ip</th><th>param</th><th>status</th><th>timeConsuming</th>
         </tr>
