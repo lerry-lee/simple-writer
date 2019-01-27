@@ -6,43 +6,68 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebFilter("/*")
 public class HttpRequestFilter implements Filter {
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    final String CHARACTER_ENCODING = "utf-8";
 
+    @Override
+    public void init(FilterConfig filterConfig) {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest=(HttpServletRequest)request;
-        HttpServletResponse httpServletResponse=(HttpServletResponse)response;
-        //统一request和response编码格式为utf-8
-        request.setCharacterEncoding("utf-8");
-        httpServletResponse.setCharacterEncoding("utf-8");
-        //过滤掉静态资源请求
-        String spath=httpServletRequest.getServletPath();
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 
-        String[] urls={"/pages/","/css/","/plugins/"};
-        boolean flag=true;
-        for(String str:urls){
-            if(spath.indexOf(str)!=-1){
-                flag=false;
+        request.setCharacterEncoding(CHARACTER_ENCODING);
+        httpServletResponse.setCharacterEncoding(CHARACTER_ENCODING);
+
+        //过滤掉静态资源请求
+        String spath = httpServletRequest.getServletPath();
+        String[] urls = {"/pages/", "/css/", "/plugins/"};
+        boolean flag = true;
+        for (String str : urls) {
+            if (spath.indexOf(str) != -1) {
+                flag = false;
                 break;
             }
         }
-        if(flag) {
+        if (flag) {
+            //获取当前时间
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String date = sdf.format(new Date());
+            //获取ip
+            String ip = "#ip";
+            //获取请求方法get/post
+            String method = httpServletRequest.getMethod();
+            //获取请求的url
+            String url = String.valueOf(httpServletRequest.getRequestURL());
+            //获取请求参数
+            String param = null;
+            if (httpServletRequest.getQueryString() != null) {
+                param = URLDecoder.decode(httpServletRequest.getQueryString(), "utf-8");
+            }
+            //获取状态码
+            int status = httpServletResponse.getStatus();
             //计算url请求响应时间
-            long t1 = System.currentTimeMillis();
-            filterChain.doFilter(request, response);
-            long t2 = System.currentTimeMillis();
-            //将url请求信息写入数据库
-            HttpRequestInfoService.filterInsert(httpServletRequest,httpServletResponse,t2-t1);
 
-        }else{
-            filterChain.doFilter(request,response);
+            /*BufferedReader br = httpServletRequest.getReader();
+            String str;
+            StringBuffer s=new StringBuffer();
+            while ((str = br.readLine()) != null)
+                s.append(str);
+            System.out.println("请求体： " + s);*/
+            long t1 = System.currentTimeMillis();
+            filterChain.doFilter(request, response);//拦截request获取请求信息后放行
+            long t2 = System.currentTimeMillis();
+            long t = t2 - t1;
+            HttpRequestInfoService.filterInsert(date, url, ip, param, method, status, t);
+        } else {
+            filterChain.doFilter(request, response);
         }
     }
 

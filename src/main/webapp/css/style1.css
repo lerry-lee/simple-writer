@@ -100,23 +100,37 @@ ul#nav li a:hover {
     margin-top: 10px;
     font-size: 11px;
     color: #333333;
-    border-width: 1px;
-    border-color: #999999;
+    border:1px solid #7BA7AB;
     border-collapse: collapse;
 }
 .div-echarts table th {
-    background-color: #c3dde0;
-    border-width: 1px;
+    background-color: lightsteelblue;
+    border:1px solid #7BA7AB;
     padding: 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
 }
 .div-echarts table tr {
-    background-color: #d4e3e5;
+    border:1px solid #7BA7AB;
 }
 .div-echarts table td {
-    border-width: 1px;
+    border:1px solid #7BA7AB;
     padding: 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
+}
+
+.div-echarts input{
+    border:2px solid #7BA7AB;
+    border-radius: 5px;
+    background: white;
+    color:#9E9C9C;
+}
+.div-echarts button{
+    top:0;
+    right: 0;
+    background:#7BA7AB;
+    border-radius: 5px;
+}
+.div-echarts button:before{
+    content:"\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
 }

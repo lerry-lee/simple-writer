@@ -1,13 +1,10 @@
 package controller;
 
-import utils.ExtractJson;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
 import java.util.List;
 
 import static utils.SendHttpPostJson.sendJsonHttpPost;
@@ -20,20 +17,17 @@ public class SendHttpPostJsonServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         try {
-
-            httpServletRequest.setCharacterEncoding("utf-8");
             String param_json = httpServletRequest.getParameter(PARAM_JSON);
             //测试后端能否正常获取参数
 //          System.out.println(param_json);
-
             List<StringBuffer> list = sendJsonHttpPost(URL, param_json);
             //将buffer存到session中
-            HttpSession session=httpServletRequest.getSession();
+            HttpSession session = httpServletRequest.getSession();
             //每次新的请求，清除上次的值
             session.removeAttribute("f1");
             session.removeAttribute("t1");
-            httpServletRequest.getSession().setAttribute("f1",list.get(0));
-            httpServletRequest.getSession().setAttribute("t1",list.get(1));
+            httpServletRequest.getSession().setAttribute("f1", list.get(0));
+            httpServletRequest.getSession().setAttribute("t1", list.get(1));
 
             //统一请求返回格式
 //            String rst="";

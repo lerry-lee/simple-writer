@@ -2,6 +2,7 @@ package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import service.HttpRequestInfoService;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,14 +12,14 @@ import java.io.PrintWriter;
 
 @WebServlet("/getUrlCount")
 public class GetUrlCountServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response){
-        String json= null;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+        String json = null;
         try {
             json = HttpRequestInfoService.getUrlCount();
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        PrintWriter writer= null;
+        PrintWriter writer = null;
         try {
             writer = response.getWriter();
         } catch (IOException e) {
@@ -27,7 +28,8 @@ public class GetUrlCountServlet extends HttpServlet {
         writer.write(json);
         writer.close();
     }
-    protected void doPost(HttpServletRequest request,HttpServletResponse response){
-        doGet(request,response);
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        doGet(request, response);
     }
 }
