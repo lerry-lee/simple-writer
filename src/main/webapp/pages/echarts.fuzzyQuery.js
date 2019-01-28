@@ -3,6 +3,8 @@ $(function () {
     var startDate = $("#start-date").val();
     var endDate = $("#end-date").val();
     var status = $("input[name='status']:checked").val();
+    if(typeof status=="undefined")status="";
+
     $("#url-search").click(function () {
         $.get(
             "fuzzyQuery",

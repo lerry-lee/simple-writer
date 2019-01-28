@@ -21,7 +21,7 @@
     <div>
         起始时间：<input id="start-date" type="date">
         结束时间：<input id="end-date" type="date">
-        响应状态：<input name="status" type="radio" checked="checked" value="success">成功
+        响应状态：<input name="status" type="radio" value="success">成功
                 <input name="status" type="radio" value="failed">失败&nbsp;
         请求关键词：<input id="url-input">
         <button id="url-search"></button>
@@ -43,7 +43,7 @@
 <script src="plugins/echarts.common.min.js"></script>
 <script src="plugins/jquery.min.js"></script>
 <script type="text/javascript" src="pages/echarts.getPieChart.js"></script>
-<script type="text/javascript" src="pages/echarts.getTable.js"></script>
+<%--<script type="text/javascript" src="pages/echarts.getTable.js"></script>--%>
 <script type="text/javascript" src="pages/echarts.fuzzyQuery.js"></script>
 </body>
 </html>
