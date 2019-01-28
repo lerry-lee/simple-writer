@@ -29,16 +29,6 @@ public class SendHttpPostJsonServlet extends HttpServlet {
             httpServletRequest.getSession().setAttribute("f1", list.get(0));
             httpServletRequest.getSession().setAttribute("t1", list.get(1));
 
-            //统一请求返回格式
-//            String rst="";
-//            httpServletResponse.setCharacterEncoding("utf-8");
-//            if(null!=result){
-//                rst=ToJson.toJson(new HttpResultInfoEntity(0,result,"成功"));
-//            }
-//            else{
-//                rst=ToJson.toJson(new HttpResultInfoEntity(1,null,"失败"));
-//            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

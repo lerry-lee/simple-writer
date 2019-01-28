@@ -45,9 +45,9 @@ public class HttpRequestInfoService {
     }
 
     //通过url模糊查询
-    public static String urlGetAll(String query_url) {
+    public static String urlGetAll(String query_url,String start_date,String end_date,String status) {
         HttpRequestInfoDaoImpl hrtdi = new HttpRequestInfoDaoImpl();
-        List<HttpRequestInfoEntity> list = hrtdi.urlQuery(query_url);
+        List<HttpRequestInfoEntity> list = hrtdi.fuzzyQuery(query_url,start_date,end_date,status);
         String list_json = null;
         try {
             list_json = ToJson.toJson(list);

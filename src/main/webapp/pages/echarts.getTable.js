@@ -6,7 +6,7 @@ $(document).ready(function () {
             var json = JSON.parse(list);
             for (var i in json) {
                 $("#tb").append(
-                    "<tr onmouseover=\"this.style.backgroundColor='#b0c4de'\" onmouseout=\"this.style.backgroundColor='#FFF'\"><td>" + json[i].id +
+                    "<tr><td>" + json[i].id +
                     "</td><td>" + json[i].date +
                     "</td><td>" + json[i].url +
                     "</td><td>" + json[i].method +

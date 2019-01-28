@@ -1,15 +1,23 @@
 $(function () {
-    var data = $("#url-input").val();
+    var url = $("#url-input").val();
+    var startDate = $("#start-date").val();
+    var endDate = $("#end-date").val();
+    var status = $("input[name='status']:checked").val();
     $("#url-search").click(function () {
         $.get(
-            "urlFuzzyQuery",
-            {"url": data},
+            "fuzzyQuery",
+            {
+                "url": url,
+                "startDate": startDate,
+                "endDate": endDate,
+                "status": status
+            },
             function (list) {
                 $("#tb tr:not(:first)").empty();
                 var json = JSON.parse(list);
                 for (var i in json) {
                     $("#tb").append(
-                        "<tr onmouseover=\"this.style.backgroundColor='#b0c4de'\" onmouseout=\"this.style.backgroundColor='#FFF'\"><td>" + json[i].id +
+                        "<tr><td>" + json[i].id +
                         "</td><td>" + json[i].date +
                         "</td><td>" + json[i].url +
                         "</td><td>" + json[i].method +
