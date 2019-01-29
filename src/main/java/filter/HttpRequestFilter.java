@@ -45,19 +45,21 @@ public class HttpRequestFilter implements Filter {
             //获取请求方法get/post
             String method = httpServletRequest.getMethod();
             //获取请求的url
-            String url = String.valueOf(httpServletRequest.getRequestURL());
+            String url = URLDecoder.decode(String.valueOf(httpServletRequest.getRequestURL()),"utf-8");
             //获取请求参数
-            String param ="";
+            String param = "";
             if (httpServletRequest.getQueryString() != null) {
                 param = URLDecoder.decode(httpServletRequest.getQueryString(), "utf-8");
             }
             //计算url请求响应时间
             long t1 = System.currentTimeMillis();
+
             filterChain.doFilter(request, response);//拦截request获取请求信息后放行
             long t2 = System.currentTimeMillis();
             long t = t2 - t1;
             //获取状态码
             int status = httpServletResponse.getStatus();
+
             HttpRequestInfoService.filterInsert(date, url, ip, param, method, status, t);
         } else {
             filterChain.doFilter(request, response);

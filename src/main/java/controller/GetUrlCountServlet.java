@@ -19,14 +19,14 @@ public class GetUrlCountServlet extends HttpServlet {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        PrintWriter writer = null;
         try {
-            writer = response.getWriter();
+            PrintWriter out = response.getWriter();
+            out.write(json);
+            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        writer.write(json);
-        writer.close();
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {

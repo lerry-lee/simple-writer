@@ -1,9 +1,9 @@
 $(function () {
     var url = $("#url-input").val();
-    var startDate = $("#start-date").val();
-    var endDate = $("#end-date").val();
-    var status = $("input[name='status']:checked").val();
-    if(typeof status=="undefined")status="";
+    var date_time=$("#date-time").val();
+    var startDate = date_time.substring(0,19);
+    var endDate = date_time.substring(22,41);
+    var method = $("input[name='method']:checked").val();
 
     $("#url-search").click(function () {
         $.get(
@@ -12,7 +12,7 @@ $(function () {
                 "url": url,
                 "startDate": startDate,
                 "endDate": endDate,
-                "status": status
+                "method": method
             },
             function (list) {
                 $("#tb tr:not(:first)").empty();

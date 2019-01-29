@@ -4,7 +4,7 @@ package service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import dao.impl.HttpRequestInfoDaoImpl;
 import entity.HttpRequestInfoEntity;
-import entity.HttpRequestTimesEntity;
+import bean.UrlCountBean;
 import utils.ToJson;
 
 import java.util.HashMap;
@@ -24,13 +24,12 @@ public class HttpRequestInfoService {
     //返回url和访问次数
     public static String getUrlCount() throws JsonProcessingException {
         HttpRequestInfoDaoImpl h = new HttpRequestInfoDaoImpl();
-        List<HttpRequestTimesEntity> list = h.queryCount();
-//        String list_json=ToJson.toJson(list);
+        List<UrlCountBean> list = h.queryCount();
         Map<String, Integer> map = new HashMap<>();
         Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
-            HttpRequestTimesEntity hrt = (HttpRequestTimesEntity) iterator.next();
-            map.put(hrt.getUrl(), hrt.getTimes());
+            UrlCountBean ucb = (UrlCountBean) iterator.next();
+            map.put(ucb.getUrl(), ucb.getTimes());
         }
         //将map对象转换成json字符串
         String map_json = ToJson.toJson(map);
@@ -44,10 +43,10 @@ public class HttpRequestInfoService {
         h.insert(httpRequestInfoEntity);
     }
 
-    //通过url模糊查询
-    public static String urlGetAll(String query_url,String start_date,String end_date,String status) {
-        HttpRequestInfoDaoImpl hrtdi = new HttpRequestInfoDaoImpl();
-        List<HttpRequestInfoEntity> list = hrtdi.fuzzyQuery(query_url,start_date,end_date,status);
+    //模糊查询
+    public static String fuzzyQuery(String query_url, String start_date, String end_date, String method) {
+        HttpRequestInfoDaoImpl h = new HttpRequestInfoDaoImpl();
+        List<HttpRequestInfoEntity> list = h.fuzzyQuery(query_url,start_date,end_date,method);
         String list_json = null;
         try {
             list_json = ToJson.toJson(list);

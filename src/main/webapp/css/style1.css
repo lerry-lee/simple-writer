@@ -193,3 +193,13 @@ ul#nav li a:hover {
     -webkit-border-radius: 0 0 6px 0;
     border-radius: 0 0 6px 0;
 }
+.daterange i {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    top: auto;
+    cursor: pointer;
+}
+.daterange {
+    position: relative;
+}

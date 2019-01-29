@@ -1,6 +1,6 @@
 package controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import service.HttpRequestInfoService;
 
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +16,8 @@ public class GetAllHttpInfoServlet extends HttpServlet {
         try {
             String list = HttpRequestInfoService.getAll();
             PrintWriter out = response.getWriter();
-            out.write(list);
+            out.print(list);
             out.close();
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

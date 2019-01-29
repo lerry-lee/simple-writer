@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
 @WebServlet("/fuzzyQuery")
 public class FuzzyQueryServlet extends HttpServlet {
@@ -16,17 +15,16 @@ public class FuzzyQueryServlet extends HttpServlet {
         String query_url = request.getParameter("url");
         String start_date=request.getParameter("startDate");
         String end_date=request.getParameter("endDate");
-        String status=request.getParameter("status");
-        String json = HttpRequestInfoService.urlGetAll(query_url,start_date,end_date,status);
-        PrintWriter out = null;
+        String method=request.getParameter("method");
+        String json = HttpRequestInfoService.fuzzyQuery(query_url,start_date,end_date,method);
+
         try {
-            out = response.getWriter();
+            PrintWriter out = response.getWriter();
+            out.write(json);
+            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        out.write(json);
-        out.close();
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {

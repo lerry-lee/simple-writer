@@ -1,9 +1,10 @@
 package dao.impl;
 
+
+import bean.UrlCountBean;
 import dao.BaseDao;
 import dao.HttpRequestInfoDao;
 import entity.HttpRequestInfoEntity;
-import entity.HttpRequestTimesEntity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,7 +43,7 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     @Override
     public List<HttpRequestInfoEntity> query() {
         conn = BaseDao.getconn();
-        String sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo";
+        String sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE id<5";
         List<HttpRequestInfoEntity> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
@@ -70,18 +71,18 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     }
 
     @Override
-    public List<HttpRequestTimesEntity> queryCount() {
+    public List<UrlCountBean> queryCount() {
         conn = BaseDao.getconn();
         String sql = "SELECT url,COUNT(*) AS count from HttpRequestInfo GROUP BY url ORDER BY count DESC";
-        List<HttpRequestTimesEntity> list = new ArrayList<>();
+        List<UrlCountBean> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 String url = rs.getString(1);
                 int count = rs.getInt(2);
-                HttpRequestTimesEntity httpRequestTimesEntity = new HttpRequestTimesEntity(url, count);
-                list.add(httpRequestTimesEntity);
+                UrlCountBean urlCountBean = new UrlCountBean(url, count);
+                list.add(urlCountBean);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -92,42 +93,25 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     }
 
     @Override
-    public List<HttpRequestInfoEntity> fuzzyQuery(String url_query, String start_date, String end_date, String str_status) {
+    public List<HttpRequestInfoEntity> fuzzyQuery(String url_query, String start_date, String end_date, String str_method) {
         conn = BaseDao.getconn();
         String sql = "";
-        boolean query_with_date = !start_date.equals("") && end_date.equals("");
-        boolean query_with_status = !str_status.equals("");
+        boolean query_with_date = !start_date.equals("");
         if (!query_with_date) {
-            if (!query_with_status) {
-                sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ?";
-            } else {
-                if (str_status.equals("success")) {
-                    sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND status = ? ";
-                } else {
-                    sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? and status != ?";
-                }
-            }
+            sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? ";
         } else {
-            if (!query_with_status) {
-                sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ?AND  date BETWEEN ? AND ?";
-            } else {
-                if (str_status.equals("success")) {
-                    sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND status = ? AND  date BETWEEN ? AND ?";
-                } else {
-                    sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? and status != ?AND  date BETWEEN ? AND ?";
-                }
-            }
+            sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? AND  date BETWEEN ? AND ?";
         }
         List<HttpRequestInfoEntity> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, "%" + url_query + "%");
-            if (query_with_status)
-                pst.setInt(2, 200);
+            pst.setString(2, str_method);
             if (query_with_date) {
                 pst.setString(3, start_date);
                 pst.setString(4, end_date);
             }
+            System.out.println(start_date+query_with_date+end_date);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt(1);
@@ -148,5 +132,4 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
         }
         return list;
     }
-
 }

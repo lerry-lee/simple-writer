@@ -31,7 +31,7 @@
 
 <%--jquery提交ajax请求方式--%>
 <script src="plugins/jquery.min.js"></script>
-<script type="text/javascript" src="pages/analyse.getFeedback.js"></script>
+<script type="text/javascript" src="pages/analyse.getfeedback.js"></script>
 
 </body>
 </html>
