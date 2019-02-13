@@ -43,7 +43,7 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     @Override
     public List<HttpRequestInfoEntity> query() {
         conn = BaseDao.getconn();
-        String sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE id<5";
+        String sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo";
         List<HttpRequestInfoEntity> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
@@ -111,7 +111,6 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
                 pst.setString(3, start_date);
                 pst.setString(4, end_date);
             }
-            System.out.println(start_date+query_with_date+end_date);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt(1);

@@ -3,7 +3,7 @@ var data = JSON.stringify({
     'action': 'fetch',
     'extra': {
         'feedbackOpt': 'r_01',
-        'grammar': $("#grammar").find("option:selected").text(),
+        'grammar': $("input[name='grammar']:checked").val(),
         'feature': 7
     },
     'type': 'manual'
@@ -14,11 +14,18 @@ $(function () {
         $.post(
             url,
             {"param_json": data},
-            function () {
-                //格式化json
-                // var objectJson=JSON.parse(result);
-                // var formatJson=JSON.stringify(objectJson,null,4);
-                $("#rst").html("成功，查看结果请点击导航栏Feedback和Tips");
+            function (result) {
+                // 格式化json
+                var objectJson = JSON.parse(result);
+
+                var feedback = "";
+                var tips = "";
+                for (key in objectJson) {
+                    feedback = objectJson[1] + objectJson[2] + objectJson[3];
+                    tips = objectJson[4];
+                }
+                $("#feedback").html(feedback);
+                $("#tips").html(tips);
             }
         );
     });

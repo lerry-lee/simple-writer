@@ -1,5 +1,6 @@
 package utils;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -11,11 +12,9 @@ import org.apache.http.util.CharsetUtils;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SendHttpPostJson {
-    public static List<StringBuffer> sendJsonHttpPost(String url, String json) {
+    public static JSONObject test(String url, String json) {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseInfo = null;
@@ -41,20 +40,7 @@ public class SendHttpPostJson {
                 e.printStackTrace();
             }
         }
-
-        List<String> flist= ExtractJson.extract(responseInfo);
-        //feedbackBuffer存feedback页面的数据
-        StringBuffer feedbackBuffer=new StringBuffer();
-        feedbackBuffer.append(flist.get(0));
-        feedbackBuffer.append(flist.get(1));
-        feedbackBuffer.append(flist.get(2));
-        //tipsBuffer存tips页面的数据
-        StringBuffer tipsBuffer=new StringBuffer();
-        tipsBuffer.append(flist.get(3));
-        List<StringBuffer> list=new ArrayList<>();
-        list.add(feedbackBuffer);
-        list.add(tipsBuffer);
-
-        return list;
+        JSONObject rst = ExtractJson.extract_json(responseInfo);
+        return rst;
     }
 }

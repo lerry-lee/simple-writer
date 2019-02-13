@@ -18,7 +18,8 @@ public class HttpRequestInfoService {
         HttpRequestInfoDaoImpl hrtdi = new HttpRequestInfoDaoImpl();
         List<HttpRequestInfoEntity> list = hrtdi.query();
         String list_json = ToJson.toJson(list);
-        return list_json;
+        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+list.size()+",\"data\":"+list_json+"}";
+        return rst;
     }
 
     //返回url和访问次数
@@ -53,6 +54,7 @@ public class HttpRequestInfoService {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return list_json;
+        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+list.size()+",\"data\":"+list_json+"}";
+        return rst;
     }
 }

@@ -6,7 +6,7 @@ $(document).ready(function () {
         function (map) {
             var objectJson = JSON.parse(map);
             var arrayJson = [];
-            var dataArray=[];
+            var dataArray = [];
             for (var key in objectJson) {
                 var arr = {
                     value: objectJson[key],
@@ -19,9 +19,9 @@ $(document).ready(function () {
             var pieChart = echarts.init(document.getElementById("echarts"));
 
             var option = {
-                title:{
-                    text:'URL访问次数饼状图',
-                    x:'center'
+                title: {
+                    text: 'HTTP REQUEST TIMES PIE CHART',
+                    x: 'center'
                 },
                 tooltip: {
                     trigger: 'item',
@@ -29,18 +29,18 @@ $(document).ready(function () {
                 },
                 series: [
                     {
-                        name:'访问来源',
-                        type:'pie',
-                        radius:'55%',
-                        center:['50%', '60%'],
-                        itemStyle:{
-                            emphasis:{
-                                shadowBlur:10,
-                                shadowOffsetX:0,
-                                shadowColor:'rgba(0,0,0,0.5)'
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0,0,0,0.5)'
                             }
                         },
-                        data:arrayJson
+                        data: arrayJson
                     }
                 ]
             };
