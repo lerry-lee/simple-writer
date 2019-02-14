@@ -27,12 +27,12 @@
         <div class="layui-col-md6">
             <div class="layui-card">
                 <div class="layui-card-header">HTTP请求信息数据表</div>
-                <div style="padding-left: 2%;padding-right: 2%">
+                <div style="padding:10px">
                     请求时间：<input type="text" class="layui-input" placeholder="选择起止时间" id="date-time">
                     请求方法：<input name="method" type="radio" checked="checked" value="GET">GET
                     <input name="method" type="radio" value="POST">POST&nbsp;
                     请求关键词：<input id="url-input" placeholder="输入url中的关键词">
-                    <button id="url-search" class="layui-btn-primary">搜索</button>
+                    <button id="url-search" class="layui-btn layui-btn-normal" style="-webkit-transform: scale(0.7)">搜索</button>
                 </div>
                 <div class="layui-card-body" style="overflow: auto">
                     <table id="demo" lay-filter="test" class="layui-table" lay-data="{id:'demo'}"></table>

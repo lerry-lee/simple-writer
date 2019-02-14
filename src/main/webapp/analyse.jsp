@@ -18,7 +18,7 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md6">
             <div class="layui-card">
-                <div class="layui-card-header">写作面板</div>
+                <div class="layui-card-header" id="to-edit"><i class="edit-analyse"></i>写作面板</div>
                 <div class="layui-card-body">
                     <span><textarea id="txt" name="txt" class="layui-textarea" style="display: none">When I kept adjusting how I'd normally ask questions in day to day life, it felt exhausting because I had to put more energy into not only know what questions to ask but also how and when to ask those questions.</textarea></span>
                     <span>Grammar:
@@ -33,7 +33,7 @@
         </div>
         <div class="layui-col-md6">
             <div class="layui-card">
-                <div class="layui-card-header">反馈面板</div>
+                <div class="layui-card-header" id="to-feedback"><i class="feedback-analyse"></i>反馈面板</div>
                 <div class="layui-card-body">
                     <span id="feedback"></span>
                 </div>
@@ -41,15 +41,27 @@
         </div>
         <div class="layui-col-md6">
             <div class="layui-card">
-                <div class="layui-card-header">提示面板</div>
+                <div class="layui-card-header" id="to-tips"><i class="tips-analyse"></i>提示面板</div>
                 <div class="layui-card-body">
-                    <span id="tips"></span>
+                    <span class="span-tips" id="tips"></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<%--工具集--%>
+<script>
+    layui.use(['util', 'layer'], function () {
+        var util = layui.util;
+        //固定块
+        util.fixbar({
+            bar1: false
+            , css: {right: 50, bottom: 100}
+            , bgcolor: '#393D49'
+        });
+    });
+</script>
 
 <script>
     layui.use('layedit', function () {

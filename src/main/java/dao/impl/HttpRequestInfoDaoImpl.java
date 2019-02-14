@@ -5,6 +5,8 @@ import bean.UrlCountBean;
 import dao.BaseDao;
 import dao.HttpRequestInfoDao;
 import entity.HttpRequestInfoEntity;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,6 +19,9 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
 
     Connection conn = null;
     PreparedStatement pst = null;
+    @Getter
+    @Setter
+    private int total;
 
     @Override
     public void insert(HttpRequestInfoEntity httpRequestInfoEntity) {
@@ -41,12 +46,15 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     }
 
     @Override
-    public List<HttpRequestInfoEntity> query() {
+    public List<HttpRequestInfoEntity> query(int offset, int rows) {
         conn = BaseDao.getconn();
-        String sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo";
+        String sql = "SELECT SQL_CALC_FOUND_ROWS id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo LIMIT ?,?";
+        String sql_ = "SELECT FOUND_ROWS()";
         List<HttpRequestInfoEntity> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
+            pst.setInt(1, offset);
+            pst.setInt(2, rows);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt(1);
@@ -58,9 +66,13 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
                 Integer status = rs.getInt(7);
                 Long timeConsuming = rs.getLong(8);
                 HttpRequestInfoEntity httpRequestInfoEntity = new HttpRequestInfoEntity(id, date, url, method, ip, param, status, timeConsuming);
-
                 list.add(httpRequestInfoEntity);
-//
+
+            }
+            pst = conn.prepareStatement(sql_);
+            ResultSet rs_=pst.executeQuery();
+            while(rs_.next()) {
+                setTotal(rs_.getInt(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,23 +105,28 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
     }
 
     @Override
-    public List<HttpRequestInfoEntity> fuzzyQuery(String url_query, String start_date, String end_date, String str_method) {
+    public List<HttpRequestInfoEntity> fuzzyQuery(int offset,int rows,String url_query, String start_date, String end_date, String str_method) {
         conn = BaseDao.getconn();
         String sql = "";
+        String sql_ = "SELECT FOUND_ROWS()";
         boolean query_with_date = !start_date.equals("");
         if (!query_with_date) {
-            sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? ";
+            sql = "SELECT SQL_CALC_FOUND_ROWS id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? LIMIT ?,?";
         } else {
-            sql = "SELECT id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? AND  date BETWEEN ? AND ?";
+            sql = "SELECT SQL_CALC_FOUND_ROWS id,date,url,param,method,ip,status,timeConsuming FROM HttpRequestInfo WHERE url LIKE ? AND method = ? AND  date BETWEEN ? AND ? LIMIT ?,?";
         }
         List<HttpRequestInfoEntity> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, "%" + url_query + "%");
             pst.setString(2, str_method);
+            pst.setInt(3,offset);
+            pst.setInt(4,rows);
             if (query_with_date) {
                 pst.setString(3, start_date);
                 pst.setString(4, end_date);
+                pst.setInt(5,offset);
+                pst.setInt(6,rows);
             }
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
@@ -123,6 +140,11 @@ public class HttpRequestInfoDaoImpl implements HttpRequestInfoDao {
                 Long timeConsuming = rs.getLong(8);
                 HttpRequestInfoEntity httpRequestInfoEntity = new HttpRequestInfoEntity(id, date, url, method, ip, param, status, timeConsuming);
                 list.add(httpRequestInfoEntity);
+            }
+            pst = conn.prepareStatement(sql_);
+            ResultSet rs_=pst.executeQuery();
+            while(rs_.next()) {
+                setTotal(rs_.getInt(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();

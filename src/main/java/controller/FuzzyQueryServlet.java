@@ -16,7 +16,11 @@ public class FuzzyQueryServlet extends HttpServlet {
         String start_date=request.getParameter("startDate");
         String end_date=request.getParameter("endDate");
         String method=request.getParameter("method");
-        String json = HttpRequestInfoService.fuzzyQuery(query_url,start_date,end_date,method);
+        String page=request.getParameter("page");
+        String limit=request.getParameter("limit");
+        int rows=Integer.parseInt(limit);
+        int offset=(Integer.parseInt(page)-1)*rows;
+        String json = HttpRequestInfoService.fuzzyQuery(offset,rows,query_url,start_date,end_date,method);
 
         try {
             PrintWriter out = response.getWriter();

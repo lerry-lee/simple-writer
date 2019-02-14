@@ -24,6 +24,7 @@ $(function () {
                     feedback = objectJson[1] + objectJson[2] + objectJson[3];
                     tips = objectJson[4];
                 }
+
                 $("#feedback").html(feedback);
                 $("#tips").html(tips);
             }

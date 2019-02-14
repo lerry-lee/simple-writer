@@ -14,7 +14,11 @@ import java.io.PrintWriter;
 public class GetAllHttpInfoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         try {
-            String list = HttpRequestInfoService.getAll();
+            String page=request.getParameter("page");
+            String limit=request.getParameter("limit");
+            int rows=Integer.parseInt(limit);
+            int offset=(Integer.parseInt(page)-1)*rows;
+            String list = HttpRequestInfoService.getAll(offset,rows);
             PrintWriter out = response.getWriter();
             out.print(list);
             out.close();

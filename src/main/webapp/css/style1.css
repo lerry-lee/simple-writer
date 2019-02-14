@@ -1,207 +1,158 @@
-.div-header{
-    width: 100%;
-    overflow: hidden;
-}
 
-ul#nav {
-    margin: 0;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    background: #00A2CA;
-
-
-}
-ul#nav li {
-    display: inline;
-    height: 60px
-}
-ul#nav li a {
-    display: inline-block;
-    padding: 0 20px;
-    height: 60px;
-    line-height: 60px;
-    color: #FFF;
-    font-family: "\5FAE\8F6F\96C5\9ED1";
-    font-size: 20px;
-    text-decoration: none
-}
-ul#nav li a:hover {
-    background: #0095BB
-}
-
-.div-analyse {
-    display: inline-block;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100%;
-
-}
-.div-analyse span {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.div-analyse span textarea{
-    margin-top: 5px;
-    border: 1px solid #CCC;
-    padding-left: 5px;
-    padding-right: 5px;
-    color: black;
-    height: 188px;
-    width: 100%;
-    font-size: 18px;
-}
-
-
-.div-home {
-    display: block;
-    text-align: center;
-}
-
-
-.btn {
-    margin-top: 10px;
-    border: 0;
-    background-color: #00A2CA;
-    font-size: 22px;
-    color: #FFF;
-}
 
 .div-footer {
-    bottom: 2px;
+    bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: gray;
-    padding-top: 6px;
+    padding-top: 10px;
     text-align: center;
+    font-size: 14px;
+    color: grey;
+}
+.div-footer hr{
+    border: 1px solid lightgrey;
+}
+.div-footer p{
+    padding-top: 10px;
+}
+.alert.alert-success{
+    font-family:"Adobe Caslon Pro";
+    color:#333333;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius:5px;
+    background:#D3F8E2;
+}
+.alert.alert-info{
+    font-family: "Adobe Arabic";
+    color:#333333;
     font-size: 18px;
-    color: lightgray;
-}
-
-.div-feedback {
-    align-items: center;
-    margin: 10px;
-}
-.div-feedback div {
+    border-radius:5px;
     margin-bottom: 10px;
+    padding: 10px;
+    background:#CFF3FC;
 }
-.div-feedback table {
-    margin-bottom: 10px;
-}
-
-.div-echarts {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    overflow: auto;
-}
-.div-echarts div{
+.table.table-bordered{
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family: Arial;
+    font-size:13px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #dedede;
+    border-collapse: collapse;
 }
-.div-echarts input{
-    border:2px solid #7BA7AB;
-    border-radius: 5px;
-    background: white;
-    color:#9E9C9C;
+.table-bordered th{
+    font-size: 14px;
+    border-width: 2px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #dedede;
+    background-color: #dedede;
 }
-.div-echarts button{
-    top:0;
-    right: 0;
-    background:#7BA7AB;
-    border-radius: 5px;
+.table-bordered td{
+    border-width: 2px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #dedede;
+    background-color: #ffffff;
 }
-.div-echarts button:before{
-    content:"\f002";
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: #F9F0DA;
+.span-tips{
+    font-family: Arial;
+    color:#333333;
 }
-
-.bordered {
-    border-spacing: 0;
-    font-size:12px;
-    border: solid #ccc 1px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-box-shadow: 0 1px 1px #ccc;
-    -moz-box-shadow: 0 1px 1px #ccc;
-    box-shadow: 0 1px 1px #ccc;
+.fa.fa.fa-thumbs-up.text-success{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(icon/dianzan_1.png);
+    background-size: cover;
+    padding-right: 5px;
 }
-
-.bordered tr:hover {
-    background: lightgoldenrodyellow;
-    -o-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+.fa.fa-exclamation-triangle.text-danger{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(icon/frown.png);
+    background-size: cover;
+    padding-right: 5px;
 }
-
-.bordered td, .bordered th {
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-.bordered th {
-    background-color: #dce9f9;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
-    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
-    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
-    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
-    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
-    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
-    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
-    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-    border-top: none;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-}
-
-.bordered td:first-child, .bordered th:first-child {
-    border-left: none;
-}
-
-.bordered th:first-child {
-    -moz-border-radius: 6px 0 0 0;
-    -webkit-border-radius: 6px 0 0 0;
-    border-radius: 6px 0 0 0;
-}
-
-.bordered th:last-child {
-    -moz-border-radius: 0 6px 0 0;
-    -webkit-border-radius: 0 6px 0 0;
-    border-radius: 0 6px 0 0;
-}
-
-.bordered th:only-child{
-    -moz-border-radius: 6px 6px 0 0;
-    -webkit-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0;
-}
-
-.bordered tr:last-child td:first-child {
-    -moz-border-radius: 0 0 0 6px;
-    -webkit-border-radius: 0 0 0 6px;
-    border-radius: 0 0 0 6px;
-}
-
-.bordered tr:last-child td:last-child {
-    -moz-border-radius: 0 0 6px 0;
-    -webkit-border-radius: 0 0 6px 0;
-    border-radius: 0 0 6px 0;
-}
-.daterange i {
-    position: absolute;
-    bottom: 10px;
-    right: 14px;
-    top: auto;
-    cursor: pointer;
-}
-.daterange {
+.badge.badge-pill.badge-analytic{
     position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    font-family:"Segoe UI Black";
+    font-size: 12px;
+    text-align: center;
+    background-color:#FF7A22 ;
+    color: #000000;
+    border-radius: 10px;
+    height: 18px;
+    line-height: 18px
+}
+.badge.badge-pill.badge-analytic-green{
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    font-family: "Segoe UI Black";
+    font-size: 12px;
+    text-align: center;
+    background-color:#008B45;
+    color: #fff;
+    border-radius: 10px;
+    height: 18px;
+    line-height: 18px
+}
+.home-header{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/shouye.png);
+    background-size: cover;
+    padding-right: 5px;
+}
+.chart-header{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/tubiao.png);
+    background-size: cover;
+    padding-right: 5px;
+    overflow: visible;
+}
+.edit-analyse{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/bianji.png);
+    background-size: cover;
+    padding-right: 5px;
+}
+.feedback-analyse{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/dingdan.png);
+    background-size: cover;
+    padding-right: 5px;
+}
+.tips-analyse{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/linggan.png);
+    background-size: cover;
+    padding-right: 5px;
+}
+.home-p{
+    text-align: center;
+    bottom: 20%;
+    position: absolute;
+    font-family: Ebrima;
+    font-size:20px;
+    color: #333333;
+}
+.home-Carousel{
+    margin: 5%;
+
 }

@@ -14,11 +14,12 @@ import java.util.Map;
 
 public class HttpRequestInfoService {
 
-    public static String getAll() throws JsonProcessingException {
+    public static String getAll(int offset,int rows) throws JsonProcessingException {
         HttpRequestInfoDaoImpl hrtdi = new HttpRequestInfoDaoImpl();
-        List<HttpRequestInfoEntity> list = hrtdi.query();
+        List<HttpRequestInfoEntity> list = hrtdi.query(offset,rows);
         String list_json = ToJson.toJson(list);
-        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+list.size()+",\"data\":"+list_json+"}";
+        int total=hrtdi.getTotal();
+        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+total+",\"data\":"+list_json+"}";
         return rst;
     }
 
@@ -45,16 +46,17 @@ public class HttpRequestInfoService {
     }
 
     //模糊查询
-    public static String fuzzyQuery(String query_url, String start_date, String end_date, String method) {
+    public static String fuzzyQuery(int offset,int rows,String query_url, String start_date, String end_date, String method) {
         HttpRequestInfoDaoImpl h = new HttpRequestInfoDaoImpl();
-        List<HttpRequestInfoEntity> list = h.fuzzyQuery(query_url,start_date,end_date,method);
+        List<HttpRequestInfoEntity> list = h.fuzzyQuery(offset,rows,query_url,start_date,end_date,method);
         String list_json = null;
         try {
             list_json = ToJson.toJson(list);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+list.size()+",\"data\":"+list_json+"}";
+        int total=h.getTotal();
+        String rst="{\"code\":0,\"msg\":\"\",\"count\":"+total+",\"data\":"+list_json+"}";
         return rst;
     }
 }

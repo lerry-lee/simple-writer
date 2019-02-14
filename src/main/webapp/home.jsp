@@ -14,74 +14,46 @@
 </head>
 
 <body>
-<div class="layui-row layui-col-space15">
-    <div class="layui-col-md6">
-        <div class="layui-card">
-            <div class="layui-card-body">
-                <div class="layui-carousel" id="test1" lay-filter="test1" style="text-align:center;font-size: 20px;font-family: Arial">
+<%--<div class="layui-row layui-col-space15">--%>
+    <%--<div class="layui-col-md6">--%>
+        <%--<div class="layui-card">--%>
+            <%--<div class="layui-card-body">--%>
+<div class="home-Carousel">
+                <div class="layui-carousel" id="test1" lay-filter="test1">
                     <div carousel-item="">
-                        <div style="background-color: whitesmoke"><p style="bottom: 40%;position: absolute;">The UTS 2027 strategy will continue
-                            to emphasise the importance of authentic learning for
-                            students.
-                            Internships, work placements, community service, overseas exchanges and role play team
-                            simulations are all
-                            contexts in which students experience something of the complexity of real world professional
-                            practice.</p>
+                        <div style="background-image: url(css/img/1.jpg);background-size: cover">
+                            <p class="home-p">Welcome to
+                                AcaWriter! This website provides automated feedback on academic writing. A lot of
+                                research
+                                into writing shows that many students find it tough to express their ideas in formal
+                                academic language, and wish they had better, quicker feedback.</p>
                         </div>
-                        <div style="background-color: #5FB878"><p style="bottom: 40%;position: absolute;">The question is what and how do
-                            students learn from these experiences? One of the most
-                            established methods
-                            is to ask students to reflect on this in writing. Done well, this can be extremely powerful,
-                            but done
-                            poorly, it is often experienced as a superficial, meaningless ‘diary’ that is written by
-                            students out of
-                            obligation.</p>
+                        <div style="background-image: url(css/img/2.jpg);background-size: cover"><p class="home-p">
+                            AcaWriter
+                            works by looking for specific hallmarks of good academic writingthat signal (to your
+                            audience, the reader) that there's a significant connection being made, or an important
+                            development or contrast in ideas. This helps to demonstrate your critical thinking, skill in
+                            argument, or development as a reflective professional.</p>
                         </div>
-                        <div style="background-color: #93D1FF"><p style="bottom: 40%;position: absolute;">Now clearly, there’s nothing as
-                            valuable as detailed instruction on reflective writing, and
-                            then receiving
-                            feedback from a good mentor. But this is (i) a scarce skillset and (ii) it’s very
-                            labour-intensive. The
-                            practical consequence is that many students do not understand what good reflective writing
-                            is, and do not
-                            receive good feedback on their work. For these reasons, there’s growing interest in the
-                            potential of
-                            automated techniques to relieve some of the load.</p>
+                        <div style="background-image: url(css/img/3.jpg);background-size: cover"><p class="home-p">
+                            AcaWriter is
+                            not grading your writing. Instead, it gives you feedback to improve your draft. Nobody will
+                            see your documents other than you, and the UTS research team who is continually analysing
+                            AcaWriter. So please revise your draft and get feedback as many times as you want!</p>
                         </div>
-                        <div style="background-color: #4476A7"><p style="bottom: 40%;position: absolute;">The Connected Intelligence Centre
-                            (CIC) at UTS has developed a website providing automated
-                            feedback on
-                            student writing, called AcaWriter. This helps develop students’ reflective writing by
-                            providing immediate,
-                            actionable feedback on their writing. This has been used in UTS in several contexts, and
-                            this workshop will
-                            share some of those examples.</p>
+                        <div style="background-image: url(css/img/4.jpg);background-size: cover">
                         </div>
-                        <div style="background-color: #FFB800"><p style="bottom: 40%;position: absolute;">In particular, using the software
-                            standalone without integrating it in its educational
-                            context isn’t enough
-                            for students to make the best use of it. For learning analytic tools like AcaWriter to have
-                            a meaningful
-                            impact on learners, the tools should be embedded in the pedagogical context. In our
-                            workshop, we will
-                            demonstrate the use of AcaWriter for writing feedback and how we design learning activities
-                            around it for
-                            different pedagogic contexts.</p>
+                        <div style="background-image: url(css/img/5.jpg);background-size: cover">
                         </div>
-                        <div style="background-color: pink"><p style="bottom: 40%;position: absolute;">We will show examples of learning
-                            activities integrating AcaWriter in a pedagogical context
-                            implemented in
-                            UTS: an undergraduate pharmacy unit for relecting on work placements. These models can help
-                            you design
-                            similar learning activities for students using AcaWriter in your own pedagogical contexts.
-                            </p>
+                        <div style="background-image: url(css/img/6.jpg);background-size: cover">
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 </div>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 
 <script>
     layui.use(['carousel', 'form'], function () {
@@ -96,7 +68,7 @@
         //改变下时间间隔、动画类型、高度
         carousel.render({
             elem: '#test1'
-            , interval: 3000
+            , interval: 5000
             , anim: 'default'
             , height: '80%'
             , width: '100%'

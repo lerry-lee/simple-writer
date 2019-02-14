@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="templates/header.jsp" %>
-<link href="css/style2.css" type="text/css" rel="stylesheet"/>
+<link href="css/flash-elephant.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
     <title>test</title>

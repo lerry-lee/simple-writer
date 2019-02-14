@@ -60,7 +60,7 @@ public class HttpRequestFilter implements Filter {
             //获取状态码
             int status = httpServletResponse.getStatus();
 
-            HttpRequestInfoService.filterInsert(date, url, ip, param, method, status, t);
+//            HttpRequestInfoService.filterInsert(date, url, ip, param, method, status, t);
         } else {
             filterChain.doFilter(request, response);
         }

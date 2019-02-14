@@ -8,22 +8,23 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="plugins/layui/css/layui.min.css" media="all">
+<link href="css/style1.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
 </head>
 <body>
 
 <ul class="layui-nav">
-    <li class="layui-nav-item"><a href="home.jsp">主页</a></li>
+    <li class="layui-nav-item"><a href="home.jsp"><i class="home-header"></i>主页</a></li>
     <li class="layui-nav-item">
-        <a href="analyse.jsp">写作反馈</a>
+        <a href="analyse.jsp">智能写作反馈</a>
         <dl class="layui-nav-child">
-            <dd><a href="">分析</a></dd>
-            <dd><a href="">反馈</a></dd>
-            <dd><a href="">提示</a></dd>
+            <dd><a href="#to-edit">写作</a></dd>
+            <dd><a href="#to-feedback">反馈</a></dd>
+            <dd><a href="#to-tips">提示</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item"><a href="echarts.jsp">图表</a></li>
+    <li class="layui-nav-item"><a href="echarts.jsp"><i class="chart-header"></i>图表</a></li>
     <li class="layui-nav-item">
         <a href="">待开发</a>
         <dl class="layui-nav-child">
