@@ -1,48 +1,67 @@
 
-
 .div-footer {
     bottom: 0;
     width: 100%;
     height: 60px;
-    padding-top: 10px;
+    padding-top: 0;
     text-align: center;
-    font-size: 14px;
-    color: grey;
+    font-family: "MV Boli";
+    font-size: 16px;
+    color: #ffffff;
+    animation: changeshadow 2s ease-in infinite;
 }
-.div-footer hr{
+
+@keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px grey;
+    }
+    50% {
+        text-shadow: 0 0 40px grey;
+    }
+    100% {
+        text-shadow: 0 0 4px grey;
+    }
+}
+
+.div-footer hr {
     border: 1px solid lightgrey;
 }
-.div-footer p{
+
+.div-footer div {
     padding-top: 10px;
 }
-.alert.alert-success{
-    font-family:"Adobe Caslon Pro";
-    color:#333333;
+
+.alert.alert-success {
+    font-family: "Adobe Caslon Pro";
+    color: #333333;
     margin-bottom: 10px;
     padding: 10px;
-    border-radius:5px;
-    background:#D3F8E2;
+    border-radius: 5px;
+    background: #D3F8E2;
 }
-.alert.alert-info{
+
+.alert.alert-info {
     font-family: "Adobe Arabic";
-    color:#333333;
+    color: #333333;
     font-size: 18px;
-    border-radius:5px;
+    border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
-    background:#CFF3FC;
+    background: #CFF3FC;
 }
-.table.table-bordered{
+
+.table.table-bordered {
     margin-top: 10px;
     margin-bottom: 10px;
     font-family: Arial;
-    font-size:13px;
-    color:#333333;
+    font-size: 13px;
+    color: #333333;
     border-width: 1px;
     border-color: #dedede;
     border-collapse: collapse;
 }
-.table-bordered th{
+
+.table-bordered th {
     font-size: 14px;
     border-width: 2px;
     padding: 8px;
@@ -50,109 +69,142 @@
     border-color: #dedede;
     background-color: #dedede;
 }
-.table-bordered td{
+
+.table-bordered td {
     border-width: 2px;
     padding: 8px;
     border-style: solid;
     border-color: #dedede;
     background-color: #ffffff;
 }
-.span-tips{
+
+.span-tips {
     font-family: Arial;
-    color:#333333;
+    color: #333333;
 }
-.fa.fa.fa-thumbs-up.text-success{
+
+.fa.fa.fa-thumbs-up.text-success {
     display: inline-block;
     width: 18px;
     height: 18px;
     background-image: url(icon/dianzan_1.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.fa.fa-exclamation-triangle.text-danger{
+
+.fa.fa-exclamation-triangle.text-danger {
     display: inline-block;
     width: 18px;
     height: 18px;
     background-image: url(icon/frown.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.badge.badge-pill.badge-analytic{
-    position: relative;
-    display: inline-block;
-    padding: 0 6px;
-    font-family:"Segoe UI Black";
-    font-size: 12px;
-    text-align: center;
-    background-color:#FF7A22 ;
-    color: #000000;
-    border-radius: 10px;
-    height: 18px;
-    line-height: 18px
-}
-.badge.badge-pill.badge-analytic-green{
+
+.badge.badge-pill.badge-analytic {
     position: relative;
     display: inline-block;
     padding: 0 6px;
     font-family: "Segoe UI Black";
     font-size: 12px;
     text-align: center;
-    background-color:#008B45;
+    background-color: #FF7A22;
+    color: #000000;
+    border-radius: 10px;
+    height: 18px;
+    line-height: 18px
+}
+
+.badge.badge-pill.badge-analytic-green {
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    font-family: "Segoe UI Black";
+    font-size: 12px;
+    text-align: center;
+    background-color: #008B45;
     color: #fff;
     border-radius: 10px;
     height: 18px;
     line-height: 18px
 }
-.home-header{
+
+.icon-offset {
+    margin-right: 2px;
+}
+
+.home-header {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url(icon/shouye.png);
+    background-image: url(icon/shouye4.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.chart-header{
+
+.chart-header {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url(icon/tubiao.png);
+    background-image: url(icon/tongjitu.png);
     background-size: cover;
-    padding-right: 5px;
-    overflow: visible;
 }
-.edit-analyse{
+.analyse-header {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url(icon/bianji.png);
+    background-image: url(icon/analyse.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.feedback-analyse{
+.develop-header {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/daikaifa.png);
+    background-size: cover;
+}
+.about-header {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/yonghu.png);
+    background-size: cover;
+}
+
+.edit-analyse {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(icon/shuru.png);
+    background-size: cover;
+
+}
+
+.feedback-analyse {
     display: inline-block;
     width: 16px;
     height: 16px;
     background-image: url(icon/dingdan.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.tips-analyse{
+
+.tips-analyse {
     display: inline-block;
     width: 16px;
     height: 16px;
     background-image: url(icon/linggan.png);
     background-size: cover;
-    padding-right: 5px;
 }
-.home-p{
+
+.home-p {
     text-align: center;
     bottom: 20%;
     position: absolute;
-    font-family: Ebrima;
-    font-size:20px;
+    font-family: "MV Boli";
+    font-size: 20px;
     color: #333333;
 }
-.home-Carousel{
-    margin: 5%;
 
+.home-Carousel {
+    margin: 5%;
+}
+.home-Carousel div{
+    border-radius: 5px;
 }

@@ -1,3 +1,4 @@
+
 var data = JSON.stringify({
     'txt': $("#txt").val(),
     'action': 'fetch',

@@ -10,9 +10,9 @@
 <link href="css/flash-elephant.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
-    <title>test</title>
+    <title>关于我们</title>
 </head>
-<body>
+<body style="background-color: #F2F2F2">
 
 <div>
     <div class="ele-container">
@@ -41,8 +41,10 @@
                 <div class="ele-foot"></div>
             </div>
         </div>
+
     </div>
 </div>
+
 </body>
 </html>
 

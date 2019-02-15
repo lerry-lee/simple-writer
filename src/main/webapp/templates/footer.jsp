@@ -14,7 +14,7 @@
 <body>
 <div class="div-footer">
     <hr>
-    <p>Hands-on AcaWriter: Developing students’ reflective writing with automated feedback</p>
+    <div>I am a slow walker, but I never walk back.</div>
 </div>
 </body>
 </html>

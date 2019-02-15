@@ -15,18 +15,18 @@
 <body>
 
 <ul class="layui-nav">
-    <li class="layui-nav-item"><a href="home.jsp"><i class="home-header"></i>主页</a></li>
+    <li class="layui-nav-item"><a href="home.jsp"><i class="home-header icon-offset"></i>首页</a></li>
     <li class="layui-nav-item">
-        <a href="analyse.jsp">智能写作反馈</a>
+        <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>智能写作反馈</a>
         <dl class="layui-nav-child">
             <dd><a href="#to-edit">写作</a></dd>
             <dd><a href="#to-feedback">反馈</a></dd>
             <dd><a href="#to-tips">提示</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item"><a href="echarts.jsp"><i class="chart-header"></i>图表</a></li>
+    <li class="layui-nav-item"><a href="echarts.jsp"><i class="chart-header icon-offset"></i>图表</a></li>
     <li class="layui-nav-item">
-        <a href="">待开发</a>
+        <a href=""><i class="develop-header icon-offset"></i>待开发</a>
         <dl class="layui-nav-child">
             <dd><a href="">模块1</a></dd>
             <dd><a href="">模版2</a></dd>
@@ -34,7 +34,7 @@
             <dd><a href="">模块4</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item"><a href="test.jsp">测试</a></li>
+    <li class="layui-nav-item"><a href="about.jsp"><i class="about-header icon-offset"></i>关于我们</a></li>
 </ul>
 <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
 <script>

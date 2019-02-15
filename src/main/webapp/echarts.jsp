@@ -10,9 +10,9 @@
 
 <html>
 <head>
-    <title>echarts</title>
+    <title>图表</title>
 </head>
-<body>
+<body style="background-color: #F2F2F2">
 
 <div style="padding: 20px; background-color: #F2F2F2;">
     <div class="layui-row layui-col-space15">
