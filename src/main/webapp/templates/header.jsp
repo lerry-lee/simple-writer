@@ -24,7 +24,7 @@
             <dd><a href="#to-tips">提示</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item"><a href="echarts.jsp"><i class="chart-header icon-offset"></i>图表</a></li>
+    <li class="layui-nav-item" style="margin-left: 10px"><a href="echarts.jsp"><i class="chart-header icon-offset"></i>图表</a></li>
     <li class="layui-nav-item">
         <a href=""><i class="develop-header icon-offset"></i>待开发</a>
         <dl class="layui-nav-child">
@@ -34,7 +34,7 @@
             <dd><a href="">模块4</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item"><a href="about.jsp"><i class="about-header icon-offset"></i>关于我们</a></li>
+    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp"><i class="about-header icon-offset"></i>每天进步一点点</a></li>
 </ul>
 <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
 <script>

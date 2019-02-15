@@ -5,30 +5,12 @@
     height: 60px;
     padding-top: 0;
     text-align: center;
-    font-family: "MV Boli";
-    font-size: 16px;
-    color: #ffffff;
-    animation: changeshadow 2s ease-in infinite;
-}
-
-@keyframes changeshadow {
-    0% {
-        text-shadow: 0 0 4px grey;
-    }
-    50% {
-        text-shadow: 0 0 40px grey;
-    }
-    100% {
-        text-shadow: 0 0 4px grey;
-    }
-}
-
-.div-footer hr {
-    border: 1px solid lightgrey;
 }
 
 .div-footer div {
+    display: inline-block;
     padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .alert.alert-success {
@@ -164,7 +146,7 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url(icon/yonghu.png);
+    background-image: url(icon/feiji.png);
     background-size: cover;
 }
 
