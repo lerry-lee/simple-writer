@@ -21,6 +21,9 @@ $(document).ready(function () {
             var option = {
                 title: {
                     text: 'HTTP REQUEST TIMES PIE CHART',
+                    textStyle: {
+                        fontFamily: 'MV Boli'
+                    },
                     x: 'center'
                 },
                 tooltip: {
@@ -44,8 +47,6 @@ $(document).ready(function () {
                     }
                 ]
             };
-
-
             pieChart.setOption(option);
 
         }

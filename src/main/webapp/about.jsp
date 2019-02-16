@@ -10,7 +10,7 @@
 <link href="css/flash-elephant.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
-    <title>关于我们</title>
+    <title>Like a Snail</title>
 </head>
 <body style="background-color: #F2F2F2">
 

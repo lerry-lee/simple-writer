@@ -111,66 +111,45 @@
 
 .icon-offset {
     margin-right: 2px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
 }
 
 .home-header {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/shouye4.png);
     background-size: cover;
 }
 
 .chart-header {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/tongjitu.png);
     background-size: cover;
 }
 .analyse-header {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/analyse.png);
     background-size: cover;
 }
 .develop-header {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url(icon/daikaifa.png);
+    background-image: url(icon/caidan.png);
     background-size: cover;
 }
 .about-header {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/woniu.png);
     background-size: cover;
 }
 
 .edit-analyse {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/shuru.png);
     background-size: cover;
 
 }
 
 .feedback-analyse {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/dingdan.png);
     background-size: cover;
 }
 
 .tips-analyse {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-image: url(icon/linggan.png);
     background-size: cover;
 }
@@ -189,4 +168,26 @@
 }
 .home-Carousel div{
     border-radius: 5px;
+}
+.header-acawriter{
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    line-height: 80px;
+    float: left;
+}
+.header-acawriter a{
+    font-family:'French Script MT';
+    font-size: 50px;
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    color: rgba(255, 255, 255, .7);
+    transition: all .3s;
+    -webkit-transition: all .3s
+}
+.header-acawriter a:hover{
+    color:#fff;
 }

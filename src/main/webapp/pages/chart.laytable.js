@@ -25,13 +25,14 @@ layui.use('table', function () {
             {field: 'timeConsuming', title: '响应时间', width: 80, sort: true},
         ]]
     });
-    var url = $("#url-input").val();
-    var date_time = $("#date-time").val();
-    var startDate = date_time.substring(0, 19);
-    var endDate = date_time.substring(22, 41);
-    var method = $("input[name='method']:checked").val();
 
     $('#url-search').click(function () {
+        var url = $("#url-input").val();
+        var date_time = $("#date-time").val();
+        var startDate = date_time.substring(0, 19);
+        var endDate = date_time.substring(22, 41);
+        var method = $("input[name='method']:checked").val();
+
         table.reload('demo', {
             url: 'fuzzyQuery',
             where: {

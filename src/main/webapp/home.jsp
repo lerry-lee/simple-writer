@@ -10,7 +10,7 @@
 
 <html>
 <head>
-    <title>首页</title>
+    <title>Home</title>
 </head>
 
 <body style="background-color: #F2F2F2">

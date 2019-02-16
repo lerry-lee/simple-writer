@@ -14,7 +14,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class SendHttpPostJson {
-    public static JSONObject test(String url, String json) {
+    public static JSONObject sendHttpPostJson(String url, String json) {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseInfo = null;

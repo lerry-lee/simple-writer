@@ -1648,7 +1648,8 @@ a cite {
     border-bottom: 1px solid #f6f6f6;
     color: #333;
     border-radius: 2px 2px 0 0;
-    font-size: 14px
+    font-family: "MV Boli";
+    font-size: 18px
 }
 
 .layui-bg-black, .layui-bg-blue, .layui-bg-cyan, .layui-bg-green, .layui-bg-orange, .layui-bg-red {
@@ -1792,7 +1793,8 @@ a cite {
     color: #fff;
     white-space: nowrap;
     text-align: center;
-    font-size: 14px;
+    font-family: "MV Boli";
+    font-size: 16px;
     border: none;
     border-radius: 2px;
     cursor: pointer
@@ -1964,7 +1966,7 @@ a cite {
 
 .layui-input, .layui-textarea {
     display: block;
-    width: 100%;
+    width: 50%;
     padding-left: 10px
 }
 
@@ -2045,7 +2047,7 @@ a cite {
 
 .layui-form-item .layui-input-inline {
     float: left;
-    width: 190px;
+    width: 350px;
     margin-right: 10px
 }
 
@@ -3488,17 +3490,18 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav {
-    position: relative;
+    text-align: right;
+    position:relative;
     padding: 0 20px;
     background-color: #393D49;
     color: #fff;
-    border-radius: 2px;
     font-size: 0;
     box-sizing: border-box
 }
 
 .layui-nav * {
-    font-size: 14px
+    font-family:"Lucida Calligraphy";
+    font-size: 20px
 }
 
 .layui-nav .layui-nav-item {
@@ -3507,7 +3510,7 @@ body .layui-table-tips .layui-layer-content {
     *display: inline;
     *zoom: 1;
     vertical-align: middle;
-    line-height: 60px
+    line-height: 80px
 }
 
 .layui-nav .layui-nav-item a {
@@ -3577,10 +3580,11 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav-child {
+    text-align: left;
     display: none;
     position: absolute;
     left: 0;
-    top: 65px;
+    top: 85px;
     min-width: 100%;
     line-height: 36px;
     padding: 5px 0;
