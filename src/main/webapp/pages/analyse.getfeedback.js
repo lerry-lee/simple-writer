@@ -1,21 +1,48 @@
 layui.use(['layedit', 'util', 'layer'], function () {
     var util = layui.util;
+    var layer=layui.layer;
     var layedit = layui.layedit;
     //构建一个默认的编辑器
     var index = layedit.build('txt');
     //固定块
     util.fixbar({
-        bar1: false
+        bar1:'&#xe62e;'
+        , bar2: '&#xe62e;'
         , css: {right: 50, bottom: 100}
-        , bgcolor: '#393D49'
+        , bgcolor: '#393D49;width:36px;height:36px;font-size:32px;line-height:36px'
+        , click: function (type) {
+            if (type === 'bar1') {
+                window.location.hash='#to-feedback';
+                layer.tips('反馈内容在这里哦','#to-feedback',{tips:1});
+            } else if (type === 'bar2') {
+                window.location.hash='#to-tips';
+                layer.tips('提示内容在这里哦','#to-tips',{tips:1});
+            }
+        }
     });
 
+    //监听键盘按下，保存写作内容
+    // $("#txt").keyup(function () {
+       var timer=setInterval(function () {
+           var content=layedit.getContent(index);
+           $.post(
+               'saveReport',
+               {'content':content},
+               function (rst) {
+                   if(rst=='1')
+                       layer.msg('content saved');
+               }
+           );
+       },5000);
+    // });
+
+    //监听analyse按钮点击，分析文本
     $("#send").click(function () {
             var txt = layedit.getText(index);
             var grammar = $("input[name='grammar']:checked").val();
 
             if ($.trim(txt) == '') {
-                alert('写作内容为空！');
+                layer.msg('写作内容为空！');
                 return;
             } else {
                 var data = JSON.stringify({

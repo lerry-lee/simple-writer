@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Home</title>
+    <script src="pages/home.carousel.js"></script>
 </head>
 
 <body style="background-color: #F2F2F2">
@@ -48,7 +49,6 @@
     </div>
 </div>
 
-<script src="pages/home.carousel.js"></script>
 </body>
 </html>
 

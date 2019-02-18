@@ -1,7 +1,7 @@
 
-create database writer1 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+create database writer1 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-use writer1
+use writer1;
 
 create table HttpRequestInfo(
   id int primary key auto_increment,
@@ -12,4 +12,16 @@ create table HttpRequestInfo(
   param varChar(200),
   status int,
   timeConsuming int
-)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table UserInfo(
+id int primary key auto_increment,
+username varchar(20),
+password varchar(20)
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table Report(
+id int primary key auto_increment,
+username varchar(20),
+content text
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;

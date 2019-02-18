@@ -1648,7 +1648,6 @@ a cite {
     border-bottom: 1px solid #f6f6f6;
     color: #333;
     border-radius: 2px 2px 0 0;
-    font-family: "MV Boli";
     font-size: 18px
 }
 
@@ -1793,7 +1792,6 @@ a cite {
     color: #fff;
     white-space: nowrap;
     text-align: center;
-    font-family: "MV Boli";
     font-size: 16px;
     border: none;
     border-radius: 2px;
@@ -3498,10 +3496,13 @@ body .layui-table-tips .layui-layer-content {
     font-size: 0;
     box-sizing: border-box
 }
-
+@font-face {
+    font-family: font-header;
+    src: url("font/frscript.ttf");
+}
 .layui-nav * {
-    font-family:"Lucida Calligraphy";
-    font-size: 20px
+    font-family:logo-header;
+    font-size: 24px
 }
 
 .layui-nav .layui-nav-item {

@@ -4,7 +4,7 @@
     var e = layui.$, i = {
         fixbar: function (t) {
             var i, a, n = "layui-fixbar", r = "layui-fixbar-top", o = e(document), l = e("body");
-            t = e.extend({showHeight: 200}, t), t.bar1 = t.bar1 === !0 ? "&#xe606;" : t.bar1, t.bar2 = t.bar2 === !0 ? "&#xe607;" : t.bar2, t.bgcolor = t.bgcolor ? "background-color:" + t.bgcolor : "";
+            t = e.extend({showHeight: 200}, t), t.bar1 = t.bar1 === !0 ? "&#xe63c;" : t.bar1, t.bar2 = t.bar2 === !0 ? "&#xe60b;" : t.bar2, t.bgcolor = t.bgcolor ? "background-color:" + t.bgcolor : "";
             var c = [t.bar1, t.bar2, "&#xe604;"],
                 g = e(['<ul class="' + n + '">', t.bar1 ? '<li class="layui-icon" lay-type="bar1" style="' + t.bgcolor + '">' + c[0] + "</li>" : "", t.bar2 ? '<li class="layui-icon" lay-type="bar2" style="' + t.bgcolor + '">' + c[1] + "</li>" : "", '<li class="layui-icon ' + r + '" lay-type="top" style="' + t.bgcolor + '">' + c[2] + "</li>", "</ul>"].join("")),
                 s = g.find("." + r), u = function () {

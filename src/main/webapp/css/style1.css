@@ -1,3 +1,21 @@
+@font-face {
+    font-family: panel-;
+    src: url("font/mvboli.ttf")
+}
+
+@font-face {
+    font-family: logo-header;
+    src: url("font/frscript.ttf");
+}
+
+.icon-alibaba {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 
 .div-footer {
     bottom: 0;
@@ -158,7 +176,7 @@
     text-align: center;
     bottom: 20%;
     position: absolute;
-    font-family: "MV Boli";
+    font-family: panel-;
     font-size: 20px;
     color: #333333;
 }
@@ -179,7 +197,7 @@
     float: left;
 }
 .header-acawriter a{
-    font-family:'French Script MT';
+    font-family:logo-header;
     font-size: 50px;
     display: block;
     padding: 0 20px;

@@ -11,6 +11,11 @@
 <html>
 <head>
     <title>Chart and Table</title>
+    <script src="plugins/jquery.min.js"></script>
+    <script src="pages/chart.laytable.js"></script>
+    <script src="plugins/echarts.common.min.js"></script>
+    <script type="text/javascript" src="pages/chart.getpiechart.js"></script>
+
 </head>
 <body style="background-color: #F2F2F2">
 
@@ -59,10 +64,6 @@
         </div>
     </div>
 </div>
-<script src="plugins/jquery.min.js"></script>
-<script src="pages/chart.laytable.js"></script>
-<script src="plugins/echarts.common.min.js"></script>
-<script type="text/javascript" src="pages/chart.getpiechart.js"></script>
 
 </body>
 </html>

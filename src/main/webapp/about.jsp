@@ -12,6 +12,7 @@
 <head>
     <title>Like a Snail</title>
 </head>
+
 <body style="background-color: #F2F2F2">
 
 <div>
