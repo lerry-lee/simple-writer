@@ -4,13 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter@Setter
-public class ReportEntity {
+public class UserEntity {
 
     private int id;
+
     private String username;
-    private String report;
-    public ReportEntity(String username,String report){
+
+    private String password;
+
+    public UserEntity(String username,String password){
         this.username=username;
-        this.report=report;
+        this.password=password;
     }
 }

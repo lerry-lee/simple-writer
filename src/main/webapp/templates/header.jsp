@@ -7,11 +7,13 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="plugins/layui/css/layui.min.css" media="all">
-<link href="css/style1.css" type="text/css" rel="stylesheet"/>
+
 <html>
 <head>
+    <link rel="stylesheet" href="plugins/layui/css/layui.min.css" media="all">
+    <link href="css/style1.css" type="text/css" rel="stylesheet"/>
     <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
+    <script src="plugins/jquery.min.js"></script>
     <script src="pages/header.navigation.js"></script>
 </head>
 <body>
@@ -32,6 +34,11 @@
         </dl>
     </li>
     <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp"><i class="about-header icon-offset"></i>Like a Snail</a></li>
+    <li class="layui-nav-item" style="margin-left: 40px"><a id="user"><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i></a>
+        <dl class="layui-nav-child">
+            <dd><a href="login.jsp">logout</a></dd>
+        </dl>
+    </li>
 </ul>
 
 </body>

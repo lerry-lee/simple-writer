@@ -15,7 +15,7 @@
     <script src="plugins/jquery.min.js"></script>
     <script src="plugins/icon-alibaba/iconfont.min.js"></script>
     <script src="pages/analyse.getcontent.js"></script>
-    <script src="pages/analyse.getfeedback.js"></script>
+    <script src="pages/analyse.save_and_analyse.js"></script>
 </head>
 
 <body style="background-color: #F2F2F2">
@@ -30,7 +30,7 @@
                     Writing Panel
                 </div>
                 <div class="layui-card-body">
-                    <span><textarea id="txt" name="txt" class="layui-textarea" style="display: none"></textarea></span>
+                    <span><textarea id="txt" style="display: none"></textarea></span>
                     <span style="font-size: 16px">Grammar:
                     <input name="grammar" type="radio" value="analytical" checked="checked">analytical
                     <input name="grammar" type="radio" value="reflective">reflective

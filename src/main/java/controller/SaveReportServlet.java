@@ -1,5 +1,6 @@
 package controller;
 
+import entity.ReportEntity;
 import service.ReportService;
 
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +13,8 @@ import java.io.PrintWriter;
 @WebServlet("/saveReport")
 public class SaveReportServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
-        String content=request.getParameter("content");
-        String username= (String) request.getSession().getAttribute("username");
-        boolean flag= ReportService.saveReport(username,content);
+        ReportEntity report=new ReportEntity((String) request.getSession().getAttribute("username"),request.getParameter("content"));
+        boolean flag= ReportService.saveReport(report);
         if(flag){
             PrintWriter out= null;
             try {

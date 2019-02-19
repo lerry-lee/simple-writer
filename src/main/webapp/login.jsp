@@ -38,6 +38,9 @@
                            type="password" placeholder="Password">
                 </div>
                 <div style="text-align: center">
+                    <a href="register.jsp" class="layui-btn layui-btn-radius"
+                            style="color: #FFFFFF;font-family: panel-;font-size: 26px">register
+                    </a>
                     <button id="login" class="layui-btn layui-btn-normal layui-btn-radius"
                             style="color: #FFFFFF;font-family: panel-;font-size: 26px">login
                     </button>

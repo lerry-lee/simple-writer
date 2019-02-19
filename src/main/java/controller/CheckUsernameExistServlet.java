@@ -1,6 +1,6 @@
 package controller;
 
-import service.ReportService;
+import service.UserService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,18 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/queryReport")
-public class QueryReport extends HttpServlet {
+@WebServlet("/checkUsernameExist")
+public class CheckUsernameExistServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
-        String username= (String) request.getSession().getAttribute("username");
-        String content=ReportService.queryContent(username);
+        String username=request.getParameter("username");
+        boolean flag= UserService.usernameExist(username);
         PrintWriter out= null;
         try {
             out = response.getWriter();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        out.print(content);
+        if(flag)
+            out.print("1");
+        else
+            out.print("0");
         out.close();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response){

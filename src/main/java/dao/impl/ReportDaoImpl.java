@@ -2,6 +2,7 @@ package dao.impl;
 
 import dao.BaseDao;
 import dao.ReportDao;
+import entity.ReportEntity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,16 +14,16 @@ public class ReportDaoImpl implements ReportDao {
     PreparedStatement pst = null;
 
     @Override
-    public boolean save(String username, String content) {
+    public boolean save(ReportEntity report) {
         conn= BaseDao.getconn();
         String sql="INSERT INTO Report (username,content) VALUES (?,?)" +
                 "ON DUPLICATE KEY UPDATE content = ? ";
         boolean flag=false;
         try{
             pst=conn.prepareStatement(sql);
-            pst.setString(1,username);
-            pst.setString(2, content);
-            pst.setString(3,content);
+            pst.setString(1,report.getUsername());
+            pst.setString(2, report.getReport());
+            pst.setString(3,report.getReport());
             int rs=pst.executeUpdate();
             if(rs>0)
                 flag=true;

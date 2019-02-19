@@ -143,14 +143,17 @@
     background-image: url(icon/tongjitu.png);
     background-size: cover;
 }
+
 .analyse-header {
     background-image: url(icon/analyse.png);
     background-size: cover;
 }
+
 .develop-header {
     background-image: url(icon/caidan.png);
     background-size: cover;
 }
+
 .about-header {
     background-image: url(icon/woniu.png);
     background-size: cover;
@@ -171,6 +174,11 @@
     background-image: url(icon/linggan.png);
     background-size: cover;
 }
+.home-yumaobi{
+    background-image: url("icon/yumaobi.png");
+    background-size: cover;
+    color: rgba(255, 255, 255, .8);
+}
 
 .home-p {
     text-align: center;
@@ -184,10 +192,12 @@
 .home-Carousel {
     margin: 5%;
 }
-.home-Carousel div{
+
+.home-Carousel div {
     border-radius: 5px;
 }
-.header-acawriter{
+
+.header-acawriter {
     position: relative;
     display: inline-block;
     *display: inline;
@@ -196,8 +206,9 @@
     line-height: 80px;
     float: left;
 }
-.header-acawriter a{
-    font-family:logo-header;
+
+.header-acawriter a {
+    font-family: logo-header;
     font-size: 50px;
     display: block;
     padding: 0 20px;
@@ -206,6 +217,7 @@
     transition: all .3s;
     -webkit-transition: all .3s
 }
-.header-acawriter a:hover{
-    color:#fff;
+
+.header-acawriter a:hover {
+    color: #fff;
 }
