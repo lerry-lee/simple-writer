@@ -22,6 +22,12 @@ password varchar(20)
 
 create table Report(
 id int primary key auto_increment,
-username varchar(20),
+username varchar(20)  unique,
 content text
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table Visits(
+id int primary key auto_increment,
+username varchar(20)  unique,
+times int
 )DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
