@@ -14,7 +14,7 @@
     <link href="css/style1.css" type="text/css" rel="stylesheet"/>
     <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="plugins/jquery.min.js"></script>
-    <script src="pages/header.navigation.js"></script>
+    <script src="pages/header.all.js"></script>
 </head>
 <body>
 
