@@ -177,8 +177,8 @@ a cite {
 
 @font-face {
     font-family: layui-icon;
-    src: url(../font/iconfont.min.eot?v=240);
-    src: url(../font/iconfont.min.eot?v=240#iefix) format('embedded-opentype'), url(../font/iconfont.min.svg?v=240#iconfont) format('svg'), url(../font/iconfont.min.woff?v=240) format('woff'), url(../font/iconfont.min.ttf?v=240) format('truetype')
+    src: url(../font/iconfont.eot?v=240);
+    src: url(../font/iconfont.eot?v=240#iefix) format('embedded-opentype'), url(../font/iconfont.svg?v=240#iconfont) format('svg'), url(../font/iconfont.woff?v=240) format('woff'), url(../font/iconfont.ttf?v=240) format('truetype')
 }
 
 .layui-icon {
@@ -845,6 +845,7 @@ a cite {
 }
 
 .layui-layout-admin .layui-body {
+    position: fixed;
     top: 60px;
     bottom: 44px
 }
@@ -1648,7 +1649,7 @@ a cite {
     border-bottom: 1px solid #f6f6f6;
     color: #333;
     border-radius: 2px 2px 0 0;
-    font-size: 18px
+    font-size: 14px
 }
 
 .layui-bg-black, .layui-bg-blue, .layui-bg-cyan, .layui-bg-green, .layui-bg-orange, .layui-bg-red {
@@ -1792,7 +1793,7 @@ a cite {
     color: #fff;
     white-space: nowrap;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     border-radius: 2px;
     cursor: pointer
@@ -1964,7 +1965,7 @@ a cite {
 
 .layui-input, .layui-textarea {
     display: block;
-    width: 50%;
+    width: 100%;
     padding-left: 10px
 }
 
@@ -2045,7 +2046,7 @@ a cite {
 
 .layui-form-item .layui-input-inline {
     float: left;
-    width: 350px;
+    width: 190px;
     margin-right: 10px
 }
 
@@ -3488,21 +3489,17 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav {
-    text-align: right;
-    position:relative;
+    position: relative;
     padding: 0 20px;
-    background-color: #02061e;
+    background-color: #393D49;
     color: #fff;
+    border-radius: 2px;
     font-size: 0;
     box-sizing: border-box
 }
-@font-face {
-    font-family: font-header;
-    src: url("font/frscript.ttf");
-}
+
 .layui-nav * {
-    font-family:logo-header;
-    font-size: 24px
+    font-size: 14px
 }
 
 .layui-nav .layui-nav-item {
@@ -3511,7 +3508,7 @@ body .layui-table-tips .layui-layer-content {
     *display: inline;
     *zoom: 1;
     vertical-align: middle;
-    line-height: 80px
+    line-height: 60px
 }
 
 .layui-nav .layui-nav-item a {
@@ -3581,11 +3578,10 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav-child {
-    text-align: left;
     display: none;
     position: absolute;
     left: 0;
-    top: 85px;
+    top: 65px;
     min-width: 100%;
     line-height: 36px;
     padding: 5px 0;

@@ -26,11 +26,9 @@
     <script type="text/javascript" src="css/register/js/jquery.mockjax-min.js"></script>
     <script src="pages/register.all.js"></script>
 </head>
-<body>
+<body style="background-image: url('css/img/home-bg.jpg');background-size: cover">
 <div class='register'>
-    <%--<div class='register_title'>--%>
-        <%--<span>管理员登录</span>--%>
-    <%--</div>--%>
+
     <div class='register_fields'>
         <div class='register_fields__user'>
             <div class='icon'>

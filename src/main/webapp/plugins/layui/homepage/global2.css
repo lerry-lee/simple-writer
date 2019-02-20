@@ -1,4 +1,9 @@
+/**
 
+ layui官网
+ By 贤心
+
+*/
 
 h1, h2, h3 {
     font-size: 14px;
@@ -8,7 +13,7 @@ h1, h2, h3 {
     color: #999
 }
 
-/* 甯冨眬 */
+/* 布局 */
 .site-inline {
     font-size: 0;
 }
@@ -33,7 +38,7 @@ h1, h2, h3 {
     padding: 20px 0 10px 20px;
 }
 
-/* 澶撮儴 */
+/* 头部 */
 .header {
     height: 59px;
     border-bottom: 1px solid #404553;
@@ -195,7 +200,7 @@ h1, h2, h3 {
 }
 
 
-/* 瀛愪晶杈? */
+/* 子侧边 */
 .layui-side-child {
     width: 160px !important;
     left: 200px;
@@ -265,7 +270,7 @@ h1, h2, h3 {
 }
 
 
-/* 搴曢儴 */
+/* 底部 */
 .footer {
     padding: 30px 0;
     line-height: 30px;
@@ -324,6 +329,7 @@ body .layui-layout-admin .footer-demo {
     top: -9px;
 }
 
+/* 首页banner部分 */
 .site-banner {
     position: relative;
     height: 600px;
@@ -333,7 +339,6 @@ body .layui-layout-admin .footer-demo {
 }
 
 .site-banner-bg, .site-banner-main {
-    display: inline-block;
     position: absolute;
     left: 0;
     top: 0;
@@ -453,8 +458,14 @@ body .layui-layout-admin .footer-demo {
 }
 
 
+/* 描述字体 */
+@font-face {
+    font-family: 'webfont-desc';
+    src: url('//at.alicdn.com/t/webfont_eovt4pxxy5.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_eovt4pxxy5.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/webfont_eovt4pxxy5.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/webfont_eovt4pxxy5.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/webfont_eovt4pxxy5.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+}
+
 .web-font-desc {
-    font-family: panel- !important;
     font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -464,7 +475,8 @@ body .layui-layout-admin .footer-demo {
 
 .site-desc {
     position: relative;
-    margin-top: 150px;
+    height: 70px;
+    margin-top: 20px;
 }
 
 .site-desc .web-font-desc {
@@ -479,15 +491,16 @@ body .layui-layout-admin .footer-demo {
 }
 
 .site-desc cite {
-    margin: 20px;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
     width: 100%;
-    color: #c2c2c2;
-    font-size: 14px;
+    color: #e2e2e2;
     font-style: normal;
 }
 
 .site-download {
-    margin-top: 30px;
+    margin-top: 80px;
     font-size: 0;
 }
 
@@ -521,7 +534,7 @@ body .layui-layout-admin .footer-demo {
     position: relative;
     margin-top: 15px;
     color: #ccc;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .site-version span {
@@ -585,13 +598,12 @@ body .layui-layout-admin .footer-demo {
     vertical-align: top;
     *display: inline;
     *zoom: 1;
-    font-family: panel-;
     font-size: 14px;
 }
 
 .site-idea li {
-    width: 300px;
-    height: 200px;
+    width: 220px;
+    height: 290px;
     padding: 30px;
     line-height: 24px;
     margin-left: 30px;
@@ -613,7 +625,7 @@ body .layui-layout-admin .footer-demo {
     text-align: center;
 }
 
-/* 璧炲姪鍟? */
+/* 赞助商 */
 .site-sponsor-home {
     margin-top: 40px;
     text-align: center;
@@ -678,7 +690,7 @@ body .layui-layout-admin .footer-demo {
 }
 
 
-/* 杈呭姪 */
+/* 辅助 */
 .site-tips {
     margin-bottom: 10px;
     padding: 15px;
@@ -707,7 +719,7 @@ body .layui-layer-notice .layui-layer-content {
     color: #009688;
 }
 
-/* 鐩綍 */
+/* 目录 */
 .site-dir {
     display: none;
 }
@@ -747,7 +759,7 @@ body .layui-layer-dir .layui-layer-content {
     font-style: normal;
 }
 
-/* 鏂囨。 */
+/* 文档 */
 .site-tree {
     border-right: 1px solid #eee;
 }
@@ -931,7 +943,7 @@ body .layui-layer-dir .layui-layer-content {
     margin-right: 200px;
 }
 
-/* 鏇存柊鏃ュ織 */
+/* 更新日志 */
 .site-changelog .layui-timeline-title h2 {
     display: inline-block;
 }
@@ -941,7 +953,7 @@ body .layui-layer-dir .layui-layer-content {
     left: 10px;
 }
 
-/* 棰滆壊 */
+/* 颜色 */
 .site-doc-color {
     font-size: 0;
 }
@@ -976,7 +988,7 @@ body .layui-layer-dir .layui-layer-content {
     padding: 10px;
 }
 
-/* 瀹牸 */
+/* 宫格 */
 .site-doc-icon {
     margin-bottom: 50px;
     font-size: 0;
@@ -1026,7 +1038,7 @@ body .layui-layer-dir .layui-layer-content {
     color: #000;
 }
 
-/* 鏍呮牸绀轰緥 */
+/* 栅格示例 */
 .grid-demo {
     padding: 10px;
     line-height: 50px;
@@ -1048,7 +1060,7 @@ body .layui-layer-dir .layui-layer-content {
 }
 
 
-/* 婕旂ず */
+/* 演示 */
 body .layui-layout-admin .site-demo {
     bottom: 60px;
     padding: 0;
@@ -1346,7 +1358,7 @@ body .site-demo-nav .layui-nav-item {
     overflow: hidden;
 }
 
-/* 鍏跺畠 */
+/* 其它 */
 #trans-tooltip,
 #tip-arrow-bottom,
 #tip-arrow-top {
@@ -1354,7 +1366,7 @@ body .site-demo-nav .layui-nav-item {
 }
 
 
-/* 鐙珛缁勪欢 涓? 涓婚〉 */
+/* 独立组件 与 主页 */
 .alone {
     text-align: center;
     background-color: #009688;
@@ -1468,9 +1480,10 @@ body .site-demo-nav .layui-nav-item {
 }
 
 
+/* 适配多设备 */
 @media screen and (max-width: 750px) {
     .layui-main {
-        width: 100%;
+        width: auto;
         margin: 0 10px;
     }
 
@@ -1569,11 +1582,11 @@ body .site-demo-nav .layui-nav-item {
     }
 
     .site-idea {
-        margin: 20px 0;
+        margin: 20px 10px;
     }
 
     .site-idea li {
-        margin: 0 0 20px 0;
+        margin: 20px 0 20px 0;
         width: 100%;
         height: auto;
         -webkit-box-sizing: border-box !important;
@@ -1752,7 +1765,7 @@ body .site-demo-nav .layui-nav-item {
 }
 
 
-@-webkit-keyframes site-anim-closeup { /* 鐗瑰啓 */
+@-webkit-keyframes site-anim-closeup { /* 特写 */
     from {
         -webkit-transform: translate3d(0, 0, 0) scale(1);
         opacity: 1;
@@ -1783,3 +1796,5 @@ body .site-demo-nav .layui-nav-item {
     animation-name: site-anim-closeup;
     overflow: hidden;
 }
+
+
