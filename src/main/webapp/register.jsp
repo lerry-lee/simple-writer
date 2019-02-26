@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Register</title>
+    <title>注册-Acawriter</title>
     <link href="css/register/css/default.min.css" rel="stylesheet" type="text/css" />
     <!--必要样式-->
     <link href="css/register/css/styles.min.css" rel="stylesheet" type="text/css" />
@@ -34,28 +34,39 @@
             <div class='icon'>
                 <img alt="" src='css/register/img/user_icon_copy-.png'>
             </div>
-            <input id='username' placeholder='用户名' maxlength="16" type='text' autocomplete="off"/>
-            <div class='validation'>
+            <input id='username' placeholder='input username' maxlength="16" type='text' autocomplete="off"/>
+            <div class='validation' id="uValidation">
                 <img alt="" src='css/register/img/tick-.png'>
             </div>
+            <div class="error" id="error-umsg"></div>
         </div>
         <div class='register_fields__password'>
             <div class='icon'>
                 <img alt="" src='css/register/img/lock_icon_copy-.png'>
             </div>
-            <input id='password' placeholder='密码' maxlength="16" type='password' autocomplete="off">
-            <div class='validation'>
+            <input id='password' placeholder='input password' maxlength="16" type='password' autocomplete="off">
+            <div class='validation' id="pValidation">
                 <img alt="" src='css/register/img/tick-.png'>
             </div>
+            <div class="error" id="error-pmsg"></div>
         </div>
-        <%--<div class='register_fields__password'>--%>
-            <%--<div class='icon'>--%>
-                <%--<img alt="" src='css/register/img/key-.png'>--%>
-            <%--</div>--%>
-            <%--<input name="code" placeholder='验证码' maxlength="4" type='text' name="ValidateNum" autocomplete="off">--%>
-        <%--</div>--%>
+        <div class='register_fields__password'>
+            <div class='icon'>
+                <img alt="" src='css/register/img/lock_icon_copy-.png'>
+            </div>
+            <input id='password_verify' placeholder='verify password' maxlength="16" type='password' autocomplete="off">
+            <div class='validation' id="pvValidation">
+                <img alt="" src='css/register/img/tick-.png'>
+            </div>
+            <div class="error" id="error-pvmsg"></div>
+        </div>
+
         <div class='register_fields__submit'>
-            <input type='button' id='register' value='注册'>
+            <input type='button' id='register' value='register'>
+        </div>
+
+        <div class='register_fields__submit'>
+            <input type='button' id='to-login' value='to login'>
         </div>
     </div>
 </div>

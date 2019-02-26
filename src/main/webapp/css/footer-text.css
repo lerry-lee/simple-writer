@@ -67,6 +67,7 @@
 .loader {
     overflow: hidden;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .loader span {

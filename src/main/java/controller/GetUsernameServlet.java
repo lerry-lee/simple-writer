@@ -19,4 +19,7 @@ public class GetUsernameServlet extends HttpServlet {
         out.print(request.getSession().getAttribute("username"));
         out.close();
     }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        doGet(request, response);
+    }
 }

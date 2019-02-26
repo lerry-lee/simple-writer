@@ -17,17 +17,17 @@
     <div>
         <div class="loader font4">
             <span>I</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span2">a</span>
             <span class="span3">m</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span4">a</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span5">s</span>
             <span class="span6">l</span>
             <span class="span7">o</span>
             <span class="span2">w</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span3">w</span>
             <span class="span4">a</span>
             <span class="span5">l</span>
@@ -36,23 +36,24 @@
             <span class="span2">r</span>
             <span>&nbsp</span>
             <span class="span3">,</span>
+            <span>&nbsp</span>
             <span class="span4">b</span>
             <span class="span5">u</span>
             <span class="span6">t</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span7">I</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span2">n</span>
             <span class="span3">e</span>
             <span class="span4">v</span>
             <span class="span5">e</span>
             <span class="span6">r</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span7">w</span>
             <span class="span2">a</span>
             <span class="span3">l</span>
             <span class="span4">k</span>
-            <span>&nbsp</span>
+            <span>&nbsp&nbsp</span>
             <span class="span5">b</span>
             <span class="span6">a</span>
             <span class="span7">c</span>

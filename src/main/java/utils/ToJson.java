@@ -6,10 +6,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ToJson {
     public static ObjectMapper objectMapper;
+
     static {
-        objectMapper=new ObjectMapper();
+        objectMapper = new ObjectMapper();
     }
+
     public static String toJson(Object object) throws JsonProcessingException {
         return objectMapper.writeValueAsString(object);
     }
+
 }

@@ -14,7 +14,7 @@ body {
   /* IE6-9 fallback on horizontal gradient */
 }
 body ::-webkit-input-placeholder {
-  color: #4E546D;
+  color: #999999;
 }
 body .authent {
   box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
@@ -143,14 +143,15 @@ body .register_fields .icon {
   z-index: 1;
   left: 36px;
   top: 8px;
-  opacity: .5;
+  /*opacity: .5;*/
 }
+
 body .register_fields input[type='password'],body .register_fields input[type='text'] {
-  color: #61BFFF !important;
+  color: #4FA1D9 !important;
 }
 body .register_fields input[type='text'], body .register_fields input[type='password'] {
-  color: #afb1be;
-  width: 190px;
+  color: #ffffff;
+  width: 250px;
   margin-top: -2px;
   background: rgba(57, 61, 82, 0);
   left: 0;
@@ -184,6 +185,7 @@ body .register_fields__submit .forgot a {
   color: #606479;
 }
 body .register_fields__submit input {
+  margin-top: 10px;
   width:250px;
   border-radius: 50px;
   background: transparent;
@@ -209,6 +211,10 @@ body .register_fields__submit input:hover {
           transition-property: background,color;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
+}
+.error{
+  color: darkred;
+  padding-left: 30px;
 }
 
 /* Color Schemes */

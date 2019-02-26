@@ -1649,6 +1649,7 @@ a cite {
     border-bottom: 1px solid #f6f6f6;
     color: #333;
     border-radius: 2px 2px 0 0;
+    font-family: panel-;
     font-size: 14px
 }
 
@@ -1793,6 +1794,7 @@ a cite {
     color: #fff;
     white-space: nowrap;
     text-align: center;
+    font-family: panel-;
     font-size: 14px;
     border: none;
     border-radius: 2px;

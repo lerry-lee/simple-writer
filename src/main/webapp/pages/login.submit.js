@@ -1,3 +1,10 @@
+
+
+$(document).keypress(function (e) {
+    if(e.which==13)
+        $('#login').click();
+});
+
 //加载弹出层组件
 layui.use('layer', function () {
     var layer = layui.layer;

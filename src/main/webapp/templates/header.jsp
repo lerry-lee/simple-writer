@@ -19,13 +19,13 @@
 <body>
 
 <ul class="layui-nav">
-    <li class="header-acawriter"><a href="home.jsp"><i class="layui-icon" style="font-size: 40px">&#xe62e;</i>AcaWriter</a></li>
+    <li class="header-acawriter"><a href="home.jsp">AcaWriter</a></li>
     <li class="layui-nav-item">
-        <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>Analytical Report</a>
+        <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>反思性写作</a>
     </li>
-    <li class="layui-nav-item"><a href="chart.jsp"><i class="chart-header icon-offset"></i>Chart Table</a></li>
+    <li class="layui-nav-item"><a href="chart.jsp"><i class="chart-header icon-offset"></i>统计报表</a></li>
     <li class="layui-nav-item">
-        <a onclick="show()"><i class="develop-header icon-offset"></i>Developing</a>
+        <a onclick="show()"><i class="develop-header icon-offset"></i>开发中</a>
         <dl class="layui-nav-child">
             <dd><a href="">module1</a></dd>
             <dd><a href="">module2</a></dd>
@@ -33,10 +33,10 @@
             <dd><a href="">module4</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp"><i class="about-header icon-offset"></i>Like a Snail</a></li>
+    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp">Like a Snail</a></li>
     <li class="layui-nav-item" style="margin-left: 40px"><a id="user"><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i></a>
         <dl class="layui-nav-child">
-            <dd><a href="login.jsp">logout</a></dd>
+            <dd><a href="login.jsp">登出</a></dd>
         </dl>
     </li>
 </ul>

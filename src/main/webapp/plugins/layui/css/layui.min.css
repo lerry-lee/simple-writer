@@ -1648,6 +1648,7 @@ a cite {
     border-bottom: 1px solid #f6f6f6;
     color: #333;
     border-radius: 2px 2px 0 0;
+    font-family: panel-;
     font-size: 18px
 }
 
@@ -1792,6 +1793,7 @@ a cite {
     color: #fff;
     white-space: nowrap;
     text-align: center;
+    font-family: panel-;
     font-size: 16px;
     border: none;
     border-radius: 2px;
@@ -3501,8 +3503,8 @@ body .layui-table-tips .layui-layer-content {
     src: url("font/frscript.ttf");
 }
 .layui-nav * {
-    font-family:logo-header;
-    font-size: 24px
+    font-family:panel-;
+    font-size: 22px
 }
 
 .layui-nav .layui-nav-item {

@@ -11,11 +11,10 @@
 
 <html>
 <head>
-    <title>Reflective Writing</title>
+    <title>反思性写作-Acawriter</title>
     <script src="plugins/jquery.min.js"></script>
     <script src="plugins/icon-alibaba/iconfont.min.js"></script>
-    <script src="pages/analyse.getcontent.js"></script>
-    <script src="pages/analyse.save_and_analyse.js"></script>
+    <script src="pages/analyse.all.js"></script>
 </head>
 
 <body style="background-color: #F2F2F2">
@@ -30,12 +29,13 @@
                     Writing Panel
                 </div>
                 <div class="layui-card-body">
-                    <span><textarea id="txt" style="display: none"></textarea></span>
-                    <span style="font-size: 16px">Grammar:
+                    <div><textarea id="txt" style="display: none"></textarea></div>
+                    <div style="margin-top:10px;font-size: 16px">Grammar:
                     <input name="grammar" type="radio" value="analytical" checked="checked">analytical
                     <input name="grammar" type="radio" value="reflective">reflective
-                    </span>
+                    </div>
                     <div style="text-align: right">
+                        <button class="layui-btn" id="score">To score</button>
                         <button class="layui-btn" id="send">Analyse</button>
                     </div>
                 </div>
@@ -65,6 +65,7 @@
         </div>
     </div>
 </div>
+<div style="opacity: 0" id="temporary-storage"></div>
 
 </body>
 </html>
