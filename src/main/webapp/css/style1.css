@@ -4,13 +4,10 @@
 }
 
 @font-face {
-    font-family: logo-header;
-    src: url("font/frscript.ttf");
+    font-family: jiashu;
+    src: url("font/hanyif3.ttf");
 }
-@font-face {
-    font-family: china-font1;
-    src: url("font/chinafont1.ttf");
-}
+
 
 .icon-alibaba {
     width: 1em;
@@ -217,7 +214,7 @@
 }
 
 .header-acawriter a {
-    font-family: panel-;
+    font-family: jiashu;
     font-size: 45px;
     display: block;
     padding: 0 20px;

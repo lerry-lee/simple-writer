@@ -121,6 +121,15 @@
             </ul>
         </div>
     </li>
+    <li class="layui-timeline-item">
+        <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2019-2-27</h3>
+            <p>
+                网站字体改为汉仪家书体
+                <br>访问量统计每个用户当天访问只记一次
+            </p>
+        </div>
+    </li>
 </ul>
 </body>
 </html>

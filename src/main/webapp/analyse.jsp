@@ -35,7 +35,7 @@
                     <input name="grammar" type="radio" value="reflective">reflective
                     </div>
                     <div style="text-align: right">
-                        <button class="layui-btn" id="score">To score</button>
+                        <button class="layui-btn" id="score">To Score</button>
                         <button class="layui-btn" id="send">Analyse</button>
                     </div>
                 </div>

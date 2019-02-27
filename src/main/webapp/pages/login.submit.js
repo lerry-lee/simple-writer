@@ -25,11 +25,12 @@ layui.use('layer', function () {
                 "password": password
             },
             function (rst) {
-                var objectJson = JSON.parse(rst);
-                if (objectJson.status == '0') {
-                    layer.msg(objectJson.msg);
+                if (rst== '0') {
+                    layer.msg('用户名或密码错误');
                     return;
-                }else window.location.href = 'home.jsp';
+                }else{
+                    window.location.href = 'home.jsp';
+                }
             }
         );
 

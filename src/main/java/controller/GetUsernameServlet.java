@@ -10,13 +10,14 @@ import java.io.PrintWriter;
 @WebServlet("/getUsername")
 public class GetUsernameServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+        String username= (String) request.getSession().getAttribute("username");
         PrintWriter out= null;
         try {
             out = response.getWriter();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        out.print(request.getSession().getAttribute("username"));
+        out.print(username);
         out.close();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {

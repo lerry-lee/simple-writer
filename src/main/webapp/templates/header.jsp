@@ -14,7 +14,7 @@
     <link href="css/style1.css" type="text/css" rel="stylesheet"/>
     <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="plugins/jquery.min.js"></script>
-    <script src="pages/header.all.js"></script>
+    <script src="pages/header.getlogin.js"></script>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
     </li>
     <li class="layui-nav-item"><a href="chart.jsp"><i class="chart-header icon-offset"></i>统计报表</a></li>
     <li class="layui-nav-item">
-        <a onclick="show()"><i class="develop-header icon-offset"></i>开发中</a>
+        <a id="developing"><i class="develop-header icon-offset"></i>开发中</a>
         <dl class="layui-nav-child">
             <dd><a href="">module1</a></dd>
             <dd><a href="">module2</a></dd>
@@ -33,8 +33,8 @@
             <dd><a href="">module4</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp">Like a Snail</a></li>
-    <li class="layui-nav-item" style="margin-left: 40px"><a id="user"><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i></a>
+    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp">Snail Spirit</a></li>
+    <li class="layui-nav-item" style="margin-left: 40px"><a><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i><span id="user"></span></a>
         <dl class="layui-nav-child">
             <dd><a href="login.jsp">登出</a></dd>
         </dl>

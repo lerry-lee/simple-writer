@@ -72,6 +72,17 @@ $(function () {
                         {type: 'line', smooth: true, seriesLayoutBy: 'row'},
                         {
                             type: 'pie',
+                            roseType: 'angle',
+                            itemStyle: {
+                                // 阴影的大小
+                                shadowBlur: 60,
+                                // 阴影水平方向上的偏移
+                                shadowOffsetX: 0,
+                                // 阴影垂直方向上的偏移
+                                shadowOffsetY: 0,
+                                // 阴影颜色
+                                shadowColor: 'rgba(0, 0, 0, 0.3)'
+                            },
                             id: 'pie',
                             radius: '40%',
                             center: ['50%', '25%'],

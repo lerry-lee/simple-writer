@@ -14,6 +14,7 @@
     <script src="plugins/jquery.min.js"></script>
     <script src="plugins/echarts/echarts.common.min.js"></script>
     <script src="pages/chart.all.js"></script>
+    <script src="plugins/echarts/vintage.js"></script>
 </head>
 <body style="background-color: #F2F2F2">
 

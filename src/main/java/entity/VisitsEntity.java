@@ -6,11 +6,9 @@ import lombok.Setter;
 @Getter @Setter
 public class VisitsEntity {
     private int id;
-    private String username;
-    private int times;
+    private String usersign;
 
-    public VisitsEntity(String username,int times){
-        this.username=username;
-        this.times=times;
+    public VisitsEntity(String usersign) {
+        this.usersign = usersign;
     }
 }

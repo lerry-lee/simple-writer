@@ -5,7 +5,7 @@ layui.use(['rate','layer'], function () {
     rate.render({
         elem: '#test0'
         , value: 0
-        , half: true
+        , half: false
         , theme: '#FF8000' //自定义主题色
         , text: true
         ,choose: function(value){
@@ -15,7 +15,7 @@ layui.use(['rate','layer'], function () {
     rate.render({
         elem: '#test1'
         , value: 0
-        , half: true
+        , half:false
         , theme: '#009688'
         , text: true
         ,choose: function(value){
@@ -26,7 +26,7 @@ layui.use(['rate','layer'], function () {
     rate.render({
         elem: '#test2'
         , value: 0
-        , half: true
+        , half: false
         , theme: '#1E9FFF'
         , text: true
         ,choose: function(value){
@@ -36,7 +36,7 @@ layui.use(['rate','layer'], function () {
     rate.render({
         elem: '#test3'
         , value: 0
-        , half: true
+        , half: false
         , theme: '#2F4056'
         , text: true
         ,choose: function(value){

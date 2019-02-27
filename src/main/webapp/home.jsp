@@ -12,9 +12,10 @@
 <html>
 <head>
     <title>首页-Acawriter</title>
+    <script src="pages/home.visits.js"></script>
 </head>
 
-<body style="background-color: #F2F2F2">
+<body style="background-color: #F2F2F2;font-family: jiashu">
 
 <div class="site-banner">
     <div class="site-banner-bg"
@@ -25,8 +26,8 @@
             <i class="zfj-home" style="color: #fff; color: rgba(255,255,255,.7);"></i>
         </div>
         <div class="layui-anim site-desc site-desc-anim">
-            <p class="web-font-desc">反思性写作平台</p>
-            <cite>待秋风萧瑟，散作满天星辰，看那四季轮回，是我不灭的执念。</cite>
+            <p class="web-font-desc">反思性智能写作平台</p>
+            <cite>待，秋风萧瑟时，散作满天星辰，看那四季轮回，是我不灭的执念。</cite>
         </div>
         <div class="site-download">
             <a href="analyse.jsp" class="layui-inline site-down">
@@ -34,9 +35,9 @@
             </a>
         </div>
         <div class="site-version">
-            <span>当前：<cite>1.4.3</cite></span>
+            <span>当前版本：<cite>1.4.4</cite></span>
             <span><a id="updatelog" href="updatelog.jsp" rel="nofollow" target="_blank">更新日志</a></span>
-            <span id="visits">访问量：</span>
+            <span>访问量：<cite id="visits"></cite></span>
         </div>
     </div>
 </div>

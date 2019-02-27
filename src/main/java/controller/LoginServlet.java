@@ -20,8 +20,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session=request.getSession();
                 session.setAttribute("username",user.getUsername());
                 PrintWriter out = response.getWriter();
-                String rst="{\"status\":\"1\",\"url\":\"home.jsp\"}";
-                out.print(rst);
+                out.print("1");
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -29,8 +28,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             try {
                 PrintWriter out = response.getWriter();
-                String rst="{\"status\":\"0\",\"msg\":\"用户名或密码错误\"}";
-                out.print(rst);
+                out.print("0");
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();

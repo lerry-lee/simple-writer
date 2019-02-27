@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="templates/header.jsp" %>
-<link href="css/flash-elephant.css" type="text/css" rel="stylesheet"/>
+<link href="css/elephant.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
     <title>像一只蜗牛</title>

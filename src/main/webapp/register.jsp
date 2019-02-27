@@ -34,7 +34,7 @@
             <div class='icon'>
                 <img alt="" src='css/register/img/user_icon_copy-.png'>
             </div>
-            <input id='username' placeholder='input username' maxlength="16" type='text' autocomplete="off"/>
+            <input id='username' placeholder='输入您的用户名' maxlength="16" type='text' autocomplete="off"/>
             <div class='validation' id="uValidation">
                 <img alt="" src='css/register/img/tick-.png'>
             </div>
@@ -44,7 +44,7 @@
             <div class='icon'>
                 <img alt="" src='css/register/img/lock_icon_copy-.png'>
             </div>
-            <input id='password' placeholder='input password' maxlength="16" type='password' autocomplete="off">
+            <input id='password' placeholder='输入您的密码' maxlength="16" type='password' autocomplete="off">
             <div class='validation' id="pValidation">
                 <img alt="" src='css/register/img/tick-.png'>
             </div>
@@ -54,7 +54,7 @@
             <div class='icon'>
                 <img alt="" src='css/register/img/lock_icon_copy-.png'>
             </div>
-            <input id='password_verify' placeholder='verify password' maxlength="16" type='password' autocomplete="off">
+            <input id='password_verify' placeholder='再次确认密码' maxlength="16" type='password' autocomplete="off">
             <div class='validation' id="pvValidation">
                 <img alt="" src='css/register/img/tick-.png'>
             </div>
@@ -62,11 +62,11 @@
         </div>
 
         <div class='register_fields__submit'>
-            <input type='button' id='register' value='register'>
+            <input type='button' id='register' value='立即注册'>
         </div>
 
         <div class='register_fields__submit'>
-            <input type='button' id='to-login' value='to login'>
+            <input type='button' id='to-login' value='去登陆'>
         </div>
     </div>
 </div>
