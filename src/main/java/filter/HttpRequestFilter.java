@@ -26,7 +26,7 @@ public class HttpRequestFilter implements Filter {
 
         //过滤掉静态资源请求
         String spath = httpServletRequest.getServletPath();
-        String[] urls = {"/pages/", "/css/", "/plugins/"};
+        String[] urls = {"/pages/", "/css/", "/plugins/","favicon"};
         boolean flag = true;
         for (String str : urls) {
             if (spath.indexOf(str) != -1) {

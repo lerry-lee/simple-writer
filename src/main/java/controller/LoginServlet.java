@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -17,6 +19,9 @@ public class LoginServlet extends HttpServlet {
         UserEntity user=new UserEntity( request.getParameter("username"),request.getParameter("password"));
         if (UserService.login(user)) {
             try {
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+                String sdate = df.format(new Date());
+                System.out.println(user.getUsername()+"已登录 "+sdate);
                 HttpSession session=request.getSession();
                 session.setAttribute("username",user.getUsername());
                 PrintWriter out = response.getWriter();

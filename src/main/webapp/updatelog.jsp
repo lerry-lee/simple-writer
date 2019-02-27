@@ -125,9 +125,10 @@
         <div class="layui-timeline-content layui-text">
             <h3 class="layui-timeline-title">2019-2-27</h3>
             <p>
-                网站字体改为汉仪家书体
+                网站字体优化
                 <br>访问量统计每个用户当天访问只记一次
                 <br>修复已知BUG
+                <br>重登提示窗优化
             </p>
         </div>
     </li>

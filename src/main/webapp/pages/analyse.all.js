@@ -57,10 +57,10 @@ layui.use(['layedit', 'util', 'layer'], function () {
         $('#temporary-storage').html(layedit.getContent(index));
         layer.open({
             type: 2,
+            offset:'100px',
+            shade:0.5,
             title: '来给本次反思性写作的过程进行评分吧',
             shadeClose: true,
-            shade: false,
-            maxmin: false, //开启最大化最小化按钮
             area: ['400px', '330px'],
             content: 'score.jsp'
         });

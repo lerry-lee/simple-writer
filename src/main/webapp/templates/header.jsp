@@ -14,7 +14,7 @@
     <link href="css/style1.css" type="text/css" rel="stylesheet"/>
     <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="plugins/jquery.min.js"></script>
-    <script src="pages/header.getlogin.js"></script>
+    <script src="pages/header.all.js"></script>
 </head>
 <body>
 
@@ -36,7 +36,7 @@
     <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp">Snail Spirit</a></li>
     <li class="layui-nav-item" style="margin-left: 40px"><a><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i><span id="user"></span></a>
         <dl class="layui-nav-child">
-            <dd><a href="login.jsp">登出</a></dd>
+            <dd><a id='logout' href="login.jsp">登出</a></dd>
         </dl>
     </li>
 </ul>

@@ -14,19 +14,19 @@
     <script type="text/javascript" src="pages/score.submit.js"></script>
 </head>
 <body>
-<div style="padding: 20px">
+<div style="padding: 20px 50px">
     <div><input id="title" style="width: 250px" class="layui-input" type="text" placeholder="在此处添加标题有助于写作内容回馈" maxlength="16"></div>
     <ul>
-        <li>自我反思评价
+        <li>自我反思
             <div id="test0"></div>
         </li>
-        <li>比较反思评价
+        <li>比较反思
             <div id="test1"></div>
         </li>
-        <li>总结反思评价
+        <li>总结反思
             <div id="test2"></div>
         </li>
-        <li>自动反馈评价
+        <li>自动反馈
             <div id="test3"></div>
         </li>
     </ul>

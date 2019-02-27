@@ -4,6 +4,7 @@ layui.use(['rate','layer'], function () {
     var self,comparison,summary,automatic;
     rate.render({
         elem: '#test0'
+        ,length:7
         , value: 0
         , half: false
         , theme: '#FF8000' //自定义主题色
@@ -14,6 +15,7 @@ layui.use(['rate','layer'], function () {
     });
     rate.render({
         elem: '#test1'
+        ,length:7
         , value: 0
         , half:false
         , theme: '#009688'
@@ -25,6 +27,7 @@ layui.use(['rate','layer'], function () {
 
     rate.render({
         elem: '#test2'
+        ,length:7
         , value: 0
         , half: false
         , theme: '#1E9FFF'
@@ -35,6 +38,7 @@ layui.use(['rate','layer'], function () {
     })
     rate.render({
         elem: '#test3'
+        ,length:7
         , value: 0
         , half: false
         , theme: '#2F4056'
