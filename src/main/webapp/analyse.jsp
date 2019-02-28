@@ -18,6 +18,7 @@
 </head>
 
 <body style="background-color: #F2F2F2">
+<div  style="padding-left: 160px">
 <div style="padding: 20px; background-color: #F2F2F2">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
@@ -66,7 +67,7 @@
     </div>
 </div>
 <div style="opacity: 0" id="temporary-storage"></div>
-
+</div>
 </body>
 </html>
 

@@ -90,6 +90,7 @@ layui.use(['layedit', 'util', 'layer'], function () {
                     url,
                     {"param_json": data},
                     function (result) {
+                        layer.msg('分析成功！请查看自动反馈结果',{offset:'100px'});
                         // 格式化json
                         var objectJson = JSON.parse(result);
                         var feedback = "";

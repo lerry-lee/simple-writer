@@ -13,9 +13,11 @@
     <title>像一只蜗牛</title>
 </head>
 
-<body style="background-color: #F2F2F2">
 
-<div>
+<body style="background-image:url('css/img/home-bg3.jpg');background-size: cover">
+
+
+<div style="padding-left: 160px">
     <div class="ele-container">
         <div class="ele-wrapper">
             <div class="ele-tail"></div>

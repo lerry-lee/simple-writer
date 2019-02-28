@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>更新日志-Acawriter</title>
+    <title>更新日志-AcaWriter</title>
 </head>
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
@@ -19,9 +19,9 @@
         <div class="layui-timeline-content layui-text">
             <h3 class="layui-timeline-title">2019-1-28</h3>
             <p>
-                acawriter 1.0 的一切准备工作似乎都已到位。
-                <br>图表页面样式优化
-                <ul><li>增加根据HTTP请求时间查询的条件</li></ul>
+                AcaWriter1.0已经就位，在此版本基础上我们还做了如下更新：
+                <ul><li>图表页面样式优化</li>
+                <li>数据表增加根据HTTP请求时间查询的条件</li></ul>
             </p>
         </div>
     </li>
@@ -129,6 +129,17 @@
                 <br>访问量统计每个用户当天访问只记一次
                 <br>修复已知BUG
                 <br>重登提示窗优化
+            </p>
+        </div>
+    </li>
+    <li class="layui-timeline-item">
+        <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2019-2-28</h3>
+            <p>
+                AcaWriter2.0准备就绪：
+                <br>页面风格较1.0有较大变化
+                <br>修复某些BUG
+                <br>提示信息更加优化
             </p>
         </div>
     </li>

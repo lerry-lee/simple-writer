@@ -16,30 +16,74 @@
     <script src="plugins/jquery.min.js"></script>
     <script src="pages/header.all.js"></script>
 </head>
+
+<style>
+    nav {
+        top: 0vh;
+        bottom: 0vh;
+        text-align: center;
+        background: #202932;
+        position: fixed;
+        z-index: 100;
+        height: 100vh;
+        left: 0;
+        width: 160px;
+        font-weight: 300;
+        font-size: 20px;
+        color: whitesmoke;
+    }
+
+    nav ul {
+        margin-top: 60px;
+        text-align: center;
+        list-style-type: none;
+        height: 40vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    nav ul li a {
+        color: whitesmoke;
+        text-decoration: none !important;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 0;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+</style>
 <body>
 
-<ul class="layui-nav">
-    <li class="header-acawriter"><a href="home.jsp">AcaWriter</a></li>
-    <li class="layui-nav-item">
-        <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>反思性写作</a>
-    </li>
-    <li class="layui-nav-item"><a href="chart.jsp"><i class="chart-header icon-offset"></i>统计报表</a></li>
-    <li class="layui-nav-item">
-        <a id="developing"><i class="develop-header icon-offset"></i>开发中</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">module1</a></dd>
-            <dd><a href="">module2</a></dd>
-            <dd><a href="">module3</a></dd>
-            <dd><a href="">module4</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item" style="margin-left: 10px"><a href="about.jsp">Snail Spirit</a></li>
-    <li class="layui-nav-item" style="margin-left: 40px"><a><i class="layui-icon" style="color: whitesmoke;">&#xe612;</i><span id="user"></span></a>
-        <dl class="layui-nav-child">
-            <dd><a id='logout' href="login.jsp">登出</a></dd>
-        </dl>
-    </li>
-</ul>
+<nav style="font-family: Arial;padding-top: 100px">
 
+    <div class="layui-anim"><i class="layui-icon" id="user-icon" style="color: whitesmoke;font-size: 50px;cursor:pointer">&#xe612;</i></div>
+    <div id="user" style="color: whitesmoke;font-size: 14px;height: 16px"></div>
+    <a id="logout" style="visibility: hidden;color:grey;cursor:pointer">注销</a>
+
+    <ul>
+        <li><a href="home.jsp"><i class="home-header icon-offset"></i>首页</a>
+        </li>
+        <li>
+            <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>写作</a>
+        </li>
+        <li><a href="chart.jsp"><i class="chart-header icon-offset"></i>图表</a>
+        </li>
+        <li>
+            <a id="developing" style="cursor:pointer"><i class="develop-header icon-offset"></i>模块</a>
+        </li>
+        <li><a href="about.jsp">About</a>
+        </li>
+    </ul>
+</nav>
 </body>
 </html>
