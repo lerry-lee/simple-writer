@@ -10,7 +10,7 @@
 <link href="css/elephant.css" type="text/css" rel="stylesheet"/>
 <html>
 <head>
-    <title>像一只蜗牛</title>
+    <title>座右铭</title>
 </head>
 
 

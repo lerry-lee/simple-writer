@@ -58,12 +58,6 @@
             <version>2.9.8</version>
         </dependency>
 
-       <!--  https://mvnrepository.com/artifact/org.json/json
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20160810</version>
-        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
@@ -76,7 +70,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.16</version>
         </dependency>
-
 
 
     </dependencies>

@@ -62,13 +62,15 @@
     }
 
 </style>
+
 <body>
 
 <nav style="font-family: Arial;padding-top: 100px">
 
-    <div class="layui-anim"><i class="layui-icon" id="user-icon" style="color: whitesmoke;font-size: 50px;cursor:pointer">&#xe612;</i></div>
+    <div class="layui-anim"><i class="layui-icon" id="user-icon"
+                               style="color: whitesmoke;font-size: 50px;cursor:pointer">&#xe612;</i></div>
     <div id="user" style="color: whitesmoke;font-size: 14px;height: 16px"></div>
-    <a id="logout" style="visibility: hidden;color:grey;cursor:pointer">注销</a>
+    <a id="logout" style="visibility: hidden;color:grey;cursor:pointer">登出</a>
 
     <ul>
         <li><a href="home.jsp"><i class="home-header icon-offset"></i>首页</a>
@@ -79,9 +81,10 @@
         <li><a href="chart.jsp"><i class="chart-header icon-offset"></i>图表</a>
         </li>
         <li>
-            <a id="developing" style="cursor:pointer"><i class="develop-header icon-offset"></i>模块</a>
+            <a id="developing" style="cursor:pointer">
+                <i class="develop-header icon-offset"></i>蜗牛</a>
         </li>
-        <li><a href="about.jsp">About</a>
+        <li><a href="motto.jsp">Motto</a>
         </li>
     </ul>
 </nav>

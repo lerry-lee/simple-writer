@@ -14,12 +14,14 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class SendHttpPostJson {
-    public static JSONObject sendHttpPostJson(String url, String json) {
+    static String URL = "http://acawriter-dev.utscic.edu.au/api/acaParser";
+
+    public static JSONObject sendHttpPostJson(String json, int feature) {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseInfo = null;
         try {
-            HttpPost httpPost = new HttpPost(url);
+            HttpPost httpPost = new HttpPost(URL);
             httpPost.addHeader("Content-Type", "application/json;charset=UTF-8");
             ContentType contentType = ContentType.create("application/json", CharsetUtils.get("UTF-8"));
             httpPost.setEntity(new StringEntity(json, contentType));
@@ -40,7 +42,16 @@ public class SendHttpPostJson {
                 e.printStackTrace();
             }
         }
-        JSONObject rst = ExtractJson.extract_json(responseInfo);
+        JSONObject rst;
+        if (feature == 6) {
+            rst = ExtractJson.extract_6(responseInfo);
+        } else if (feature == 5) {
+            rst = ExtractJson.extract_5(responseInfo);
+        } else if (feature == 7) {
+            rst = ExtractJson.extract_7(responseInfo);
+        } else {
+            rst = ExtractJson.extract_8(responseInfo);
+        }
         return rst;
     }
 }

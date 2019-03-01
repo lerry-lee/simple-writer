@@ -14,9 +14,7 @@
     <link href="css/register/css/styles.min.css" rel="stylesheet" type="text/css" />
     <link href="css/register/css/demo.min.css" rel="stylesheet" type="text/css" />
     <link href="css/register/css/loaders.min.css" rel="stylesheet" type="text/css" />
-
     <link href="plugins/layui/css/layui.min.css" rel="stylesheet" type="text/css" />
-
     <script type="text/javascript" src="plugins/jquery.min.js"></script>
     <script type="text/javascript" src="css/register/js/jquery-ui.min-.js"></script>
     <script type="text/javascript" src='css/register/js/stopExecutionOnTimeout.min.js?t=1'></script>

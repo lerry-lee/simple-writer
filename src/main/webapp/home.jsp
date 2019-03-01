@@ -14,7 +14,6 @@
 <html>
 <head>
     <title>首页-Acawriter</title>
-
     <script src="pages/home.visits.js"></script>
 </head>
 
@@ -30,7 +29,7 @@
             <i class="zfj-home" style="color: #fff; color: rgba(255,255,255,.7);"></i>
         </div>
         <div class="layui-anim site-desc site-desc-anim">
-            <p class="web-font-desc" style="font-family: jiashu">反思性智能写作平台</p>
+            <p class="web-font-desc" style="font-family: jiashu">智能写作反馈平台</p>
             <cite>待，秋风萧瑟时，散作满天星辰，看那四季轮回，是我不灭的执念。</cite>
         </div>
         <div class="site-download">
@@ -40,7 +39,7 @@
         </div>
         <div class="site-version">
             <span>当前版本：<cite>2.0.1</cite></span>
-            <span><a id="updatelog" href="updatelog.jsp" rel="nofollow" target="_blank">更新日志</a></span>
+            <span><a href="updatelog.jsp">更新日志</a></span>
             <span>访问量：<cite id="visits"></cite></span>
         </div>
     </div>
@@ -62,7 +61,7 @@
         <li style="margin-top: 30px">
             <fieldset class="layui-elem-field layui-field-title">
                 <legend>水到渠成</legend>
-                <p>反思性写作首先自我反思，写作后自己先分析文章并做修改。然后比较性反思，可将文章或者段落分享给他人评阅。再来总结性反思，总结他人的建议和自己的观点。最后交给平台自动产生反馈。</p>
+                <p>智能写作反馈，有分析性反馈和反思性反馈两种。在写作后首先应进行自我反思，自己分析批改，然后可将文章分享给他人评阅。最后结合他人意见和自动反馈结果进行总结，对自己的写作进行优化。</p>
             </fieldset>
         </li>
     </ul>

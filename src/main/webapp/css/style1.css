@@ -32,24 +32,81 @@
     padding-bottom: 5px;
 }
 
-.alert.alert-success {
-    font-family: "Adobe Caslon Pro";
-    font-size: 18px;
-    color: #333333;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    background: #D3F8E2;
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 
-.alert.alert-info {
-    font-family: "Adobe Arabic";
-    color: #333333;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #CFF3FC;
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert-dark {
+    color: #1b1e21;
+    background-color: #d6d8d9;
+    border-color: #c6c8ca;
+}
+
+.alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+h5 {
+    font-size: 1.25rem;
+!important;
+}
+
+.link2me {
+    font-weight: bold;
+}
+
+.context, .challenge, .change, .metrics {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 1px;
+}
+
+.context:before {
+    content: "\F0C8";
+    color: #0000FF;
+}
+
+.challenge:before {
+    content: "\F111";
+    color: #C000C0;
+}
+
+.change:before {
+    content: "\F04B";
+    color: #008300;
+}
+
+.metrics:before {
+    content: "\F0E7";
+    color: orangered;
 }
 
 .table.table-bordered {
@@ -61,6 +118,17 @@
     border-width: 1px;
     border-color: #dedede;
     border-collapse: collapse;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    display: table;
+    border-spacing: 2px;
 }
 
 .table-bordered th {
@@ -93,7 +161,7 @@
     background-size: cover;
 }
 
-.fa.fa-exclamation-triangle.text-danger {
+.fa.fa-exclamation-triangle.text-danger, .fa.fa-exclamation-circle {
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -105,10 +173,9 @@
     position: relative;
     display: inline-block;
     padding: 0 6px;
-    font-family: "Segoe UI Black";
     font-size: 12px;
     text-align: center;
-    background-color: #FF7A22;
+    background-color: darkorange;
     color: #000000;
     border-radius: 10px;
     height: 18px;
@@ -119,11 +186,10 @@
     position: relative;
     display: inline-block;
     padding: 0 6px;
-    font-family: "Segoe UI Black";
     font-size: 12px;
     text-align: center;
-    background-color: #008B45;
-    color: #fff;
+    color: white;
+    background-color: darkgreen;
     border-radius: 10px;
     height: 18px;
     line-height: 18px
@@ -160,6 +226,7 @@
     background-image: url(icon/woniu.png);
     background-size: cover;
 }
+
 .zfj-home {
     background-image: url(icon/snail.png);
     background-size: cover;
@@ -180,7 +247,8 @@
     background-image: url(icon/linggan.png);
     background-size: cover;
 }
-.home-yumaobi{
+
+.home-yumaobi {
     background-image: url("icon/yumaobi.png");
     background-size: cover;
     color: rgba(255, 255, 255, .8);
@@ -228,3 +296,5 @@
 .header-acawriter a:hover {
     color: #fff;
 }
+
+

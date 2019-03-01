@@ -24,16 +24,17 @@ layui.use(['element', 'layer'], function () {
     $('#logout').click(function () {
         layer.msg('确定要退出登录吗？', {
             time: 0 //不自动关闭
-            ,shade:0.8
-            ,btn: ['确定', '返回']
-            ,yes: function(){
+            , shade: 0.8
+            , offset: '100px'
+            , btn: ['确定', '返回']
+            , yes: function () {
                 $.get(
                     'logout',
                     {},
                     function () {
                     }
                 );
-                window.location.href='login.jsp';
+                window.location.href = 'login.jsp';
             }
         });
 

@@ -14,8 +14,9 @@
     <script type="text/javascript" src="pages/score.submit.js"></script>
 </head>
 <body>
-<div style="padding: 20px 50px">
-    <div><input id="title" style="width: 250px" class="layui-input" type="text" placeholder="在此处添加标题有助于写作内容回馈" maxlength="16"></div>
+<div style="padding: 20px 20px">
+    <div>标题<input id="title" style="width: 300px;display: inline-block;margin-left: 5px" class="layui-input" type="text"
+                  placeholder="在此处添加标题有助于写作内容回馈" maxlength="16"></div>
     <ul>
         <li>自我反思
             <div id="test0"></div>
@@ -26,12 +27,13 @@
         <li>总结反思
             <div id="test2"></div>
         </li>
-        <li>自动反馈
+        <li>智能反馈
             <div id="test3"></div>
         </li>
     </ul>
-
-    <button id="score-submit" class="layui-btn">提交</button>
+    <div style="text-align: center">
+        <button id="score-submit" class="layui-btn">提交</button>
+    </div>
 </div>
 
 </body>

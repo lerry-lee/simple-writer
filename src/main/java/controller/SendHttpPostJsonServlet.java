@@ -13,13 +13,11 @@ import static utils.SendHttpPostJson.sendHttpPostJson;
 @WebServlet("/sendHttpPostJson")
 public class SendHttpPostJsonServlet extends HttpServlet {
 
-    public static final String URL = "http://acawriter-dev.utscic.edu.au/api/acaParser";
-    public static final String PARAM_JSON = "param_json";
-
-    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse httpServletResponse) {
         try {
-            String param_json = httpServletRequest.getParameter(PARAM_JSON);
-            JSONObject json = sendHttpPostJson(URL, param_json);
+            String param_json = request.getParameter("param_json");
+            int feature= Integer.parseInt(request.getParameter("feature"));
+            JSONObject json = sendHttpPostJson(param_json,feature);
             PrintWriter out = httpServletResponse.getWriter();
             out.print(json);
             out.close();

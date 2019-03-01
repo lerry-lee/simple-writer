@@ -10,11 +10,9 @@
 
 <html>
 <head>
-    <title>统计报表-Acawriter</title>
-    <script src="plugins/jquery.min.js"></script>
+    <title>图表-Acawriter</title>
     <script src="plugins/echarts/echarts.common.min.js"></script>
     <script src="pages/chart.all.js"></script>
-    <script src="plugins/echarts/vintage.js"></script>
 </head>
 <body style="background-color: #F2F2F2">
 <div  style="padding-left: 160px">
