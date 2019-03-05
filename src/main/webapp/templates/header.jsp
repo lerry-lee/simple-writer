@@ -81,8 +81,8 @@
         <li><a href="chart.jsp"><i class="chart-header icon-offset"></i>图表</a>
         </li>
         <li>
-            <a id="developing" style="cursor:pointer">
-                <i class="develop-header icon-offset"></i>蜗牛</a>
+            <a href="community.jsp" id="developing" style="cursor:pointer">
+                <i class="develop-header icon-offset"></i>社区</a>
         </li>
         <li><a href="motto.jsp">Motto</a>
         </li>

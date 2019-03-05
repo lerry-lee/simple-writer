@@ -1,0 +1,54 @@
+
+
+.container {
+    display: block;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    color: #6f7579;
+    padding: 40px 35px;
+    background-color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+}
+.main-listing {
+    margin-bottom: 20px;
+}
+article{
+    padding: 10px 0;
+}
+
+a{
+    cursor: pointer;
+    color: #f0b70c;
+}
+.hentry .post-meta .date {
+    background: url("images/calendar-icon.png") no-repeat left center;
+}
+.hentry .post-meta .category {
+    background: url("images/category-icon.png") no-repeat left center;
+}
+.hentry .post-meta > span {
+    display: inline-block;
+    padding-left: 22px;
+    margin-right: 15px;
+    line-height: 22px;
+
+}
+.hentry .post-meta .comments {
+    background: url("images/comment.png") no-repeat left center;
+}
+.hentry .post-meta .like-count:hover {
+    background: url("images/like.png") no-repeat 4px -24px;
+    color: #395996;
+}
+.hentry .post-meta .like-count {
+    float: right;
+    background: url("images/like.png") no-repeat 4px 6px;
+}
+.hentry.type-post .post-title {
+    padding-left: 35px;
+    background: url("images/standard-large.png") no-repeat 0 3px;
+    font-size: 20px;
+    line-height: 30px;
+}

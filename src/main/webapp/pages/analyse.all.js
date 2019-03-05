@@ -19,25 +19,18 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
     util.fixbar({
         bar1: '&#xe611;'
         // , bar2: '&#xe600;'
-        , css: {right: 50, bottom: 100}
+        , css: {right: 30, bottom: 50}
         , bgcolor: '#393D49;width:36px;height:36px;font-size:32px;line-height:36px'
         , click: function (type) {
             if (type === 'bar1') {
-                layer.msg('前往论坛', {offset: '100px'});
-            }/* else if (type === 'bar2') {
-                // window.location.hash = '#to-tips';
-                // layer.tips('提示内容在这里哦', '#to-tips', {tips: 1});
-                $('#temporary-storage').html(layedit.getContent(index));
                 layer.open({
                     type: 2,
                     offset: '100px',
-                    shade: 0.5,
-                    title: '给写作过程评分并保存此次写作版本',
-                    shadeClose: true,
-                    area: ['400px', '350px'],
-                    content: 'score.jsp'
+                    title: '编辑帖子分享到社区',
+                    area: ['600px', '550px'],
+                    content: 'share.jsp'
                 });
-            }*/
+            }
         }
     });
     //每隔5S监听文本域内容变化保存到数据库
@@ -61,6 +54,18 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
 
         }, 4999);
     }, 5000);
+    //评分存档
+    $('#score').click(function () {
+        $('#temporary-storage').html(layedit.getContent(index));
+        layer.open({
+            type: 2,
+            offset: '100px',
+            shade: 0.5,
+            title: '给写作过程评分并保存此次写作版本',
+            area: ['400px', '350px'],
+            content: 'score.jsp'
+        });
+    });
 
     //分析报告
     $("#send").click(function () {
@@ -84,6 +89,9 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
             $('#tips').css('display', 'none');
             $('#examples').css('display', 'none');
             $('#resources').css('display', 'none');
+            $('#r-tips').css('display', 'none');
+            $('#r-examples').css('display', 'none');
+            $('#r-resources').css('display', 'none');
 
             var data = JSON.stringify({
                 'txt': txt,
@@ -108,6 +116,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                     if (feature == 7) {
                         $('#analyticalReport7').css('display', 'block');
                         $('#tips').css('display', 'block');
+                        $('#r-tips').css('display', 'block');
                         // 格式化json
                         var objectJson = JSON.parse(result);
                         var feedback = "";
@@ -118,6 +127,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                     } else if (feature == 6) {
                         $('#analyticalReport6').css('display', 'block');
                         $('#examples').css('display', 'block');
+                        $('#r-examples').css('display', 'block');
 
                         var objectJson = JSON.parse(result);
                         var feedback = "";
@@ -128,6 +138,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                     } else if (feature == 5) {
                         $('#analyticalReport5').css('display', 'block');
                         $('#resources').css('display', 'block');
+                        $('#r-resources').css('display', 'block');
 
                         var objectJson = JSON.parse(result);
                         var feedback = "";

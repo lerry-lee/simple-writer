@@ -2071,8 +2071,9 @@ a cite {
 }
 
 .layui-form-select .layui-edge {
-    position: absolute;
-    right: 10px;
+    position:absolute;
+    /*right: 10px;*/
+    left: 230px;
     top: 50%;
     margin-top: -3px;
     cursor: pointer;

@@ -19,3 +19,21 @@ create table Visits(
 id int primary key auto_increment,
 usersign varchar(16)  unique,
 )DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE share(
+id int primary key auto_increment,
+username varchar(16),
+sdate varchar(10),
+category varchar(30),
+dianzan int,
+content text,
+title varchar(50)
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table comments(
+id int primary key auto_increment,
+sid int,
+comment text,
+cdate varchar(10),
+foreign key (sid) references share(id) on delete cascade
+)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;

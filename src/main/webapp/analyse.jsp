@@ -16,11 +16,6 @@
     <script src="pages/analyse.all.js"></script>
 </head>
 
-<style>
-    .layui-input-inline input{
-        width: 100%;
-    }
-</style>
 
 <body style="background-color: #F2F2F2">
 <div style="padding-left: 160px">
@@ -39,24 +34,28 @@
                         <div><textarea id="txt" style="display: none"></textarea></div>
 
                         <form class="layui-form" style="margin-top: 10px">
-                            Select a Genre
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
 
-                                    <div class="layui-input-inline" id="test_select">
-                                        <select id="genre">
-                                            <option value="0">请选择类型</option>
-                                            <optgroup label="Analytical">
-                                                <option value="6">Civil Law Essay</option>
-                                                <option value="5">Research Abstract/Intro</option>
-                                                <option value="7">Analytical Accounting</option>
-                                            </optgroup>
-                                            <optgroup label="Reflective">
-                                                <option value="8">Pharmacy</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                    <input type="button" class="layui-btn" id="send" value="Get FeedBack">
+                            <div class="layui-form-item" >
+                                <div class="layui-input-block" style="margin-left: 0"> Select a Genre</div>
+                                <div class="layui-input-block" style="margin-left: 0;width: 500px" id="test_select">
+                                    <select id="genre">
+                                        <option value="0">请选择类型</option>
+                                        <optgroup label="Analytical">
+                                            <option value="6">Civil Law Essay</option>
+                                            <option value="5">Research Abstract/Intro</option>
+                                            <option value="7">Analytical Accounting</option>
+                                        </optgroup>
+                                        <optgroup label="Reflective">
+                                            <option value="8">Pharmacy</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block" style="margin-left: 0">
+                                    <input type="button" class="layui-btn layui-btn-normal" id="send"
+                                           value="Get Feedback">
+                                    <input type="button" class="layui-btn" id="score" value="Score and Save">
                                 </div>
                             </div>
                         </form>
@@ -256,7 +255,7 @@
                     </div>
                 </div>
             </div>
-            <div class="layui-card" id="examples" style="display: none">
+            <div id="examples" class="layui-card" style="display: none">
                 <div class="layui-card-header" id="to-examples">
                     Examples
                 </div>
@@ -300,7 +299,7 @@
 
                 </div>
             </div>
-            <div class="layui-card" id="resources" style="display:none">
+            <div id="resources" class="layui-card" style="display:none">
                 <div class="layui-card-header" id="to-resources">
                     Resources
                 </div>
@@ -331,6 +330,18 @@
     </div>
 </div>
 <div style="display: none" id="temporary-storage"></div>
+<div style="position:fixed;height:300px;width:100px;z-index: 100; top: 40vh; right: 2vw;text-align: center">
+    <div class="layui-layer-title">导航</div>
+    <div class="layui-layer-content" style="background-color: white">
+        <ul>
+            <li><a href="#to-analyticalReport"><cite>查看分析</cite></a></li>
+            <li><a href="#to-feedback"><cite>查看反馈</cite></a></li>
+            <li id="r-examples" style="display: none"><a href="#to-examples"><cite>查看示例</cite></a></li>
+            <li id="r-tips" style="display: none"><a href="#to-tips"><cite>查看提示</cite></a></li>
+            <li id="r-resources" style="display: none"><a href="#to-resources"><cite>查看资源</cite></a></li>
+        </ul>
+    </div>
+</div>
 </div>
 </body>
 </html>

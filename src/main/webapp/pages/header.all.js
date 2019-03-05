@@ -40,9 +40,6 @@ layui.use(['element', 'layer'], function () {
 
     });
 
-    $('#developing').click(function () {
-        layer.msg('功能仍在开发中', {offset: '100px'});
-    });
     $('#user-icon').click(function () {
         $('#logout').css('visibility', 'visible');
     });
