@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="plugins/layui/css/layui.min.css" media="all">
     <script type="text/javascript" src="plugins/jquery.min.js"></script>
     <script type="text/javascript" src="plugins/layui/layui.min.js"></script>
-    <script type="text/javascript" src="pages/score.submit.js"></script>
+    <script type="text/javascript" src="pages/toScore.submit.js"></script>
 </head>
 <body>
 <div style="padding: 20px 20px">

@@ -7,8 +7,10 @@ import lombok.Setter;
 public class CommentsBean {
     private String comment;
     private String cdate;
-    public  CommentsBean(String comment,String cdate){
+    private String commentator;
+    public  CommentsBean(String comment,String cdate,String commentator){
         this.comment=comment;
         this.cdate=cdate;
+        this.commentator = commentator;
     }
 }

@@ -11,7 +11,7 @@
     <link href="plugins/layui/css/layui.min.css" rel="stylesheet" type="text/css">
     <script src="plugins/jquery.min.js"></script>
     <script src="plugins/layui/layui.min.js"></script>
-    <script src="pages/share.send.js"></script>
+    <script src="pages/toShare.send.js"></script>
 </head>
 <body>
 <form class="layui-form" style="margin-top: 10px">

@@ -1,10 +1,9 @@
 package dao.impl;
 
-import bean.ReflectiveScoreBean;
 import bean.ReflectiveTitleBean;
 import dao.BaseDao;
-import dao.ReflectiveScoreDao;
-import entity.ReflectiveScoreEntity;
+import dao.ReflectiveDao;
+import entity.ReflectiveEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReflectiveScoreDaoImpl implements ReflectiveScoreDao {
+public class ReflectiveDaoImpl implements ReflectiveDao {
     Connection conn = null;
     PreparedStatement pst = null;
     @Getter
@@ -23,16 +22,12 @@ public class ReflectiveScoreDaoImpl implements ReflectiveScoreDao {
     private int total;
 
     @Override
-    public boolean save(String username, ReflectiveScoreEntity scoreEntity) {
+    public boolean save(String username, ReflectiveEntity scoreEntity) {
         boolean flag = false;
         conn = BaseDao.getconn();
-        String sql_create = "CREATE TABLE IF NOT EXISTS " + username + "_reflective" +
-                " (id int primary key auto_increment, title varchar(16), content text, self int, comparison int, summary int, automatic int, sdate char(19))DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
         String sql = "INSERT INTO " + username + "_reflective" +
                 "(title,content,self,comparison,summary,automatic,sdate) VALUES (?,?,?,?,?,?,?)";
         try {
-            pst = conn.prepareStatement(sql_create);
-            pst.execute();
             pst = conn.prepareStatement(sql);
             pst.setString(1, scoreEntity.getTitle());
             pst.setString(2, scoreEntity.getContent());

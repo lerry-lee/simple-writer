@@ -22,7 +22,7 @@
             <div class="layui-card">
                 <div class="layui-card-header">DataTabel Panel</div>
                 <div class="layui-card-body">
-                    <form class="layui-form layui-form-pane" action="">
+                    <form class="layui-form layui-form-pane">
                         <div class="layui-form-item">
 
                             <label class="layui-form-label">保存时间</label>

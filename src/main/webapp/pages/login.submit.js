@@ -1,14 +1,12 @@
-
-
 $(document).keypress(function (e) {
-    if(e.which==13)
+    if (e.which == 13)
         $('#login').click();
 });
 
 //加载弹出层组件
 layui.use('layer', function () {
     var layer = layui.layer;
-    var username='',password='';
+    var username = '', password = '';
     //登录函数
     $("#login").click(function () {
 
@@ -18,6 +16,7 @@ layui.use('layer', function () {
             layer.msg("用户名或密码不能为空！");
             return;
         }
+
         $.post(
             "login",
             {
@@ -25,10 +24,10 @@ layui.use('layer', function () {
                 "password": password
             },
             function (rst) {
-                if (rst== '0') {
+                if (rst == '0') {
                     layer.msg('用户名或密码错误');
                     return;
-                }else{
+                } else {
                     window.location.href = 'home.jsp';
                 }
             }

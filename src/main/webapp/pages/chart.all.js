@@ -1,13 +1,12 @@
-layui.use('laydate', function () {
+
+
+layui.use(['table','laydate'], function () {
     var laydate = layui.laydate;
     laydate.render({
         elem: '#date-time'
         , type: 'datetime'
         , range: true
     });
-});
-
-layui.use('table', function () {
     var table = layui.table;
     table.render({
         elem: '#demo',

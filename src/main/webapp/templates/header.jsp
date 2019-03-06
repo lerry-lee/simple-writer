@@ -10,7 +10,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="plugins/layui/css/layui.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="plugins/layui/css/layui.min.css" media="all">
     <link href="css/style1.css" type="text/css" rel="stylesheet"/>
     <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="plugins/jquery.min.js"></script>

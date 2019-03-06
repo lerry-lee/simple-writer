@@ -21,12 +21,15 @@
 <body>
 <div style="padding-left: 160px">
     <div style="height: 100px;background-color: #d1ecf1;">
-        <ul class="layui-nav" style="text-align: right;height: 80px;padding: 10px 30px">
+        <ul class="layui-nav" style="text-align: right;height: 80px;padding: 50px 50px">
             <li class="layui-nav-item">
-                <a href="">我的文章<span class="layui-badge">9</span></a>
+                <a href="community.jsp">所有帖子</a>
             </li>
             <li class="layui-nav-item" style="margin-left: 30px">
-                <a href="">个人中心<span class="layui-badge-dot"></span></a>
+                <a href="myposts.jsp">我的帖子</a>
+            </li>
+            <li class="layui-nav-item" style="margin-left: 30px">
+                <a href="messages.jsp">消息中心<span class="layui-badge-dot"></span></a>
             </li>
         </ul>
     </div>
@@ -44,8 +47,8 @@
                         <div class="post-meta clearfix">
                             <span class="date">25 Feb, 2013</span>
                             <span class="category">Server &amp; Database</span>
-                            <span class="comments"><a name="to-comments" sid="007">3 Comments</a></span>
-                            <span class="like-count">66</span>
+                            <span class="comments"><a name="to-comments" sid="2">3 Comments</a></span>
+                            <span class="by-author">system</span>
                         </div>
                     </header>
                     <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,

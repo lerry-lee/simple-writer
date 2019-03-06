@@ -3,7 +3,8 @@ layui.use(['layer', 'flow', 'util'], function () {
     var flow = layui.flow;
     var util = layui.util;
     util.fixbar({
-        bar1: '&#xe605;'
+        bar1: '&#xe611;'
+        // , bar2: '&#xe600;'
         , css: {right: 30, bottom: 50}
         , bgcolor: '#393D49;width:36px;height:36px;font-size:32px;line-height:36px'
         , click: function (type) {
@@ -11,7 +12,6 @@ layui.use(['layer', 'flow', 'util'], function () {
                 $("a[name='to-comments']").click(function () {
                     var sid = $(this).attr("sid");
                     var title=$(this).attr("title");
-                    var etitle=encodeURI(encodeURI(title));
                     var author=$(this).attr("author");
                     layer.open({
                         type: 2,
@@ -19,7 +19,7 @@ layui.use(['layer', 'flow', 'util'], function () {
                         shade: 0.5,
                         title: '这篇文章的评论都在下面了哦',
                         area: ['600px', '600px'],
-                        content: 'toComment.jsp?sid=' + sid+'&title='+etitle+'&author='+author,
+                        content: 'toComment.jsp?sid=' + sid+'&title='+title+'&author='+author,
                         success: function (layero, index) {
                             //注意这里的#sid是iframe页面中的一个标签id
                             var jquerySendHelloButton = $("#params", layero.find("iframe")[0].contentWindow.document);
@@ -40,7 +40,7 @@ layui.use(['layer', 'flow', 'util'], function () {
             //模拟数据插入
             var lis = [];
             $.get(
-                'queryShare',
+                'queryMyShare',
                 {'page': page},
                 function (rst) {
                     map = JSON.parse(rst);
@@ -66,9 +66,6 @@ layui.use(['layer', 'flow', 'util'], function () {
                             "\">" +
                             json[i].totalComments +
                             " Comments</a></span>\n" +
-                            "                                <span class=\"by-author\">" +
-                            json[i].author +
-                            "</span>\n" +
                             "                            </div>\n" +
                             "\n" +
                             "                        </header>\n" +

@@ -1,7 +1,6 @@
 layui.use(['layer','form'],function () {
     var layer=layui.layer;
     var form=layui.form;
-
     $('#to-share').click(function () {
         var content = $('#content').val();
         var share_title = $('#share-title').val();

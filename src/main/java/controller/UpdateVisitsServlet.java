@@ -13,6 +13,8 @@ import java.util.Date;
 public class UpdateVisitsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String username = (String) httpServletRequest.getSession().getAttribute("username");
+        if(username==null)
+            return;
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         String sdate = df.format(new Date());
         String usersign = username + sdate;

@@ -164,6 +164,21 @@
                 </p>
             </div>
         </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-6</h3>
+                <p>
+                    增加社区功能：
+                <ul>
+                    <li>写作页面可以分享帖子到社区</li>
+                    <li>社区页面可以查看所有帖子或者在某个帖子下面进行评论</li>
+                    <li>我的帖子展示了我发起的帖子</li>
+                    <li>消息中心列出了他人对于我的帖子的评论</li>
+                </ul>
+                </p>
+            </div>
+        </li>
     </ul>
 </div>
 </body>

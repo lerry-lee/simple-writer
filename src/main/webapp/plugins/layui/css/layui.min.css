@@ -1525,7 +1525,8 @@ a cite {
     margin-bottom: 10px;
     padding: 0;
     border-width: 1px;
-    border-style: solid
+    border-style: solid;
+    letter-spacing: 2px;
 }
 
 .layui-elem-field legend {
@@ -1617,7 +1618,7 @@ a cite {
 
 .layui-colla-content {
     display: none;
-    padding: 10px 15px;
+    padding: 10px 35px;
     line-height: 22px;
     color: #666
 }

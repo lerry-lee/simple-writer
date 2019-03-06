@@ -3,14 +3,16 @@ package service;
 import bean.CommentsBean;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import dao.impl.CommentsDaoImpl;
+import dao.impl.MessagesDaoImpl;
 import entity.CommentsEntity;
+import entity.MessagesEntity;
 import utils.ToJson;
 
 import java.util.List;
 
 public class CommentsService {
-   public static boolean save(int sid,String comment,String cdate){
-       CommentsEntity comments=new CommentsEntity(sid,comment,cdate);
+   public static boolean save(int sid,String comment,String cdate,String username){
+       CommentsEntity comments=new CommentsEntity(sid,comment,cdate,username);
        CommentsDaoImpl commentsDao=new CommentsDaoImpl();
        return commentsDao.save(comments);
    }

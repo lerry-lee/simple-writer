@@ -8,11 +8,11 @@ $(document).ready(function () {
     );
 });
 
-layui.use(['layedit', 'util', 'layer', 'form'], function () {
+layui.use(['layedit', 'util', 'layer','form'], function () {
     var util = layui.util;
     var layer = layui.layer;
     var layedit = layui.layedit;
-    var form = layui.form;
+    var form=layui.form;
     //构建一个默认的编辑器
     var index = layedit.build('txt');
     //固定块
@@ -28,7 +28,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                     offset: '100px',
                     title: '编辑帖子分享到社区',
                     area: ['600px', '550px'],
-                    content: 'share.jsp'
+                    content: 'toShare.jsp'
                 });
             }
         }
@@ -63,7 +63,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
             shade: 0.5,
             title: '给写作过程评分并保存此次写作版本',
             area: ['400px', '350px'],
-            content: 'score.jsp'
+            content: 'toScore.jsp'
         });
     });
 

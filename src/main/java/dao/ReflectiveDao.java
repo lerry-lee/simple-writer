@@ -1,11 +1,11 @@
 package dao;
 
 import bean.ReflectiveTitleBean;
-import entity.ReflectiveScoreEntity;
+import entity.ReflectiveEntity;
 
 import java.util.List;
 
-public interface ReflectiveScoreDao {
-    public boolean save(String username,ReflectiveScoreEntity scoreEntity);
+public interface ReflectiveDao {
+    public boolean save(String username, ReflectiveEntity scoreEntity);
     public List<ReflectiveTitleBean> query(String username, int offset, int rows);
 }

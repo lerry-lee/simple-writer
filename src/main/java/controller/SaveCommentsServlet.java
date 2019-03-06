@@ -18,7 +18,11 @@ public class SaveCommentsServlet extends HttpServlet {
         String comment = request.getParameter("comment");
         SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy");//设置日期格式
         String cdate = df.format(new Date());
-        Boolean flag = CommentsService.save(sid, comment,cdate);
+        int niming= Integer.parseInt(request.getParameter("niming"));
+        String username= niming==1?"匿名用户": (String) request.getSession().getAttribute("username");
+        if(username==null)
+            return;
+        Boolean flag = CommentsService.save(sid, comment,cdate,username);
         PrintWriter out = null;
         try {
             out = response.getWriter();

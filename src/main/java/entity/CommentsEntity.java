@@ -9,13 +9,13 @@ public class CommentsEntity {
     private int sid;
     private String comment;
     private String cdate;
-    public CommentsEntity(int sid,String comment,String cdate){
+    private String commentator;
+
+    public CommentsEntity(int sid,String comment,String cdate,String commentator){
         this.sid=sid;
         this.comment =comment;
         this.cdate=cdate;
-    }
-    public CommentsEntity(String comment,String cdate){
-        this.comment =comment;
-        this.cdate=cdate;
+        this.commentator = commentator;
+
     }
 }
