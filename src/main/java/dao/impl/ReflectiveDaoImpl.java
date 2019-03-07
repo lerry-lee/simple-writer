@@ -51,7 +51,7 @@ public class ReflectiveDaoImpl implements ReflectiveDao {
     public List<ReflectiveTitleBean> query(String username, int offset, int rows) {
         List<ReflectiveTitleBean> list = new ArrayList<>();
         conn = BaseDao.getconn();
-        String sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate FROM " + username + "_reflective" +
+        String sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate,content FROM " + username + "_reflective" +
                 " LIMIT ?,?";
         String sql_total = "SELECT FOUND_ROWS()";
         try {
@@ -60,7 +60,7 @@ public class ReflectiveDaoImpl implements ReflectiveDao {
             pst.setInt(2, rows);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                ReflectiveTitleBean scoreEntity = new ReflectiveTitleBean(rs.getInt(1), rs.getString(2), rs.getString(3));
+                ReflectiveTitleBean scoreEntity = new ReflectiveTitleBean(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4));
                 list.add(scoreEntity);
             }
             pst = conn.prepareStatement(sql_total);
@@ -83,17 +83,17 @@ public class ReflectiveDaoImpl implements ReflectiveDao {
         boolean query_with_title=!title_query.equals("");
         if (query_with_title) {
             if(query_with_date)
-                sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate FROM" +username + "_reflective" +
+                sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate,content FROM" +username + "_reflective" +
                         "  WHERE title LIKE ? AND  sdate BETWEEN ? AND ? LIMIT ?,?";
             else
-                sql="SELECT SQL_CALC_FOUND_ROWS id,title,sdate FROM " +username + "_reflective" +
+                sql="SELECT SQL_CALC_FOUND_ROWS id,title,sdate,content FROM " +username + "_reflective" +
                         " WHERE title LIKE ? LIMIT ?,?";
         } else {
             if(query_with_date)
-                sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate FROM " +username + "_reflective" +
+                sql = "SELECT SQL_CALC_FOUND_ROWS id,title,sdate,content FROM " +username + "_reflective" +
                         " WHERE sdate BETWEEN ? AND ? LIMIT ?,?";
             else
-                sql="SELECT SQL_CALC_FOUND_ROWS id,title,sdate FROM " +username + "_reflective" +
+                sql="SELECT SQL_CALC_FOUND_ROWS id,title,sdate,content FROM " +username + "_reflective" +
                         "  LIMIT ?,?";
         }
         List<ReflectiveTitleBean> list = new ArrayList<>();
@@ -127,8 +127,9 @@ public class ReflectiveDaoImpl implements ReflectiveDao {
                 int id = rs.getInt(1);
                 String title = rs.getString(2);
                 String sdate = rs.getString(3);
+                String content=rs.getString(4);
 
-                ReflectiveTitleBean reflectiveTitleBean = new ReflectiveTitleBean(id, title, sdate);
+                ReflectiveTitleBean reflectiveTitleBean = new ReflectiveTitleBean(id, title, sdate,content);
                 list.add(reflectiveTitleBean);
             }
             pst = conn.prepareStatement(sql_);
@@ -180,5 +181,22 @@ public class ReflectiveDaoImpl implements ReflectiveDao {
             BaseDao.addClose(pst,conn);
         }
         return list;
+    }
+    public boolean delete(String username,int id){
+        boolean flag=false;
+        conn=BaseDao.getconn();
+        String sql="DELETE FROM "+username+"_reflective"+" WHERE id = ?";
+        try{
+            pst=conn.prepareStatement(sql);
+            pst.setInt(1,id);
+            int rs=pst.executeUpdate();
+            if(rs>0)
+                flag=true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            BaseDao.addClose(pst,conn);
+        }
+        return flag;
     }
 }

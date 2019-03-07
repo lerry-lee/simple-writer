@@ -1,6 +1,6 @@
 package controller;
 
-import service.ReflectiveScoreService;
+import service.ReflectiveService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class FuzzyQueryServlet extends HttpServlet {
         String limit=request.getParameter("limit");
         int rows=Integer.parseInt(limit);
         int offset=(Integer.parseInt(page)-1)*rows;
-        String json = ReflectiveScoreService.fuzzyQuery(username,offset,rows,title,start_date,end_date);
+        String json = ReflectiveService.fuzzyQuery(username,offset,rows,title,start_date,end_date);
 
         try {
             PrintWriter out = response.getWriter();

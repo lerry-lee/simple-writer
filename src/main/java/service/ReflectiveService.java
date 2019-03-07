@@ -8,7 +8,7 @@ import utils.ToJson;
 
 import java.util.List;
 
-public class ReflectiveScoreService {
+public class ReflectiveService {
     public static boolean save(String username, String title, String content, String self, String comparison, String summary, String automatic, String sdate) {
         ReflectiveEntity scoreEntity = new ReflectiveEntity(title, content, Integer.parseInt(self), Integer.parseInt(comparison), Integer.parseInt(summary), Integer.parseInt(automatic), sdate);
         ReflectiveDaoImpl scoreDao = new ReflectiveDaoImpl();
@@ -48,5 +48,9 @@ public class ReflectiveScoreService {
             e.printStackTrace();
         }
         return json;
+    }
+    public static boolean delete(String username,int id){
+        ReflectiveDaoImpl reflectiveDao=new ReflectiveDaoImpl();
+        return reflectiveDao.delete(username,id);
     }
 }

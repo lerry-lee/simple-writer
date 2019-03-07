@@ -42,7 +42,10 @@
                     </form>
                     <button id="title-search" class="layui-btn">Search</button>
                     <table id="demo" lay-filter="test" class="layui-table" lay-data="{id:'demo'}"></table>
-
+                    <script type="text/html" id="barDemo">
+                        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                    </script>
                 </div>
             </div>
             <div class="layui-card">

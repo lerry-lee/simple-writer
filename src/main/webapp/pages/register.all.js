@@ -10,10 +10,10 @@ layui.use('layer', function () {
     var ulegal, plegal;
 
     //用户名合法检测
-    $('#commentator').focus(function () {
+    $('#username').focus(function () {
         $('#error-umsg').empty();
     });
-    $('#commentator').blur(function () {
+    $('#username').blur(function () {
         ulegal = true;
         var username = $('#username').val();
         var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
@@ -75,7 +75,7 @@ layui.use('layer', function () {
 
     $('#register').click(function () {
         if(ulegal&&plegal) {
-            var username = $('#commentator').val();
+            var username = $('#username').val();
             var password = $('#password').val();
 
             $.post(

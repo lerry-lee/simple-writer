@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class="site-version">
-            <span>当前版本：<cite>3.2.1</cite></span>
+            <span>当前版本：<cite>3.2.2</cite></span>
             <span><a href="updatelog.jsp">更新日志</a></span>
             <span>访问量：<cite id="visits"></cite></span>
         </div>

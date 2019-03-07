@@ -15,18 +15,18 @@ layui.use(['layer', 'flow', 'util'], function () {
                     var author=$(this).attr("author");
                     layer.open({
                         type: 2,
-                        offset: '100px',
+                        offset: '200px',
                         shade: 0.5,
                         title: '这篇文章的评论都在下面了哦',
                         area: ['600px', '600px'],
-                        content: 'toComment.jsp?sid=' + sid+'&title='+etitle+'&author='+author,
-                        success: function (layero, index) {
-                            //注意这里的#sid是iframe页面中的一个标签id
-                            var jquerySendHelloButton = $("#params", layero.find("iframe")[0].contentWindow.document);
-                            jquerySendHelloButton.attr("sid", sid);
-                            jquerySendHelloButton.attr("title", title);
-                            jquerySendHelloButton.attr("author", author);
-                        }
+                        content: 'toComment.jsp?sid=' + sid+'&title='+etitle+'&author='+author
+                        // success: function (layero, index) {
+                        //     //注意这里的#sid是iframe页面中的一个标签id
+                        //     var jquerySendHelloButton = $("#params", layero.find("iframe")[0].contentWindow.document);
+                        //     jquerySendHelloButton.attr("sid", sid);
+                        //     jquerySendHelloButton.attr("title", title);
+                        //     jquerySendHelloButton.attr("author", author);
+                        // }
                     });
                 });
             }
@@ -53,7 +53,7 @@ layui.use(['layer', 'flow', 'util'], function () {
                             json[i].title +
                             "                            </h3>\n" +
                             "\n" +
-                            "                            <div class=\"post-meta clearfix\">\n" +
+                            "<hr class=\"layui-bg-gray\"><div class=\"post-meta clearfix\">\n" +
                             "                                <span class=\"date\">" +
                             json[i].sdate +
                             "</span>\n" +
@@ -71,11 +71,11 @@ layui.use(['layer', 'flow', 'util'], function () {
                             "</span>\n" +
                             "                            </div>\n" +
                             "\n" +
-                            "                        </header>\n" +
+                            "<hr class=\"layui-bg-gray\"></header>\n" +
                             "\n" +
                             "                        <p>" +
                             json[i].content +
-                            "                    </article><hr class=\"layui-bg-gray\">");
+                            "                    </article>");
                     }
                     //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
                     //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多

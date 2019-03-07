@@ -44,6 +44,7 @@ a{
     background: url("images/user.png") no-repeat 4px -20px;
 }
 .post-title {
+    color:#000000;
     padding-left: 35px;
     background: url("images/standard-large.png") no-repeat 0 3px;
     font-size: 20px;

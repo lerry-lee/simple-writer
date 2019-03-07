@@ -1,7 +1,7 @@
 package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import service.ReflectiveScoreService;
+import service.ReflectiveService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class GetAllReflectiveTitleServlet extends HttpServlet {
         int offset=(Integer.parseInt(page)-1)*rows;
         String json = null;
         try {
-            json = ReflectiveScoreService.getAll(username, offset,rows);
+            json = ReflectiveService.getAll(username, offset,rows);
 
 
             PrintWriter out = null;

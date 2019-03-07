@@ -28,7 +28,12 @@ layui.use('layer', function () {
                     layer.msg('用户名或密码错误');
                     return;
                 } else {
-                    window.location.href = 'home.jsp';
+                    $.get(
+                        'updateVisits',
+                        function () {
+                            window.location.href = 'home.jsp';
+                        }
+                    );
                 }
             }
         );

@@ -179,6 +179,20 @@
                 </p>
             </div>
         </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-7</h3>
+                <p>
+                    图表页面：
+                <ul>
+                    <li>增加查看、删除操作</li>
+                    <li>查看该写作版本</li>
+                    <li>删除该行数据</li>
+                </ul>
+                </p>
+            </div>
+        </li>
     </ul>
 </div>
 </body>

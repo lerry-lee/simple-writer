@@ -43,14 +43,16 @@
                         <h3 class="post-title">
                             Integrating WordPress with Your Website
                         </h3>
-
+                        <hr class="layui-bg-gray">
                         <div class="post-meta clearfix">
                             <span class="date">25 Feb, 2013</span>
                             <span class="category">Server &amp; Database</span>
                             <span class="comments"><a name="to-comments" sid="2">3 Comments</a></span>
                             <span class="by-author">system</span>
                         </div>
+                        <hr class="layui-bg-gray">
                     </header>
+
                     <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
                         rushing from one thing to another, never pausing and never ending.&nbsp;Then the day is
                         over,
@@ -60,7 +62,7 @@
                     </p>
 
                 </article>
-                <hr class="layui-bg-gray">
+
             </div>
         </div>
     </div>

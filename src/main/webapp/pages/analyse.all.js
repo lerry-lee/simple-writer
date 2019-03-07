@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $.get(
         'queryReport',
-        {},
         function (rst) {
             $('#txt').html(rst);
         }
@@ -25,7 +24,7 @@ layui.use(['layedit', 'util', 'layer','form'], function () {
             if (type === 'bar1') {
                 layer.open({
                     type: 2,
-                    offset: '100px',
+                    offset: '200px',
                     title: '编辑帖子分享到社区',
                     area: ['600px', '550px'],
                     content: 'toShare.jsp'
@@ -59,7 +58,7 @@ layui.use(['layedit', 'util', 'layer','form'], function () {
         $('#temporary-storage').html(layedit.getContent(index));
         layer.open({
             type: 2,
-            offset: '100px',
+            offset: '200px',
             shade: 0.5,
             title: '给写作过程评分并保存此次写作版本',
             area: ['400px', '350px'],

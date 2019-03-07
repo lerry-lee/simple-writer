@@ -3,7 +3,7 @@ layui.use(['layer', 'flow', 'util'], function () {
     var flow = layui.flow;
     var util = layui.util;
     util.fixbar({
-        bar1: '&#xe611;'
+        bar1: '&#xe605;'
         // , bar2: '&#xe600;'
         , css: {right: 30, bottom: 50}
         , bgcolor: '#393D49;width:36px;height:36px;font-size:32px;line-height:36px'
@@ -15,7 +15,7 @@ layui.use(['layer', 'flow', 'util'], function () {
                     var author=$(this).attr("author");
                     layer.open({
                         type: 2,
-                        offset: '100px',
+                        offset: '200px',
                         shade: 0.5,
                         title: '这篇文章的评论都在下面了哦',
                         area: ['600px', '600px'],

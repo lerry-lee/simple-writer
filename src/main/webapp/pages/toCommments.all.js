@@ -16,7 +16,7 @@ layui.use(['layer','form'], function () {
             var json = JSON.parse(rst);
             for (var i in json) {
                 $('#commments-list').append("<article><p style='color: grey'>" +
-                    json[i].cdate +"    "+json[i].commentator+
+                    json[i].cdate +"\xa0\xa0       "+json[i].commentator+
                     "</p><p>" +
                     json[i].comment +
                     "</p></article><hr class=\"layui-bg-gray\">");

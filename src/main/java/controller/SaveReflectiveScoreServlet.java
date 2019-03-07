@@ -1,6 +1,6 @@
 package controller;
 
-import service.ReflectiveScoreService;
+import service.ReflectiveService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +17,7 @@ public class SaveReflectiveScoreServlet extends HttpServlet {
         String username= (String) request.getSession().getAttribute("username");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String sdate = df.format(new Date());
-        boolean flag=ReflectiveScoreService.save(username,request.getParameter("title"),request.getParameter("content"),request.getParameter("self"),request.getParameter("comparison"),request.getParameter("summary"),request.getParameter("automatic"),sdate);
+        boolean flag= ReflectiveService.save(username,request.getParameter("title"),request.getParameter("content"),request.getParameter("self"),request.getParameter("comparison"),request.getParameter("summary"),request.getParameter("automatic"),sdate);
         PrintWriter out= null;
         try {
             out = response.getWriter();

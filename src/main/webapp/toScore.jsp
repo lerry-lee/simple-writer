@@ -16,7 +16,7 @@
 <body>
 <div style="padding: 20px 20px">
     <div>标题<input id="title" style="width: 300px;display: inline-block;margin-left: 5px" class="layui-input" type="text"
-                  placeholder="在此处添加标题有助于写作内容回馈" maxlength="16"></div>
+                  placeholder="在此处添加标题有助于写作内容回馈" maxlength="32"></div>
     <ul>
         <li>自我反思
             <div id="test0"></div>

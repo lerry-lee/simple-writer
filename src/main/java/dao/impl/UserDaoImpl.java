@@ -58,8 +58,8 @@ public class UserDaoImpl implements UserDao {
         conn = BaseDao.getconn();
         String sql = "INSERT INTO User (username,password) values (?,?)";
         String sql_create = "CREATE TABLE IF NOT EXISTS " + user.getUsername() + "_reflective" +
-                " (id int primary key auto_increment, title varchar(16), content text, self int, comparison int, summary int, automatic int, sdate char(19))DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
-        String sql_createMsg="CREATE TABLE IF NOT EXISTS "+user.getUsername()+"_messages"+" (id int primary key auto_increment, sid int, message varchar(100), isRead int(1))DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
+                " (id int primary key auto_increment, title varchar(32), content text, self int, comparison int, summary int, automatic int, sdate char(19))DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
+        String sql_createMsg="CREATE TABLE IF NOT EXISTS "+user.getUsername()+"_messages"+" (id int primary key auto_increment, sid int, message varchar(100), isRead int(1) DEFAULT 0)DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, user.getUsername());
