@@ -193,6 +193,20 @@
                 </p>
             </div>
         </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-16</h3>
+                <p>后端添加mybatis框架支持</p>
+                <p>
+                    社区页面：
+                <ul>
+                    <li>增加查询功能</li>
+                    <li>增加按类别快速查找</li>
+                </ul>
+                </p>
+            </div>
+        </li>
     </ul>
 </div>
 </body>
