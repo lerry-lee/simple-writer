@@ -15,7 +15,7 @@
 <div class="div-footer">
     <hr>
     <div>
-        <div class="loader font4">
+        <div class="loader font4" style="margin-left: 160px">
             <span>I</span>
             <span>&nbsp&nbsp</span>
             <span class="span2">a</span>

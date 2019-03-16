@@ -7,7 +7,7 @@ $(document).keypress(function (e) {
 layui.use('layer', function () {
     var layer = layui.layer;
     var username = '', password = '';
-    //登录函数
+    //登录请求
     $("#login").click(function () {
 
         username = $(" input[ name='username' ] ").val();
@@ -24,12 +24,12 @@ layui.use('layer', function () {
                 "password": password
             },
             function (rst) {
-                if (rst == '0') {
+                if (rst == 0) {
                     layer.msg('用户名或密码错误');
                     return;
                 } else {
                     $.get(
-                        'updateVisits',
+                        'addVisits',
                         function () {
                             window.location.href = 'home.jsp';
                         }

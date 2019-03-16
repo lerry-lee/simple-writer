@@ -17,22 +17,22 @@ layui.use(['layer', 'flow', 'util'], function () {
                         type: 2,
                         offset: '200px',
                         shade: 0.5,
-                        title: '这篇文章的评论都在下面了哦',
+                        title: '这篇帖子的评论都在下面了哦',
                         area: ['600px', '600px'],
                         content: 'toComment.jsp?sid=' + sid+'&title='+title+'&author='+author,
-                        success: function (layero, index) {
+                    /*    success: function (layero, index) {
                             //注意这里的#sid是iframe页面中的一个标签id
                             var jquerySendHelloButton = $("#params", layero.find("iframe")[0].contentWindow.document);
                             jquerySendHelloButton.attr("sid", sid);
                             jquerySendHelloButton.attr("title", title);
                             jquerySendHelloButton.attr("author", author);
-                        }
+                        }*/
                     });
                 });
             }
         }
     });
-    flow.load({
+    flow_my.load({
         elem: '#main-listing' //流加载容器
         , isAuto: false
         , scrollElem: '#main-listing' //滚动条所在元素，一般不用填，此处只是演示需要。
@@ -40,7 +40,7 @@ layui.use(['layer', 'flow', 'util'], function () {
             //模拟数据插入
             var lis = [];
             $.get(
-                'queryMyShare',
+                'queryMyPosts',
                 {'page': page},
                 function (rst) {
                     map = JSON.parse(rst);

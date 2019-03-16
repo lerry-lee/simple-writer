@@ -36,13 +36,13 @@
                 <option value="Research Abstract/Intro" selected="">Research Abstract/Intro</option>
                 <option value="Analytical Accounting">Analytical Accounting</option>
                 <option value="Pharmacy">Pharmacy</option>
-                <option value="Pharmacy">其他</option>
+                <option value="Others">其他</option>
             </select>
         </div>
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <input type="button" class="layui-btn" id="to-share" value="立即分享"/>
+            <input type="button" class="layui-btn" id="to-share" value="提交"/>
         </div>
     </div>
 </form>

@@ -20,19 +20,33 @@
 </head>
 <body>
 <div style="padding-left: 160px">
-    <div style="height: 100px;background-color: #d1ecf1;">
-        <ul class="layui-nav" style="text-align: right;height: 80px;padding: 50px 50px">
+    <div style="height: 200px;background-color: #d1ecf1;">
+        <ul class="layui-nav" style="text-align: right;height: 50px;padding: 10px 50px">
             <li class="layui-nav-item">
-                <a href="community.jsp">所有帖子</a>
+                <a id="allPosts">所有帖子</a>
             </li>
             <li class="layui-nav-item" style="margin-left: 30px">
-                <a href="myposts.jsp">我的帖子</a>
+                <a id="myPosts">我的帖子</a>
             </li>
             <li class="layui-nav-item" style="margin-left: 30px">
                 <a href="messages.jsp">消息中心<span class="layui-badge-dot"></span></a>
             </li>
         </ul>
+        <div >
+            <input class="layui-input" id="key_words" placeholder="输入标题或者内容中的关键词进行查找">
+            <button class="layui-btn-primary" id="search_posts" category="All" author="All">搜索</button>
+        </div>
+
+        <span class="layui-breadcrumb" lay-separator="|">
+            <a name="choose_category" category="All">All</a>
+            <a name="choose_category" category="Civil Law Essay">Civil Law Essay</a>
+            <a name="choose_category" category="Research Abstract/Intro">Research Abstract/Intro</a>
+             <a name="choose_category" category="Analytical Accounting">Analytical Accounting</a>
+             <a name="choose_category" category="Pharmacy">Pharmacy</a>
+             <a name="choose_category" category="Others">Others</a>
+        </span>
     </div>
+
     <div class="container">
         <div class="row">
             <!-- start of page content -->
@@ -47,7 +61,7 @@
                         <div class="post-meta clearfix">
                             <span class="date">25 Feb, 2013</span>
                             <span class="category">Server &amp; Database</span>
-                            <span class="comments"><a name="to-comments" sid="2">3 Comments</a></span>
+                            <span class="comments"><a name="to-comments" sid="2" author="lerry">3 Comments</a></span>
                             <span class="by-author">system</span>
                         </div>
                         <hr class="layui-bg-gray">
@@ -62,9 +76,12 @@
                     </p>
 
                 </article>
-
+                <div id="posts_list"></div>
             </div>
         </div>
+    </div>
+
+    <div id="posts_demo">
     </div>
 </div>
 </body>

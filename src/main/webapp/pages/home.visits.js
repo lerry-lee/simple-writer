@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+$(function () {
    $.get(
        'getVisits',
        function (rst){

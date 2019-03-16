@@ -11,7 +11,7 @@ layui.use(['layer','form'],function () {
         }
 
         $.post(
-            'saveShare',
+            'savePosts',
             {
                 'content': content,
                 'title': share_title,

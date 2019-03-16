@@ -59,7 +59,7 @@ layui.use(['rate', 'layer'], function () {
             layer.msg('请全部评分后再提交哦');
         } else {
             $.post(
-                'saveReflectiveScore',
+                'saveReflective',
                 {
                     'title': title,
                     'content': content,

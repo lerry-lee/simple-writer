@@ -27,10 +27,10 @@ layui.use('layer', function () {
         }
         if (ulegal) {
             $.get(
-                'checkUsernameExist',
+                'checkUsername',
                 {'username': username},
                 function (rst) {
-                    if (rst == '0')
+                    if (rst == 0)
                         $('#uValidation').css('opacity', '1');
                     else
                         $('#error-umsg').html('用户名已存在');
@@ -72,7 +72,7 @@ layui.use('layer', function () {
             $('#pvValidation').css('opacity', '1');
     });
 
-
+    //注册请求
     $('#register').click(function () {
         if(ulegal&&plegal) {
             var username = $('#username').val();
@@ -85,7 +85,7 @@ layui.use('layer', function () {
                     'password': password
                 },
                 function (rst) {
-                    if (rst == '1') {
+                    if (rst == 1) {
                         layer.msg('注册成功！即将跳转登录页面');
                         setTimeout(function () {
                             window.location.href = 'login.jsp';

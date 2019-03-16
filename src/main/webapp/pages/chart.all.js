@@ -9,7 +9,7 @@ layui.use(['table', 'laydate'], function () {
     table.render({
         elem: '#demo',
         height: 312,
-        url: 'getAllReflectiveTitle',
+        url: 'getTitle',
         page: true,
         cols: [[
             {field: 'id', title: 'ID',align:'center', width: 100, unresize: true, sort: true, fixed: 'left'},
@@ -47,15 +47,15 @@ layui.use(['table', 'laydate'], function () {
     $('#title-search').click(function () {
         var title = $("#title-input").val();
         var date_time = $("#date-time").val();
-        var startDate = date_time.substring(0, 19);
-        var endDate = date_time.substring(22, 41);
-
+        var start_date = date_time.substring(0, 19);
+        var end_date = date_time.substring(22, 41);
+        如何进行前端调试
         table.reload('demo', {
             url: 'fuzzyQuery',
             where: {
                 "title": title,
-                "startDate": startDate,
-                "endDate": endDate,
+                "start_date": start_date,
+                "end_date": end_date,
             }
         });
     });

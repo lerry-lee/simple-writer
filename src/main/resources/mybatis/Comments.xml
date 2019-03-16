@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.writer1.entity">
+    <insert id="addComments" parameterType="Comments">
+        insert into comments (sid,comment,cdate,commentator)
+        values(#{sid},#{comment},#{cdate},#{commentator})
+    </insert>
+    <select id="queryComments" parameterType="int" resultType="Comments">
+        select comment,cdate,commentator from comments where sid=#{sid}
+    </select>
+</mapper>

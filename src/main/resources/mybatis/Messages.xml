@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.writer1.entity">
+    <insert id="addMessages" parameterType="java.util.Map">
+        insert into ${tableName} (sid,message,comment)
+        values (#{sid},#{message},#{comment})
+    </insert>
+    <select id="queryMessages" parameterType="java.util.Map" resultType="Messages">
+        select sid,comment,message from ${tableName} where isRead=0
+    </select>
+</mapper>
