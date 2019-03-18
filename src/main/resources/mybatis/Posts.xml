@@ -19,7 +19,7 @@
     <select id="fuzzyQueryPosts" parameterType="java.util.Map" resultType="Posts">
         select id,author,sdate,category,content,title,totalComments from posts
         <where>
-            <if test="key_words!=null">
+            <if test="key_words!=''">
                 and (title like concat('%',#{key_words},'%')
                 or content like concat('%',#{key_words},'%'))
             </if>

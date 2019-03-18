@@ -12,29 +12,27 @@
     <title>社区-Acawriter</title>
     <!-- Style Sheet-->
     <link rel="stylesheet" href="css/community/style.css"/>
-    <link rel="stylesheet" href="plugins/layui/css/layui.min.css">
-    <script src="plugins/layui/layui.min.js"></script>
     <script src="plugins/readmore.js"></script>
     <script src="pages/community.all.js"></script>
 
 </head>
 <body>
 <div style="padding-left: 160px">
-    <div style="height: 200px;background-color: #d1ecf1;">
-        <ul class="layui-nav" style="text-align: right;height: 50px;padding: 10px 50px">
-            <li class="layui-nav-item">
-                <a id="allPosts">所有帖子</a>
-            </li>
-            <li class="layui-nav-item" style="margin-left: 30px">
-                <a id="myPosts">我的帖子</a>
-            </li>
-            <li class="layui-nav-item" style="margin-left: 30px">
-                <a href="messages.jsp">消息中心<span class="layui-badge-dot"></span></a>
-            </li>
-        </ul>
-        <div >
-            <input class="layui-input" id="key_words" placeholder="输入标题或者内容中的关键词进行查找">
-            <button class="layui-btn-primary" id="search_posts" category="All" author="All">搜索</button>
+    <ul class="layui-nav" lay-filter="" style="text-align: right;height: 40px;padding: 5px 0">
+        <li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>
+        <li class="layui-nav-item"><a id="myPosts">我的发布</a></li>
+        <%--<li class="layui-nav-item">--%>
+            <%--<a>消息中心</a>--%>
+            <%--<dl class="layui-nav-child"> <!-- 二级菜单 -->--%>
+                <%--<dd><a href="">系统消息<span class="layui-badge-dot" style="visibility: hidden"></span></a></dd>--%>
+                <%--<dd><a href="messages.jsp">评论我的<span class="layui-badge-dot" style="visibility: visible"></span></a></dd>--%>
+            <%--</dl>--%>
+        <%--</li>--%>
+    </ul>
+    <div style="background-image: url('css/img/home-bg3.jpg');height: 120px;text-align: center;padding-top: 30px">
+        <div style="margin-bottom: 10px;padding: 0px 40px">
+            <input class="layui-input" id="key_words" placeholder="输入关键词进行查找" style="background-color: transparent;border: 0.01px solid whitesmoke;display: inline;margin-right: 20px">
+            <button class="layui-btn" id="search_posts" category="All" author="All">搜索</button>
         </div>
 
         <span class="layui-breadcrumb" lay-separator="|">
@@ -81,7 +79,7 @@
         </div>
     </div>
 
-    <div id="posts_demo">
+    <div id="posts_demo" style="text-align: center">
     </div>
 </div>
 </body>

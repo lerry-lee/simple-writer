@@ -11,26 +11,22 @@
 <head>
     <title>消息中心-社区</title>
     <link rel="stylesheet" href="css/community/style.css"/>
-    <link rel="stylesheet" href="plugins/layui/css/layui.min.css">
-    <script src="plugins/layui/layui.min.js"></script>
     <script src="plugins/readmore.js"></script>
     <script src="pages/messages.all.js"></script>
 </head>
 <body>
 <div style="padding-left: 160px">
-    <div style="height: 100px;background-color: #d1ecf1;">
-        <ul class="layui-nav" style="text-align: right;height: 80px;padding: 50px 50px">
-            <li class="layui-nav-item">
-                <a href="community.jsp">所有帖子</a>
-            </li>
-            <li class="layui-nav-item" style="margin-left: 30px">
-                <a href="myposts.jsp">我的帖子</a>
-            </li>
-            <li class="layui-nav-item" style="margin-left: 30px">
-                <a href="messages.jsp">消息中心<span class="layui-badge-dot"></span></a>
-            </li>
-        </ul>
-    </div>
+    <%--<ul class="layui-nav" lay-filter="" style="background-image:url('css/img/community.jpg');text-align: center;height: 40px;padding: 5px 0">--%>
+        <%--<li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>--%>
+        <%--<li class="layui-nav-item"><a id="myPosts">我的发布</a></li>--%>
+        <%--<li class="layui-nav-item">--%>
+            <%--<a>消息中心</a>--%>
+            <%--<dl class="layui-nav-child"> <!-- 二级菜单 -->--%>
+                <%--<dd><a href="">系统消息<span class="layui-badge-dot" style="visibility: hidden"></span></a></dd>--%>
+                <%--<dd><a href="messages.jsp">评论我的<span class="layui-badge-dot" style="visibility: visible"></span></a></dd>--%>
+            <%--</dl>--%>
+        <%--</li>--%>
+    <%--</ul>--%>
     <div class="layui-collapse" id="messages">
         <%--<div class="layui-colla-item">
             <h2 class="layui-colla-title">系统消息</h2>

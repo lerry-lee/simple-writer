@@ -49,7 +49,6 @@ layui.use(['table', 'laydate'], function () {
         var date_time = $("#date-time").val();
         var start_date = date_time.substring(0, 19);
         var end_date = date_time.substring(22, 41);
-        如何进行前端调试
         table.reload('demo', {
             url: 'fuzzyQuery',
             where: {

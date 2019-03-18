@@ -17,10 +17,10 @@
     <select id="fuzzyQueryReflective" parameterType="java.util.Map" resultType="Reflective">
         select id,title,content,sdate from ${tableName}
         <where>
-            <if test="title!=null">
+            <if test="title!=''">
                 and title like concat('%',#{title},'%')
             </if>
-            <if test="start_date!=null">
+            <if test="start_date!=''">
                 and sdate between #{start_date} and #{end_date}
             </if>
         </where>

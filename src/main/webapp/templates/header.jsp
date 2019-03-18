@@ -17,76 +17,26 @@
     <script src="pages/header.all.js"></script>
 </head>
 
-<style>
-    nav {
-        top: 0vh;
-        bottom: 0vh;
-        text-align: center;
-        background: #202932;
-        position: fixed;
-        z-index: 100;
-        height: 100vh;
-        left: 0;
-        width: 160px;
-        font-weight: 300;
-        font-size: 20px;
-        color: whitesmoke;
-    }
-
-    nav ul {
-        margin-top: 60px;
-        text-align: center;
-        list-style-type: none;
-        height: 40vh;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    nav ul li a {
-        color: whitesmoke;
-        text-decoration: none !important;
-        font-size: 20px;
-        letter-spacing: 0.5px;
-        position: relative;
-        z-index: 0;
-    }
-
-    nav a:hover {
-        color: white;
-    }
-
-</style>
 
 <body>
 
-<nav style="font-family: Arial;padding-top: 100px">
-
-    <div class="layui-anim"><i class="layui-icon" id="user-icon"
-                               style="color: whitesmoke;font-size: 50px;cursor:pointer">&#xe612;</i></div>
-    <div id="user" style="color: whitesmoke;font-size: 14px;height: 16px"></div>
-    <a id="logout" style="visibility: hidden;color:grey;cursor:pointer">登出</a>
-
-    <ul>
-        <li><a href="home.jsp"><i class="home-header icon-offset"></i>首页</a>
-        </li>
-        <li>
-            <a href="analyse.jsp"><i class="analyse-header icon-offset"></i>写作</a>
-        </li>
-        <li><a href="chart.jsp"><i class="chart-header icon-offset"></i>图表</a>
-        </li>
-        <li>
-            <a href="community.jsp" id="developing" style="cursor:pointer">
-                <i class="develop-header icon-offset"></i>社区</a>
-        </li>
-        <li><a href="motto.jsp">Motto</a>
-        </li>
-    </ul>
-</nav>
+<ul class="layui-nav layui-nav-tree layui-nav-side" style="padding: 20vh 0px;text-align: center;/*background-color: #202932;*/">
+    <li class="layui-nav-item" style="height: 85px;margin-bottom: 40px">
+        <a id="user" style="line-height: 50px;cursor:pointer"><i class="layui-icon" id="user-icon" style="color: whitesmoke;font-size: 50px;">&#xe612;</i>
+        </a>
+        <dl class="layui-nav-child" style="text-align: center">
+            <dd><a href="messages.jsp">消息</a> </dd>
+            <dd><a id="logout" style="cursor: pointer">登出</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="home.jsp">首页</a>
+    </li>
+    <li class="layui-nav-item"><a href="analyse.jsp">写作</a></li>
+    <li class="layui-nav-item"><a href="chart.jsp">报表</a></li>
+    <li class="layui-nav-item"><a href="community.jsp">社区</a>
+    </li>
+    <li class="layui-nav-item"><a href="motto.jsp" style="margin-top: 40px">Motto</a></li>
+</ul>
 </body>
 </html>

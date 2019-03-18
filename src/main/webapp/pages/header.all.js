@@ -1,6 +1,6 @@
-layui.use(['layer'], function () {
+layui.use(['layer','element'], function () {
     var layer = layui.layer;
-
+    var element=layui.element;
     $.get(
         'getUsername',
         function (user) {
@@ -15,7 +15,7 @@ layui.use(['layer'], function () {
                     }
                 });
             } else
-                $('#user').html(user);
+                $('#user').append(user);
         }
     );
 

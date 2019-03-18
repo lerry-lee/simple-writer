@@ -3492,8 +3492,8 @@ body .layui-table-tips .layui-layer-content {
 .layui-nav {
     /*text-align: right;*/
     position:relative;
-    /*padding: 0 20px;*/
-    background-color: #02061e;
+    padding: 0 20px;
+    background-color: #23262e;
     color: #fff;
     font-size: 0;
     box-sizing: border-box
@@ -3514,7 +3514,7 @@ body .layui-table-tips .layui-layer-content {
 
 .layui-nav .layui-nav-item a {
     display: block;
-    /*padding: 0 20px;*/
+    padding: 0 20px;
     color: #fff;
     color: rgba(255, 255, 255, .7);
     transition: all .3s;
@@ -3527,7 +3527,7 @@ body .layui-table-tips .layui-layer-content {
     top: 0;
     width: 0;
     height: 5px;
-    background-color: #5FB878;
+    /*background-color: #5FB878;*/
     transition: all .2s;
     -webkit-transition: all .2s
 }
@@ -3583,7 +3583,7 @@ body .layui-table-tips .layui-layer-content {
     display: none;
     position: absolute;
     left: 0;
-    top: 85px;
+    top: 40px;
     min-width: 100%;
     line-height: 36px;
     padding: 5px 0;
@@ -3618,7 +3618,7 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav-tree {
-    width: 200px;
+    width: 160px;
     padding: 0
 }
 
@@ -3630,8 +3630,8 @@ body .layui-table-tips .layui-layer-content {
 
 .layui-nav-tree .layui-nav-item a {
     position: relative;
-    height: 45px;
-    line-height: 45px;
+    height: 50px;
+    /*line-height: 45px;*/
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap
@@ -3725,11 +3725,11 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-breadcrumb a {
-    color: #999 !important
+    color: whitesmoke !important
 }
 
 .layui-breadcrumb a:hover {
-    color: #5FB878 !important
+    color: skyblue !important
 }
 
 .layui-breadcrumb a cite {
