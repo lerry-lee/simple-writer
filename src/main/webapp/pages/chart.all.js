@@ -50,7 +50,7 @@ layui.use(['table', 'laydate'], function () {
         var start_date = date_time.substring(0, 19);
         var end_date = date_time.substring(22, 41);
         table.reload('demo', {
-            url: 'fuzzyQuery',
+            url: 'fuzzyQueryReflective',
             where: {
                 "title": title,
                 "start_date": start_date,
@@ -64,8 +64,9 @@ layui.use(['table', 'laydate'], function () {
         'getScore',
         function (rst) {
             var data = JSON.parse(rst);
-            var sdate_row1 = data[0][1];
-            if (sdate_row1 == undefined) {
+
+            var id_row1 = data[0][1];
+            if (id_row1 == undefined) {
                 layer.msg('还没有数据哦，快去写作和评分吧', {offset: '200px'});
                 return;
             }
@@ -105,12 +106,12 @@ layui.use(['table', 'laydate'], function () {
                             radius: '40%',
                             center: ['50%', '25%'],
                             label: {
-                                formatter: '{b}: {@' + data[0][1] + '} ({d}%)'
+                                formatter: '{b}: {@' + id_row1 + '} ({d}%)'
                             },
                             encode: {
-                                itemName: "sdate",
-                                value: data[0][1],
-                                tooltip: data[0][1]
+                                itemName: 'id',
+                                value: id_row1,
+                                tooltip: id_row1
                             }
                         }
                     ]

@@ -3490,7 +3490,6 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav {
-    /*text-align: right;*/
     position:relative;
     padding: 0 20px;
     background-color: #23262e;
@@ -3583,7 +3582,7 @@ body .layui-table-tips .layui-layer-content {
     display: none;
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 60px;
     min-width: 100%;
     line-height: 36px;
     padding: 5px 0;

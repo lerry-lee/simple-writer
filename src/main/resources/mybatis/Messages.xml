@@ -6,6 +6,15 @@
         values (#{sid},#{message},#{comment})
     </insert>
     <select id="queryMessages" parameterType="java.util.Map" resultType="Messages">
-        select sid,comment,message from ${tableName} where isRead=0
+        select id,comment,message from ${tableName} where isRead=0
+    </select>
+    <update id="readMessages" parameterType="java.util.Map">
+        update ${tableName} set isRead=1 where id= #{id}
+    </update>
+    <update id="readAllMessages" parameterType="java.util.Map">
+        update ${tableName} set isRead=1 where isRead=0
+    </update>
+    <select id="countNotRead" parameterType="java.util.Map" resultType="int">
+        select count(id) from ${tableName} where isRead=0
     </select>
 </mapper>

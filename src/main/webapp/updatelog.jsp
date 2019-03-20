@@ -207,6 +207,21 @@
                 </p>
             </div>
         </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-20</h3>
+                <p>后端添加SpringMVC框架支持</p>
+                <p>
+                    社区：
+                <ul>
+                    <li>增加消息数量提示</li>
+                    <li>增加消息已读处理</li>
+                    <li>解决动态添加的元素无法应用JS事件的BUG</li>
+                </ul>
+                </p>
+            </div>
+        </li>
     </ul>
 </div>
 </body>

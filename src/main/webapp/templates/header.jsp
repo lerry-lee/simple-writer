@@ -25,7 +25,6 @@
         <a id="user" style="line-height: 50px;cursor:pointer"><i class="layui-icon" id="user-icon" style="color: whitesmoke;font-size: 50px;">&#xe612;</i>
         </a>
         <dl class="layui-nav-child" style="text-align: center">
-            <dd><a href="messages.jsp">消息</a> </dd>
             <dd><a id="logout" style="cursor: pointer">登出</a></dd>
         </dl>
     </li>

@@ -70,23 +70,27 @@ public class ReflectiveService {
         List<Object> l3=new ArrayList<>();
         List<Object> l4=new ArrayList<>();
         List<Object> l5=new ArrayList<>();
-        l1.add("sdate");
+
+        l1.add("id");
         l2.add("self");
         l3.add("comparison");
         l4.add("summary");
         l5.add("automatic");
+
         list.add(l1);
         list.add(l2);
         list.add(l3);
         list.add(l4);
         list.add(l5);
+
         List<Reflective> reflectiveList=reflectiveDao.queryScore(map);
         for(Reflective r:reflectiveList){
-            list.get(0).add(r.getSdate());
+            list.get(0).add(String.valueOf(r.getId()));
             list.get(1).add(r.getSelf());
             list.get(2).add(r.getComparison());
             list.get(3).add(r.getSummary());
             list.get(4).add(r.getAutomatic());
+
         }
         return ToJson.toJson(list);
     }

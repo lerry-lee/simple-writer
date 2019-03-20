@@ -21,10 +21,37 @@ public class MessagesDaoImpl implements MessagesDao {
     }
 
     @Override
-    public List<Messages> query(Map<String, String> map) throws IOException {
+    public List<Messages> query(Map<String, Object> map) throws IOException {
         session=BaseDao.getSession();
         List<Messages> list=session.selectList("queryMessages",map);
         BaseDao.commitAndClose(session);
         return list;
+    }
+
+    @Override
+    public boolean read(Map<String, Object> map) throws IOException {
+        flag=false;
+        session=BaseDao.getSession();
+        if(session.update("readMessages",map)>0) flag=true;
+        BaseDao.commitAndClose(session);
+        return flag;
+    }
+
+    @Override
+    public boolean readAll(Map<String, Object> map) throws IOException {
+        flag=false;
+        session=BaseDao.getSession();
+        if(session.update("readAllMessages",map)>0) flag=true;
+        BaseDao.commitAndClose(session);
+        return flag;
+    }
+
+    @Override
+    public int count(Map<String, Object> map) throws IOException {
+        flag=false;
+        session=BaseDao.getSession();
+        int total=session.selectOne("countNotRead",map);
+        BaseDao.commitAndClose(session);
+        return total;
     }
 }

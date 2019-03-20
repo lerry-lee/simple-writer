@@ -8,5 +8,8 @@ import java.util.Map;
 
 public interface MessagesDao {
     public boolean save(Map<String,Object> map) throws IOException;
-    public List<Messages> query(Map<String,String> map) throws IOException;
+    public List<Messages> query(Map<String,Object> map) throws IOException;
+    public boolean read(Map<String,Object> map) throws IOException;
+    public boolean readAll(Map<String,Object> map) throws IOException;
+    public int count(Map<String,Object> map) throws IOException;
 }

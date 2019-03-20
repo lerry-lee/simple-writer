@@ -18,23 +18,25 @@
 </head>
 <body>
 <div style="padding-left: 160px">
-    <ul class="layui-nav" lay-filter="" style="text-align: right;height: 40px;padding: 5px 0">
-        <li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>
-        <li class="layui-nav-item"><a id="myPosts">我的发布</a></li>
-        <%--<li class="layui-nav-item">--%>
-            <%--<a>消息中心</a>--%>
-            <%--<dl class="layui-nav-child"> <!-- 二级菜单 -->--%>
-                <%--<dd><a href="">系统消息<span class="layui-badge-dot" style="visibility: hidden"></span></a></dd>--%>
-                <%--<dd><a href="messages.jsp">评论我的<span class="layui-badge-dot" style="visibility: visible"></span></a></dd>--%>
-            <%--</dl>--%>
-        <%--</li>--%>
-    </ul>
-    <div style="background-image: url('css/img/home-bg3.jpg');height: 120px;text-align: center;padding-top: 30px">
-        <div style="margin-bottom: 10px;padding: 0px 40px">
-            <input class="layui-input" id="key_words" placeholder="输入关键词进行查找" style="background-color: transparent;border: 0.01px solid whitesmoke;display: inline;margin-right: 20px">
+
+     <ul class="layui-nav" lay-filter="" style="text-align: right;height: 60px;padding: 10px 10px;">
+         <li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>
+         <li class="layui-nav-item"><a id="myPosts">我的发布</a></li>
+         <li class="layui-nav-item">
+             <a>消息中心</a>
+             <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                 <dd><a id="systemMessages">系统消息<span class="layui-badge">1</span></a></dd>
+                 <dd><a href="messages.jsp">评论我的<span class="layui-badge" id="totalMessages"></span></a></dd>
+             </dl>
+         </li>
+     </ul>
+
+    <div style="background-image:url('css/img/community.jpg');height: 100px;text-align: center;padding-top: 40px">
+        <div style="margin-bottom: 25px">
+            <input class="layui-input" id="key_words" placeholder="输入关键词进行查找"
+                   style="background-color: transparent;border: 0.01px solid whitesmoke;display: inline;margin-right: 20px">
             <button class="layui-btn" id="search_posts" category="All" author="All">搜索</button>
         </div>
-
         <span class="layui-breadcrumb" lay-separator="|">
             <a name="choose_category" category="All">All</a>
             <a name="choose_category" category="Civil Law Essay">Civil Law Essay</a>

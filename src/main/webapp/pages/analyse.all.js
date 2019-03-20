@@ -2,16 +2,17 @@ $(function () {
     $.get(
         'queryReport',
         function (rst) {
-            $('#txt').html(rst);
+            if (rst != 'null')
+                $('#txt').html(rst);
         }
     );
 });
 
-layui.use(['layedit', 'util', 'layer','form'], function () {
+layui.use(['layedit', 'util', 'layer', 'form'], function () {
     var util = layui.util;
     var layer = layui.layer;
     var layedit = layui.layedit;
-    var form=layui.form;
+    var form = layui.form;
     //构建一个默认的编辑器
     var index = layedit.build('txt');
     //固定块
@@ -104,7 +105,7 @@ layui.use(['layedit', 'util', 'layer','form'], function () {
             });
 
             $.post(
-                'sendHttpPostJson',
+                'getFeedback',
                 {
                     'param_json': data,
                     'feature': feature
@@ -160,5 +161,30 @@ layui.use(['layedit', 'util', 'layer','form'], function () {
 
         }
     );
+    $('#tips-analyticalReport').click(function () {
+        layer.tips('Report分析结果在这里哦', '#to-analyticalReport', {
+            tips: 3
+        });
+    });
+    $('#tips-feedback').click(function () {
+        layer.tips('Feedback结果在这里哦', '#to-feedback', {
+            tips: 3
+        });
+    });
+    $('#tips-examples').click(function () {
+        layer.tips('Examples结果在这里哦', '#to-examples', {
+            tips: 3
+        });
+    });
+    $('#tips-resources').click(function () {
+        layer.tips('Resources结果在这里哦', '#to-resources', {
+            tips: 3
+        });
+    });
+    $('#tips-tips').click(function () {
+        layer.tips('Tips结果在这里哦', '#to-tips', {
+            tips: 3
+        });
+    });
 });
 

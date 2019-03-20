@@ -12,7 +12,7 @@
         select id,title,content,sdate from ${tableName}
     </select>
     <select id="queryReflectiveScore"  parameterType="java.util.Map" resultType="Reflective">
-        select self,comparison,summary,automatic,sdate from ${tableName}
+        select id,self,comparison,summary,automatic from ${tableName}
     </select>
     <select id="fuzzyQueryReflective" parameterType="java.util.Map" resultType="Reflective">
         select id,title,content,sdate from ${tableName}

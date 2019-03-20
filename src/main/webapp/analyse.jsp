@@ -63,8 +63,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
         <div class="layui-card">
             <div class="layui-card-header" id="to-analyticalReport">
                 Analytical Report
@@ -157,6 +155,7 @@
                     </div>
                 </div>
             </div>
+        </div>
             <div class="layui-card">
                 <div class="layui-card-header" id="to-feedback">
                     Feedback
@@ -333,12 +332,12 @@
 <div style="position:fixed;height:300px;width:100px;z-index: 100; top: 40vh; right: 2vw;text-align: center">
     <div class="layui-layer-title">导航</div>
     <div class="layui-layer-content" style="background-color: white">
-        <ul>
-            <li><a href="#to-analyticalReport"><cite>查看分析</cite></a></li>
-            <li><a href="#to-feedback"><cite>查看反馈</cite></a></li>
-            <li id="r-examples" style="display: none"><a href="#to-examples"><cite>查看示例</cite></a></li>
-            <li id="r-tips" style="display: none"><a href="#to-tips"><cite>查看提示</cite></a></li>
-            <li id="r-resources" style="display: none"><a href="#to-resources"><cite>查看资源</cite></a></li>
+        <ul style="padding: 10px 0">
+            <li><a id="tips-analyticalReport" href="#to-analyticalReport"><cite>查看分析</cite></a></li>
+            <li><a id="tips-feedback" href="#to-feedback"><cite>查看反馈</cite></a></li>
+            <li id="r-examples" style="display: none"><a id="tips-examples" href="#to-examples"><cite>查看示例</cite></a></li>
+            <li id="r-tips" style="display: none"><a id="tips-tips" href="#to-tips"><cite>查看提示</cite></a></li>
+            <li id="r-resources" style="display: none"><a id="tips-resources" href="#to-resources"><cite>查看资源</cite></a></li>
         </ul>
     </div>
 </div>
