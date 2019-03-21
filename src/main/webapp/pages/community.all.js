@@ -6,8 +6,20 @@ layui.use(['layer', 'flow', 'util', 'element', 'laypage'], function () {
     var laypage = layui.laypage;
 
     util.fixbar({
-        css: {right: 30, bottom: 50}
+        bar1: '&#xe611;'
+        , css: {right: 30, bottom: 50}
         , bgcolor: '#393D49;width:36px;height:36px;font-size:32px;line-height:36px'
+        , click: function (type) {
+            if (type === 'bar1') {
+                layer.open({
+                    type: 2,
+                    offset: '200px',
+                    title: '编辑帖子分享到社区',
+                    area: ['600px', '550px'],
+                    content: 'toShare.jsp'
+                });
+            }
+        }
     });
 
     $.get(
@@ -258,7 +270,7 @@ layui.use(['layer', 'flow', 'util', 'element', 'laypage'], function () {
             ,btn: ['火速围观', '残忍拒绝']
             ,btnAlign: 'c'
             ,moveType: 1 //拖拽模式，0或者1
-            ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">该项目在Github同步维护<br>如需学习或者贡献请访问</div>'
+            ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">该项目在Github同步维护<br>如需访问请前往</div>'
             ,success: function(layero){
                 var btn = layero.find('.layui-layer-btn');
                 btn.find('.layui-layer-btn0').attr({

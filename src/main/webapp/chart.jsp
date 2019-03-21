@@ -10,7 +10,7 @@
 
 <html>
 <head>
-    <title>图表-Acawriter</title>
+    <title>报表-Acawriter</title>
     <script src="plugins/echarts/echarts.common.min.js"></script>
     <script src="pages/chart.all.js"></script>
 </head>

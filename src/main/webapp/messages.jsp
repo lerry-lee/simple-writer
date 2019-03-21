@@ -9,19 +9,28 @@
 <%@include file="templates/header.jsp" %>
 <html>
 <head>
-    <title>消息中心-社区</title>
+    <title>评论我的-社区</title>
     <link rel="stylesheet" href="css/community/style.css"/>
     <script src="plugins/readmore.js"></script>
     <script src="pages/messages.all.js"></script>
 </head>
-<body>
+<body style="background-color: #F2F2F2">
 <div style="padding-left: 160px;">
-    <div style="padding: 10px 10px"><i class="layui-icon" id="makeMessagesRead" style="cursor:pointer;font-size: 20px">&#xe756;</i></div>
-    <div class="layui-collapse" id="messages">
-        <%--<div class="layui-colla-item">
-            <h2 class="layui-colla-title">系统消息</h2>
-            <div class="layui-colla-content">欢迎来到Acawriter</div>
-        </div>--%>
+
+    <div style="padding: 20px; background-color: #F2F2F2;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="layui-icon" id="makeMessagesRead"
+                                                      style="cursor:pointer;font-size: 20px">&#xe756;</i>所有消息
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-collapse" id="messages">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

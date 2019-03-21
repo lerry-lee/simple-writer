@@ -213,7 +213,7 @@ body .register_fields__submit input:hover {
           transition-duration: .2s;
 }
 .error{
-  color: darkred;
+  color: red;
   padding-left: 30px;
 }
 

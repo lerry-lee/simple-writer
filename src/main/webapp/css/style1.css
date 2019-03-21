@@ -154,7 +154,8 @@ h5 {
     color: #333333;
 }
 
-.fa.fa.fa-thumbs-up.text-success {
+
+.fa.fa.fa-thumbs-up.text-success,.fa.fa-2x.fa-check-circle-o.text-success {
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -201,6 +202,12 @@ h5 {
     display: inline-block;
     width: 18px;
     height: 18px;
+}
+
+.youxiang{
+    bottom: -10px;
+    background-image: url("icon/youxiang1.png");
+    background-size: cover;
 }
 
 .home-header {

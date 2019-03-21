@@ -11,11 +11,12 @@
 <head>
     <title>更新日志-AcaWriter</title>
 </head>
-<body style="background-color: #F2F2F2">
+<body>
 <div style="padding-left: 180px">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
         <legend>更新日志</legend>
     </fieldset>
+
     <ul class="layui-timeline">
         <li class="layui-timeline-item">
             <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
@@ -222,7 +223,31 @@
                 </p>
             </div>
         </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-21</h3>
+                <p>增加关于页面，展示AcaWriter接口的信息</p>
+                <p>关于页面增加联系我们功能，可以向作者提出建议或意见</p>
+                <p>
+                    写作：
+                <ul>
+                    <li>增加报告分析</li>
+                    <li>优化反馈样式</li>
+                    <li>当文本域为空时，选择类型可自动填充demo文本</li>
+                </ul>
+                </p>
+                <p>功能模块基本完成，接下来是性能优化阶段</p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis">&#xe63e;</i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">程序员小哥哥加紧写代码中...</div>
+            </div>
+        </li>
     </ul>
+
 </div>
 </body>
 </html>

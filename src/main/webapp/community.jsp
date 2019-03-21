@@ -61,7 +61,7 @@
                         <div class="post-meta clearfix">
                             <span class="date">25 Feb, 2013</span>
                             <span class="category">Server &amp; Database</span>
-                            <span class="comments"><a name="to-comments" sid="2" author="lerry">3 Comments</a></span>
+                            <span class="comments"><a name="to-comments" sid="23" author="lerry">0 Comments</a></span>
                             <span class="by-author">system</span>
                         </div>
                         <hr class="layui-bg-gray">
@@ -72,6 +72,46 @@
                         over,
                         and we are exhausted, and we often have very little to show for it. And we start the next .
                         . .<br>滚滚长江东逝水
+                        <br>浪花淘尽英雄
+                    </p>
+
+                </article>
+                <article class="format-standard type-post hentry clearfix">
+                    <header class="clearfix">
+                        <h3 class="post-title">
+                            Using Javascript
+                        </h3>
+                        <hr class="layui-bg-gray">
+                        <div class="post-meta clearfix">
+                            <span class="date">25 Feb, 2013</span>
+                            <span class="category">Advanced Techniques</span>
+                            <span class="comments"><a name="to-comments" sid="21" author="lerry">0 Comments</a></span>
+                            <span class="by-author">system</span>
+                        </div>
+                        <hr class="layui-bg-gray">
+                    </header>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings, rushing from one thing to another, never pausing and never ending. Then the day is over, and we are exhausted, and we often have very little to show for it. And we start the next . . . <br>滚滚长江东逝水
+                        <br>浪花淘尽英雄
+                    </p>
+
+                </article>
+                <article class="format-standard type-post hentry clearfix">
+                    <header class="clearfix">
+                        <h3 class="post-title">
+                            WordPress Site Maintenance
+                        </h3>
+                        <hr class="layui-bg-gray">
+                        <div class="post-meta clearfix">
+                            <span class="date">24 Feb, 2013</span>
+                            <span class="category">Website Dev</span>
+                            <span class="comments"><a name="to-comments" sid="22" author="lerry">0 Comments</a></span>
+                            <span class="by-author">system</span>
+                        </div>
+                        <hr class="layui-bg-gray">
+                    </header>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings, rushing from one thing to another, never pausing and never ending. Then the day is over, and we are exhausted, and we often have very little to show for it. And we start the next . . .<br>滚滚长江东逝水
                         <br>浪花淘尽英雄
                     </p>
 

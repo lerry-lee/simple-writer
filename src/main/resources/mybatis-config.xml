@@ -43,5 +43,6 @@
         <mapper resource="mybatis/Comments.xml"></mapper>
         <mapper resource="mybatis/Messages.xml"></mapper>
         <mapper resource="mybatis/Visits.xml"></mapper>
+        <mapper resource="mybatis/Contact.xml"></mapper>
     </mappers>
 </configuration>

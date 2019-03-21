@@ -12,8 +12,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="plugins/layui/css/layui.min.css" media="all">
     <link href="css/style1.css" type="text/css" rel="stylesheet"/>
-    <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="plugins/jquery.min.js"></script>
+    <script src="plugins/layui/layui.min.js" charset="utf-8"></script>
     <script src="pages/header.all.js"></script>
 </head>
 
@@ -28,13 +28,11 @@
             <dd><a id="logout" style="cursor: pointer">登出</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item">
-        <a href="home.jsp">首页</a>
-    </li>
+    <li class="layui-nav-item"><a href="home.jsp">首页</a></li>
     <li class="layui-nav-item"><a href="analyse.jsp">写作</a></li>
     <li class="layui-nav-item"><a href="chart.jsp">报表</a></li>
-    <li class="layui-nav-item"><a href="community.jsp">社区</a>
-    </li>
+    <li class="layui-nav-item"><a href="community.jsp">社区</a></li>
+    <li class="layui-nav-item"><a href="about.jsp">关于</a> </li>
     <li class="layui-nav-item"><a href="motto.jsp" style="margin-top: 40px">Motto</a></li>
 </ul>
 </body>
