@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
-import com.writer1.service.ReportService;
+import com.writer1.service.impl.ReportServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,10 +14,13 @@ import static com.writer1.utils.SendHttpPostJson.sendHttpPostJson;
 
 @Controller
 public class ReportController {
+    @Autowired
+    private ReportServiceImpl reportServiceImpl;
+
     @RequestMapping("/queryReport")
     public void queryReport(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) request.getSession().getAttribute("username");
-        printWriter(response, new ReportService().query(username));
+        printWriter(response, reportServiceImpl.query(username));
     }
 
     @RequestMapping("/saveReport")
@@ -24,7 +28,7 @@ public class ReportController {
         String username = (String) request.getSession().getAttribute("username");
         if (username == null) return;
         String content = request.getParameter("content");
-        printWriter(response, new ReportService().save(username, content));
+        printWriter(response, reportServiceImpl.save(username, content));
     }
 
     @RequestMapping("/getFeedback")

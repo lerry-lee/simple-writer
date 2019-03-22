@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.writer1.mapper.ReportMapper">
+    <insert id="insertOrUpdate" parameterType="Report">
+        insert into report (username,content) values
+        (#{username},#{content})
+        ON DUPLICATE KEY UPDATE
+        content=values(content)
+    </insert>
+    <select id="query" parameterType="string" resultType="string">
+        select content from report where username=#{username}
+    </select>
+</mapper>

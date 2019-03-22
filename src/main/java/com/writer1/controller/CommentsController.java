@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
-import com.writer1.service.CommentsService;
+import com.writer1.service.impl.CommentsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +14,8 @@ import java.util.Date;
 
 @Controller
 public class CommentsController {
+    @Autowired
+    private CommentsServiceImpl commentsService;
     @RequestMapping("/saveComments")
     public void saveComments(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int sid = Integer.parseInt(request.getParameter("sid"));
@@ -22,13 +25,13 @@ public class CommentsController {
         if (commentator == null) return;
         SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy");//设置日期格式
         String cdate = df.format(new Date());
-        printWriter(response, new CommentsService().save(sid, comment, cdate, commentator));
+        printWriter(response, commentsService.save(sid, comment, cdate, commentator));
     }
 
     @RequestMapping("/queryComments")
     public void queryComments(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int sid = Integer.parseInt(request.getParameter("sid"));
-        printWriter(response, new CommentsService().query(sid));
+        printWriter(response, commentsService.query(sid));
     }
 
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {

@@ -11,8 +11,7 @@
 <head>
     <title>评论我的-社区</title>
     <link rel="stylesheet" href="css/community/style.css"/>
-    <script src="plugins/readmore.js"></script>
-    <script src="pages/messages.all.js"></script>
+    <script src="js/messages.all.js"></script>
 </head>
 <body style="background-color: #F2F2F2">
 <div style="padding-left: 160px;">

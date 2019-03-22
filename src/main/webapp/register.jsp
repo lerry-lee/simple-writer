@@ -16,13 +16,8 @@
     <link href="css/register/css/loaders.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/layui/css/layui.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="plugins/jquery.min.js"></script>
-    <script type="text/javascript" src="css/register/js/jquery-ui.min-.js"></script>
-    <script type="text/javascript" src='css/register/js/stopExecutionOnTimeout.min.js?t=1'></script>
     <script type="text/javascript" src="plugins/layui/layui.min.js"></script>
-    <script type="text/javascript" src="css/register/js/Particleground.min.js"></script>
-    <script type="text/javascript" src="css/register/js/Treatment.min.js"></script>
-    <script type="text/javascript" src="css/register/js/jquery.mockjax-min.js"></script>
-    <script src="pages/register.all.js"></script>
+    <script src="js/register.all.js"></script>
 </head>
 <body style="background-image: url('css/img/home-bg.jpg');background-size: cover">
 <div class='register'>
@@ -64,7 +59,7 @@
         </div>
 
         <div class='register_fields__submit'>
-            <input type='button' id='to-login' value='去登陆'>
+            <a href="login.jsp"><input type='button' id='to-login' value='去登陆'></a>
         </div>
     </div>
 </div>

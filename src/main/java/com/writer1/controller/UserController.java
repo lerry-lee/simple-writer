@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
-import com.writer1.service.UserService;
+import com.writer1.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,10 +15,13 @@ import java.util.Date;
 
 @Controller
 public class UserController {
+    @Autowired
+    private UserServiceImpl userServiceImpl;
+
     @RequestMapping("/checkUsername")
     public void checkUsername(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
-        printWriter(response, new UserService().queryByUsername(username));
+        printWriter(response, userServiceImpl.queryByUsername(username));
     }
 
     @RequestMapping("/getUsername")
@@ -29,7 +33,7 @@ public class UserController {
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username"),
                 password = request.getParameter("password");
-        int result = new UserService().queryByUsernameAndPassword(username, password);
+        int result = userServiceImpl.queryByUsernameAndPassword(username, password);
         if (result > 0) {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             String sdate = df.format(new Date());
@@ -52,7 +56,7 @@ public class UserController {
     public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username"),
                 password = request.getParameter("password");
-        printWriter(response, new UserService().addUser(username, password));
+        printWriter(response, userServiceImpl.addUser(username, password));
     }
 
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {

@@ -12,8 +12,7 @@
 <html>
 <head>
     <title>写作-Acawriter</title>
-    <script src="plugins/icon-alibaba/iconfont.min.js"></script>
-    <script src="pages/analyse.all.js"></script>
+    <script src="js/analyse.all.js"></script>
 </head>
 
 
@@ -27,19 +26,23 @@
                         Demo Acawriter
                     </div>
                     <div class="layui-card-body">
-                        <div>Please keep the text short (not more than 500 words) for best results. Changing the genre
-                            will pre-populate preferred text for the Genre into the text editor. Click Get Feedback to
-                            fetch the feedback on the selected Genre.
+                        <div>Please keep the text short (not more than 500 words) for best results. Click <a
+                                style="color: #ffb800">Get Feedback</a> to
+                            fetch the feedback on the selected Genre. Click <a style="color: #009688">Score Commit</a>
+                            to save this writing and score for future backtracking
                         </div>
-                        <div><textarea id="txt" style="display: none;margin-top:10px"></textarea></div>
 
-                        <div class="layui-form" style="margin-top: 10px">
+                        <div style="margin: 20px 0"><textarea id="txt" style="display: none"></textarea></div>
 
+                        <div class="layui-form">
                             <div class="layui-form-item">
-                                <div class="layui-input-block" style="margin-left: 0"> Select a Genre &nbsp;&nbsp;(If you just want to test, empty the text field and select the type)</div>
-                                <div class="layui-input-block" style="margin-left: 0;width: 500px" id="test_select">
+                                <div class="layui-input-block" style="margin-left: 0;display:block"> Select a Genre
+                                    &nbsp;&nbsp;(Empty the text field,changing the genre
+                                    will pre-populate preferred text for the Genre into the text editor.)
+                                </div>
+                                <div class="layui-input-block" style="margin-left: 0;width: 50%" id="test_select">
                                     <select id="genre" lay-filter="genre">
-                                        <option value="0">请选择类型</option>
+                                        <option value="0">请选择写作类型</option>
                                         <optgroup label="Analytical">
                                             <option value="6">Civil Law Essay</option>
                                             <option value="5">Research Abstract/Intro</option>
@@ -53,8 +56,11 @@
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-input-block" style="margin-left: 0">
-                                    <button class="layui-btn layui-btn-normal" id="send" style="display:inline-block">Get Feedback</button>
-                                    <button class="layui-btn" id="score" style="display:inline-block">Score and Save</button>
+                                    <button class="layui-btn layui-btn-warm" id="send" style="display:inline-block">Get
+                                        Feedback
+                                    </button>
+                                    <button class="layui-btn" id="score" style="display:inline-block">Score Commit
+                                    </button>
                                 </div>
                             </div>
                         </div>

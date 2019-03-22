@@ -241,6 +241,14 @@
             </div>
         </li>
         <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-21</h3>
+                <p>Spring整合Mybatis</p>
+                <p>项目结构优化</p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
             <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis">&#xe63e;</i>
             <div class="layui-timeline-content layui-text">
                 <div class="layui-timeline-title">程序员小哥哥加紧写代码中...</div>

@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>联系我们-AcaWriter</title>
-    <script src="pages/contact.all.js"></script>
+    <script src="js/contact.all.js"></script>
 </head>
 <body style="background-color: #F2F2F2">
 <div style="padding-left: 150px">
@@ -20,10 +20,10 @@
                 <div class="layui-card">
                     <div class="layui-card-header">Contact</div>
                     <div class="layui-card-body">
-                        <div style="padding-left: 100px;margin: 10px 0;font-size: 18px">How well did AcaWriter do? We
+                        <div style="text-align: center;margin: 10px 0;font-size: 18px">How well did AcaWriter do? We
                             want to hear from you!
                         </div>
-                        <div class="layui-form">
+                        <div class="layui-form" style="padding: 20px 80px 20px 20px">
                             <div class="layui-form-item">
                                 <label class="layui-form-label">Name</label>
                                 <div class="layui-input-block">

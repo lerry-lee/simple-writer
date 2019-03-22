@@ -13,30 +13,32 @@
     <!-- Style Sheet-->
     <link rel="stylesheet" href="css/community/style.css"/>
     <script src="plugins/readmore.js"></script>
-    <script src="pages/community.all.js"></script>
-
+    <script src="js/community.all.js"></script>
 </head>
 <body>
 <div style="padding-left: 160px">
 
-     <ul class="layui-nav" lay-filter="" style="text-align: right;height: 60px;padding: 10px 10px;">
-         <li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>
-         <li class="layui-nav-item"><a id="myPosts">我的发布</a></li>
-         <li class="layui-nav-item">
-             <a>消息中心</a>
-             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                 <dd><a id="systemMessages">系统消息<span class="layui-badge">1</span></a></dd>
-                 <dd><a href="messages.jsp">评论我的<span class="layui-badge" id="totalMessages"></span></a></dd>
-             </dl>
-         </li>
-     </ul>
+    <ul class="layui-nav" lay-filter="" style="text-align: right;height: 60px;padding: 10px 10px;">
+        <li class="layui-nav-item layui-this"><a id="allPosts">所有帖子</a></li>
+        <li class="layui-nav-item"><a id="myPosts">我的发布</a></li>
+        <li class="layui-nav-item">
+            <a>消息中心</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a id="systemMessages">系统消息<span class="layui-badge">1</span></a></dd>
+                <dd><a href="messages.jsp">评论我的<span class="layui-badge" id="totalMessages"></span></a></dd>
+            </dl>
+        </li>
+    </ul>
 
-    <div style="background-image:url('css/img/community.jpg');height: 100px;text-align: center;padding-top: 40px">
-        <div style="margin-bottom: 25px">
-            <input class="layui-input" id="key_words" placeholder="输入关键词进行查找"
-                   style="background-color: transparent;border: 0.01px solid whitesmoke;display: inline;margin-right: 20px">
-            <button class="layui-btn" id="search_posts" category="All" author="All">搜索</button>
+    <div style="background-image:url('css/img/community.jpg');height: 100px;text-align: center;padding-top: 20px">
+        <div style="text-align: center">
+            <div style="width: 70%;display: inline-block;margin:0 0 20px 0">
+                <input class="layui-input" id="key_words" placeholder="输入关键词进行查找"
+                       style="background-color: transparent;border: 0.01px solid whitesmoke;">
+            </div>
+            <button class="layui-btn layui-btn-normal" id="search_posts" category="All" author="All">搜索</button>
         </div>
+
         <span class="layui-breadcrumb" lay-separator="|">
             <a name="choose_category" category="All">All</a>
             <a name="choose_category" category="Civil Law Essay">Civil Law Essay</a>
@@ -91,7 +93,9 @@
                         <hr class="layui-bg-gray">
                     </header>
 
-                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings, rushing from one thing to another, never pausing and never ending. Then the day is over, and we are exhausted, and we often have very little to show for it. And we start the next . . . <br>滚滚长江东逝水
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending. Then the day is over, and we
+                        are exhausted, and we often have very little to show for it. And we start the next . . . <br>滚滚长江东逝水
                         <br>浪花淘尽英雄
                     </p>
 
@@ -111,7 +115,9 @@
                         <hr class="layui-bg-gray">
                     </header>
 
-                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings, rushing from one thing to another, never pausing and never ending. Then the day is over, and we are exhausted, and we often have very little to show for it. And we start the next . . .<br>滚滚长江东逝水
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending. Then the day is over, and we
+                        are exhausted, and we often have very little to show for it. And we start the next . . .<br>滚滚长江东逝水
                         <br>浪花淘尽英雄
                     </p>
 

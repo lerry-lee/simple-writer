@@ -12,7 +12,7 @@
 <head>
     <title>报表-Acawriter</title>
     <script src="plugins/echarts/echarts.common.min.js"></script>
-    <script src="pages/chart.all.js"></script>
+    <script src="js/chart.all.js"></script>
 </head>
 <body style="background-color: #F2F2F2">
 <div  style="padding-left: 160px">
@@ -26,7 +26,7 @@
                         <div class="layui-form-item">
 
                             <label class="layui-form-label">保存时间</label>
-                            <div class="layui-input-block">
+                            <div class="layui-input-block" style="width: 50%">
                                 <input type="text" class="layui-input" placeholder="选择保存时间的范围区间" id="date-time">
                             </div>
 
@@ -34,7 +34,7 @@
                         <div class="layui-form-item">
 
                             <label class="layui-form-label">保存标题</label>
-                            <div class="layui-input-block">
+                            <div class="layui-input-block" style="width: 50%">
                                 <input class="layui-input" id="title-input" placeholder="输入标题中的关键词">
                             </div>
 

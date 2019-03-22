@@ -14,7 +14,7 @@
 <html>
 <head>
     <title>首页-Acawriter</title>
-    <script src="pages/home.visits.js"></script>
+    <script src="js/home.visits.js"></script>
 </head>
 
 <body style="background-color: #F2F2F2">
@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="site-version">
-                <span>当前版本：<cite>4.0.1</cite></span>
+                <span>当前版本：<cite>4.0.2</cite></span>
                 <span><a href="updatelog.jsp">更新日志</a></span>
                 <span>访问量：<cite id="visits"></cite></span>
             </div>

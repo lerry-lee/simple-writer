@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.writer1.mapper.ReflectiveMapper">
+    <insert id="add" parameterType="java.util.Map">
+        insert into ${tableName} (title,content,self,comparison,summary,automatic,sdate)
+        values (#{title},#{content},#{self},#{comparison},#{summary},#{automatic},#{sdate})
+    </insert>
+    <delete id="delete" parameterType="java.util.Map">
+        delete from ${tableName} where id=#{id}
+    </delete>
+    <select id="queryTitle" parameterType="java.util.Map" resultType="Reflective">
+        select id,title,content,sdate from ${tableName}
+    </select>
+    <select id="queryScore"  parameterType="java.util.Map" resultType="Reflective">
+        select id,self,comparison,summary,automatic from ${tableName}
+    </select>
+    <select id="fuzzyQuery" parameterType="java.util.Map" resultType="Reflective">
+        select id,title,content,sdate from ${tableName}
+        <where>
+            <if test="title!=''">
+                and title like concat('%',#{title},'%')
+            </if>
+            <if test="start_date!=''">
+                and sdate between #{start_date} and #{end_date}
+            </if>
+        </where>
+    </select>
+</mapper>

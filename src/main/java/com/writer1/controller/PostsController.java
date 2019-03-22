@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
-import com.writer1.service.PostsService;
+import com.writer1.service.impl.PostsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +14,9 @@ import java.util.Date;
 
 @Controller
 public class PostsController {
+    @Autowired
+    private PostsServiceImpl postsService;
+
     @RequestMapping("/savePosts")
     public void savePosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String author = (String) request.getSession().getAttribute("username");
@@ -22,18 +26,18 @@ public class PostsController {
         String category = request.getParameter("category");
         String content = request.getParameter("content");
         String title = request.getParameter("title");
-        printWriter(response, new PostsService().save(author, sdate, category, content, title));
+        printWriter(response, postsService.save(author, sdate, category, content, title));
     }
 
     @RequestMapping("/queryAllPosts")
     public void queryAllPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        printWriter(response, new PostsService().queryAll());
+        printWriter(response, postsService.queryAll());
     }
 
     @RequestMapping("/queryMyPosts")
     public void queryMyPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String author = (String) request.getSession().getAttribute("username");
-        printWriter(response, new PostsService().queryMy(author));
+        printWriter(response, postsService.queryMy(author));
     }
 
     @RequestMapping("/queryPostsByCategory")
@@ -42,7 +46,7 @@ public class PostsController {
         String author = request.getParameter("author");
         if (author.equals("My"))
             author = (String) request.getSession().getAttribute("username");
-        printWriter(response, new PostsService().queryByCategory(category, author));
+        printWriter(response, postsService.queryByCategory(category, author));
     }
 
     @RequestMapping("/fuzzyQueryPosts")
@@ -52,7 +56,7 @@ public class PostsController {
         String author = request.getParameter("author");
         if (author.equals("My"))
             author = (String) request.getSession().getAttribute("username");
-        printWriter(response, new PostsService().fuzzyQuery(key_words, category, author));
+        printWriter(response, postsService.fuzzyQuery(key_words, category, author));
     }
 
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {

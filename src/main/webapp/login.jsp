@@ -54,7 +54,7 @@
 <script src="css/login/js/EasePack.js"></script>
 <script src="css/login/js/rAF.min.js"></script>
 <script src="css/login/js/demo-1.min.js"></script>
-<script src="pages/login.submit.js"></script>
+<script src="js/login.all.js"></script>
 </body>
 
 </html>

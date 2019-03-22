@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.writer1.entity">
-    <insert id="addContact" parameterType="Contact">
-        insert into contact (username,name,email,comments)
-        values (#{username},#{name},#{email},#{comments})
-    </insert>
-</mapper>
