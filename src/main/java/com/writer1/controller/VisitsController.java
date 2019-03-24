@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.VisitsServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class VisitsController {
 
     @RequestMapping("/addVisits")
     public void addVisits(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         String vdate = df.format(new Date());
         printWriter(response, visitsServiceImpl.add(username, vdate));

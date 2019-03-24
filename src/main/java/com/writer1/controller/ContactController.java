@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.ContactServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ public class ContactController {
     private ContactServiceImpl contactService;
     @RequestMapping("/saveContact")
     public void saveContact(HttpServletRequest request,HttpServletResponse response) throws IOException {
-        String username= (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         String name=request.getParameter("name");
         String email=request.getParameter("email");
         String comments=request.getParameter("comments");

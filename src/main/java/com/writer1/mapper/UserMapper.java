@@ -14,4 +14,5 @@ public interface UserMapper {
     public void createTableR(Map<String, String> table);
 
     public void createTableM(Map<String, String> table);
+
 }

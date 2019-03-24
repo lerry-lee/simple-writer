@@ -21,7 +21,6 @@
 .div-footer {
     position: relative;
     bottom: 0px;
-    /*padding-left: 10vw;*/
     width: 100%;
     height: 60px;
     text-align: center;
@@ -204,8 +203,16 @@ h5 {
     height: 18px;
 }
 
+.zhankai{
+    background-image: url("icon/zhankai.png");
+    background-size: cover;
+    margin-right: 2px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+
 .youxiang{
-    bottom: -10px;
     background-image: url("icon/youxiang1.png");
     background-size: cover;
 }

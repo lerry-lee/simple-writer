@@ -6,15 +6,16 @@ $(function () {
             var json = JSON.parse(rst);
             for (var i in json) {
                 $('#messages').append("<div class='layui-colla-item'>" +
-                    "<h2 class='layui-colla-title' mid='" + json[i].id + "'>" + json[i].message + "<span class='layui-badge-dot'></span></h2>" +
-                    "<div class='layui-colla-content'>" + json[i].comment + "</div></div>");
+                    "<h2 class='msg-colla-title' mid='" + json[i].id + "'><i class='zhankai'></i>" + json[i].message + "<span class='layui-badge-dot'></span></h2>" +
+                    "<div class='msg-colla-content' mid='"+json[i].id+"'>" + json[i].comment + "</div></div>");
             }
         }
     );
     //为动态添加的h2元素添加点击事件，消除小红点标记为已读
     $('#messages').delegate("h2", 'click', function () {
 
-        $(this).next().css('display', 'block');
+        var mid=$(this).attr('mid');
+        $("div.msg-colla-content[mid="+mid+"]").toggle();
 
         // 去掉小红点,标记为已读
         var mid = $(this).attr('mid');

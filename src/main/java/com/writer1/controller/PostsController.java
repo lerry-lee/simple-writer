@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.PostsServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class PostsController {
 
     @RequestMapping("/savePosts")
     public void savePosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String author = (String) request.getSession().getAttribute("username");
+        String author = (String) SecurityUtils.getSubject().getPrincipal();
         if (author == null) return;
         SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy");//设置日期格式
         String sdate = df.format(new Date());
@@ -36,7 +37,7 @@ public class PostsController {
 
     @RequestMapping("/queryMyPosts")
     public void queryMyPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String author = (String) request.getSession().getAttribute("username");
+        String author = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, postsService.queryMy(author));
     }
 

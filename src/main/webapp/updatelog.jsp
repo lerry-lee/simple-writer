@@ -249,6 +249,15 @@
             </div>
         </li>
         <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-24</h3>
+                <p>使用shiro框架实现了无加密登录验证</p>
+                <p>修复了添加spring框架后log4j无法输出日志到控制台的BUG</p>
+                <p>nginx反向代理tomcat实现动静分离（未完成）</p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
             <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis">&#xe63e;</i>
             <div class="layui-timeline-content layui-text">
                 <div class="layui-timeline-title">程序员小哥哥加紧写代码中...</div>

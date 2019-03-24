@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.writer1.mapper.UserMapper">
     <select id="queryByU" parameterType="string" resultType="User">
-        select id from user where username=#{username}
+        select * from user where username=#{username}
     </select>
     <select id="queryByUAndP" parameterType="User" resultType="User">
         select id from user where username=#{username} and password=#{password}

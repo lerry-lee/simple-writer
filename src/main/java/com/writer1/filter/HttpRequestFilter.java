@@ -41,6 +41,7 @@ public class HttpRequestFilter implements Filter {
             filterChain.doFilter(request, response);//拦截request获取请求信息后放行
             long t2 = System.currentTimeMillis();
         } else {
+            System.out.println("静态资源请求 "+spath);
             filterChain.doFilter(request, response);
         }
     }

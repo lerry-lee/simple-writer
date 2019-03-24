@@ -32,6 +32,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String getPassword(String username) {
+        return userMapper.queryByU(username).getPassword();
+    }
+
+    @Override
     public int addUser(String username, String password) {
         user = new User(username, password);
         Map<String, String> t1 = new HashMap<String, String>();

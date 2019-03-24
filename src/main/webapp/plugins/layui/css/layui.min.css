@@ -3507,7 +3507,7 @@ body .layui-table-tips .layui-layer-content {
     *display: inline;
     *zoom: 1;
     vertical-align: middle;
-    /*line-height: 80px*/
+    line-height: 80px
 }
 
 .layui-nav .layui-nav-item a {
@@ -3525,7 +3525,7 @@ body .layui-table-tips .layui-layer-content {
     top: 0;
     width: 0;
     height: 5px;
-    /*background-color: #5FB878;*/
+    background-color: #5FB878;
     transition: all .2s;
     -webkit-transition: all .2s
 }
@@ -3581,7 +3581,7 @@ body .layui-table-tips .layui-layer-content {
     display: none;
     position: absolute;
     left: 0;
-    top: 60px;
+    top: 80px;
     min-width: 100%;
     line-height: 36px;
     padding: 5px 0;

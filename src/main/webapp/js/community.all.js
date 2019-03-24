@@ -288,12 +288,12 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
         });
     });
     //readmore插件
-    setTimeout(function () {
-        $('p').readmore(
-            {
-                maxHeight: 44
-            }
-        );
-    }, 500)
+
+    $('p').readmore(
+        {
+            maxHeight: 44
+        }
+    );
+
 
 });

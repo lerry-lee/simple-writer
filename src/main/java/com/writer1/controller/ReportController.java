@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.ReportServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +20,13 @@ public class ReportController {
 
     @RequestMapping("/queryReport")
     public void queryReport(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, reportServiceImpl.query(username));
     }
 
     @RequestMapping("/saveReport")
     public void saveReport(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         if (username == null) return;
         String content = request.getParameter("content");
         printWriter(response, reportServiceImpl.save(username, content));

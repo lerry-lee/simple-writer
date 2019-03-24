@@ -1,17 +1,22 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.UserServiceImpl;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 @Controller
 public class UserController {
@@ -26,30 +31,32 @@ public class UserController {
 
     @RequestMapping("/getUsername")
     public void getUsername(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        printWriter(response, request.getSession().getAttribute("username"));
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
+        printWriter(response, username);
     }
 
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username"),
                 password = request.getParameter("password");
-        int result = userServiceImpl.queryByUsernameAndPassword(username, password);
-        if (result > 0) {
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        try {
+            subject.login(token);
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             String sdate = df.format(new Date());
             System.out.println(username + "已登录 " + sdate);
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
+            Session session = subject.getSession();
+            session.setAttribute("subject", subject);
+            printWriter(response, 1);
+        } catch (AuthenticationException e) {
+            printWriter(response, 0);
         }
-        printWriter(response, result);
     }
 
     @RequestMapping("/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String sdate = df.format(new Date());
-        System.out.println(request.getSession().getAttribute("username") + "已登出 " + sdate);
-        request.getSession().removeAttribute("username");
+        SecurityUtils.getSubject().logout();
     }
 
     @RequestMapping("/register")

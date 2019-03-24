@@ -6,7 +6,7 @@ layui.use(['layer', 'element'], function () {
         'getUsername',
         function (user) {
             if (user == '' || user == 'null') {
-                layer.msg('登陆状态已过期，请重新登录', {
+                layer.msg('登陆过期，请重新登录', {
                     shade: 0.8
                     , offset: '200px'
                     , time: 0 //不自动关闭

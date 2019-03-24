@@ -1,6 +1,7 @@
 package com.writer1.controller;
 
 import com.writer1.service.impl.ReflectiveServiceImpl;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class ReflectiveController {
 
     @RequestMapping("/saveReflective")
     public void saveReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         if (username == null) return;
         String title = request.getParameter("title");
         String content = request.getParameter("content");
@@ -34,7 +35,7 @@ public class ReflectiveController {
 
     @RequestMapping("/getTitle")
     public void getTitle(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         int page = Integer.parseInt(request.getParameter("page"));
         int rows = Integer.parseInt(request.getParameter("limit"));
         int offset = (page - 1) * rows;
@@ -43,13 +44,13 @@ public class ReflectiveController {
 
     @RequestMapping("/getScore")
     public void getScore(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, reflectiveService.queryScore(username));
     }
 
     @RequestMapping("/fuzzyQueryReflective")
     public void fuzzyQueryReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         String title = request.getParameter("title");
         String start_date = request.getParameter("start_date");
         String end_date = request.getParameter("end_date");
@@ -61,7 +62,7 @@ public class ReflectiveController {
 
     @RequestMapping("/deleteFromReflective")
     public void deleteFromReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) request.getSession().getAttribute("username");
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
         int id = Integer.parseInt(request.getParameter("id"));
         printWriter(response, reflectiveService.delete(username, id));
     }

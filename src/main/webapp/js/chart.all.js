@@ -3,7 +3,7 @@ layui.use(['table', 'laydate'], function () {
     //加载时间选择框插件
     laydate.render({
         elem: '#date-time'
-        , type: 'datetime'
+        , type: 'date'
         , range: true
     });
     var table = layui.table;

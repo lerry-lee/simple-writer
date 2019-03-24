@@ -1,5 +1,4 @@
 
-
 .container {
     display: block;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -11,23 +10,28 @@
     margin-right: auto;
     margin-left: auto;
 }
+
 .main-listing {
     margin-bottom: 20px;
 }
-article{
+
+article {
     padding: 10px 0;
 }
 
-a{
+a {
     cursor: pointer;
     color: #f0b70c;
 }
+
 .hentry .post-meta .date {
     background: url("images/calendar-icon.png") no-repeat left center;
 }
+
 .hentry .post-meta .category {
     background: url("images/category-icon.png") no-repeat left center;
 }
+
 .hentry .post-meta span {
     display: inline-block;
     padding-left: 22px;
@@ -35,18 +39,50 @@ a{
     line-height: 22px;
 
 }
+
 .hentry .post-meta .comments {
     background: url("images/comment.png") no-repeat left center;
 }
 
-.by-author{
+.by-author {
     float: right;
     background: url("images/user.png") no-repeat 4px -20px;
 }
+
 .post-title {
-    color:#000000;
+    color: #000000;
     padding-left: 35px;
     background: url("images/standard-large.png") no-repeat 0 3px;
     font-size: 20px;
     line-height: 30px;
+}
+
+.msg-colla-title {
+    position: relative;
+
+    height: 42px;
+
+    line-height: 42px;
+
+    padding: 0 15px 0 17px;
+
+    color: #333;
+
+    background-color: #f2f2f2;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    overflow: hidden;
+}
+
+.msg-colla-content {
+    display: none;
+
+    padding: 10px 35px;
+
+    line-height: 22px;
+
+    color: #666;
 }
