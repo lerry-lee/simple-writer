@@ -264,6 +264,7 @@
                 <p>nginx反向代理tomcat实现动静分离</p>
                 <p>开启mybatis二级缓存，提高查询效率</p>
                 <p>使用spider-font压缩中文字体包，解决前端加载过慢的问题</p>
+                <p>服务端代码使用javadoc注释风格</p>
             </div>
         </li>
         <li class="layui-timeline-item">
