@@ -11,6 +11,14 @@ import java.util.Map;
 
 
 public class ExtractJson {
+    /*
+     * 处理feature=5时返回的json
+     * @tab tabs→tap→tags 保存单句的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→2→alerts 保存feedback常规声明的标签
+     * @tab tabs→2→customised 保存feedback反馈声明的标签
+     * */
     public static JSONObject extract_5(String json){
         JSONObject jsonObject = (JSONObject) JSONObject.parse(json);
         String tabs = jsonObject.getString("tabs");
@@ -78,6 +86,14 @@ public class ExtractJson {
 
         return json1;
     }
+    /*
+     * 处理feature=6时返回的json
+     * @tab tabs→tap→tags 保存单句的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→2→alerts 保存feedback常规声明的标签
+     * @tab tabs→2→customised 保存feedback反馈声明的标签
+     * */
     public static JSONObject extract_6(String json){
         JSONObject jsonObject = (JSONObject) JSONObject.parse(json);
         String tabs = jsonObject.getString("tabs");
@@ -147,6 +163,14 @@ public class ExtractJson {
 
         return json1;
     }
+    /*
+     * 处理feature=7时返回的json
+     * @tab tabs→tap→tags 保存单句的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→2→alerts 保存feedback常规声明的标签
+     * @tab tabs→2→customised 保存feedback反馈声明的标签
+     * */
     public static JSONObject extract_7(String json) {
         JSONObject jsonObject = (JSONObject) JSONObject.parse(json);
         String tabs = jsonObject.getString("tabs");
@@ -224,6 +248,14 @@ public class ExtractJson {
 
         return json1;
     }
+    /*
+     * 处理feature=8时返回的json
+     * @tab tabs→tap→tags 保存单句的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→tap→str 保存单句特征值的标签
+     * @tab tabs→2→alerts 保存feedback常规声明的标签
+     * @tab tabs→2→customised 保存feedback反馈声明的标签
+     * */
     public static JSONObject extract_8(String json){
         JSONObject jsonObject = (JSONObject) JSONObject.parse(json);
         String tabs = jsonObject.getString("tabs");

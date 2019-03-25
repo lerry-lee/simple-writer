@@ -29,7 +29,7 @@
                 <i class="zfj-home" style="color: #fff; color: rgba(255,255,255,.7);"></i>
             </div>
             <div class="layui-anim site-desc site-desc-anim">
-                <p class="web-font-desc" style="font-family: jiashu">智能写作反馈平台</p>
+                <p class="web-font-desc" style="font-family:jiashu">智能写作反馈系统</p>
                 <cite>待，秋风萧瑟时，散作满天星辰，看那四季轮回，是我不灭的执念。</cite>
             </div>
             <div class="site-download">
@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="site-version">
-                <span>当前版本：<cite>4.0.2</cite></span>
+                <span>当前版本：<cite>4.3.1</cite></span>
                 <span><a href="updatelog.jsp">更新日志</a></span>
                 <span>访问量：<cite id="visits"></cite></span>
             </div>

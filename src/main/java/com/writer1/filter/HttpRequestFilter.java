@@ -34,14 +34,14 @@ public class HttpRequestFilter implements Filter {
                 break;
             }
         }
+
         if (flag) {
-            StringBuffer url=httpServletRequest.getRequestURL();
+//            System.out.println("请求 "+spath);
             //计算url请求响应时间
             long t1 = System.currentTimeMillis();
             filterChain.doFilter(request, response);//拦截request获取请求信息后放行
             long t2 = System.currentTimeMillis();
         } else {
-            System.out.println("静态资源请求 "+spath);
             filterChain.doFilter(request, response);
         }
     }

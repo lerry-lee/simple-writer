@@ -41,6 +41,7 @@
                 </bean>
             </array>
         </property>
+
     </bean>
 
     <!-- 4:配置扫描Dao接口包,动态实现DAO接口,注入到spring容器-->

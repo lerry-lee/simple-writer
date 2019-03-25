@@ -3,9 +3,11 @@ package com.writer1.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Setter
 @Getter
-public class Reflective {
+public class Reflective implements Serializable {
     private int id;
     private String title;
     private String content;

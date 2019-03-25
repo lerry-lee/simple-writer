@@ -18,7 +18,7 @@ layui.use('layer', function () {
             return;
         }
 
-        $.get(
+        $.post(
             "login",
             {
                 "username": username,

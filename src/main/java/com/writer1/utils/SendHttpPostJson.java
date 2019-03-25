@@ -16,6 +16,13 @@ import java.io.IOException;
 public class SendHttpPostJson {
     static String URL = "http://acawriter-dev.utscic.edu.au/api/acaParser";
 
+    /*
+     * 发送http post请求，参数为json
+     * @url AcaWriter API
+     * @responseInfo API返回的json
+     * @param json API调用的json参数
+     * @param feature 分析类型id
+     * */
     public static JSONObject sendHttpPostJson(String json, int feature) {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();

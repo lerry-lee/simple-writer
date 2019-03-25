@@ -23,18 +23,31 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
+    /*
+     * 检查用户名是否已存在
+     * @param username 注册用户名
+     * */
     @RequestMapping("/checkUsername")
     public void checkUsername(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         printWriter(response, userServiceImpl.queryByUsername(username));
     }
 
+    /*
+     * 获得登录状态
+     * @param username 当前登陆用户名
+     * */
     @RequestMapping("/getUsername")
     public void getUsername(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, username);
     }
 
+    /*
+     * 登陆请求
+     * @param username 用户名
+     * @param password 密码
+     * */
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username"),
@@ -54,11 +67,19 @@ public class UserController {
         }
     }
 
+    /*
+     * 退出登录
+     * */
     @RequestMapping("/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) {
         SecurityUtils.getSubject().logout();
     }
 
+    /*
+     * 注册请求
+     * @param username 用户名
+     * @param password 密码
+     * */
     @RequestMapping("/register")
     public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username"),
@@ -66,6 +87,10 @@ public class UserController {
         printWriter(response, userServiceImpl.addUser(username, password));
     }
 
+    /*
+     * 返回json给ajax
+     * @param obj
+     * */
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {
         PrintWriter out = response.getWriter();
         out.print(obj);

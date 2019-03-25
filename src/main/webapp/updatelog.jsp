@@ -258,6 +258,15 @@
             </div>
         </li>
         <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-25</h3>
+                <p>nginx反向代理tomcat实现动静分离</p>
+                <p>开启mybatis二级缓存，提高查询效率</p>
+                <p>使用spider-font压缩中文字体包，解决前端加载过慢的问题</p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
             <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis">&#xe63e;</i>
             <div class="layui-timeline-content layui-text">
                 <div class="layui-timeline-title">程序员小哥哥加紧写代码中...</div>

@@ -10,12 +10,12 @@
     <!-- spring的配置文件-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml,
-            classpath:applicationContext-shiro.xml
+        <param-value>classpath:spring-mybatis.xml,
+            classpath:spring-shiro.xml
         </param-value>
     </context-param>
 
-    <!--post,get,put,delete-->
+    <!--还原put,delete，启用restful风格-->
     <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
@@ -60,8 +60,8 @@
 
     <!--log4j-->
     <!--<context-param>-->
-        <!--<param-name>log4jConfigLocation</param-name>-->
-        <!--<param-value>classpath:log4j.properties</param-value>-->
+    <!--<param-name>log4jConfigLocation</param-name>-->
+    <!--<param-value>classpath:log4j.properties</param-value>-->
     <!--</context-param>-->
 
     <welcome-file-list>

@@ -17,7 +17,11 @@ import java.util.Date;
 public class VisitsController {
     @Autowired
     private VisitsServiceImpl visitsServiceImpl;
-
+    /*
+     * 访问量+1
+     * @param username 当前用户名
+     * @param vdate 访问时间 格式：年-月-日
+     * */
     @RequestMapping("/addVisits")
     public void addVisits(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
@@ -25,12 +29,17 @@ public class VisitsController {
         String vdate = df.format(new Date());
         printWriter(response, visitsServiceImpl.add(username, vdate));
     }
-
+    /*
+     * 获得总访问量
+     * */
     @RequestMapping("/getVisits")
     public void getVisits(HttpServletRequest request, HttpServletResponse response) throws IOException {
         printWriter(response, visitsServiceImpl.queryTotal());
     }
-
+    /*
+     * 返回json给ajax
+     * @param obj
+     * */
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {
         PrintWriter out = response.getWriter();
         out.print(obj);

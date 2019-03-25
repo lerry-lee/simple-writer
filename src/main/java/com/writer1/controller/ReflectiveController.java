@@ -17,7 +17,16 @@ import java.util.Date;
 public class ReflectiveController {
     @Autowired
     private ReflectiveServiceImpl reflectiveService;
-
+    /*
+     * 保存一次写作版本
+     * @param username 当前用户名
+     * @param title 标题
+     * @param content 写作内容
+     * @param self 自我反思评分
+     * @param comparison 比较反思评分
+     * @param summary 总结反思评分
+     * @param automatic 自动反馈评分
+     * */
     @RequestMapping("/saveReflective")
     public void saveReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
@@ -32,7 +41,12 @@ public class ReflectiveController {
         String sdate = df.format(new Date());
         printWriter(response, reflectiveService.add(username, title, content, self, comparison, summary, automatic, sdate));
     }
-
+    /*
+     * 查询所有写作版本 展示标题
+     * @param username 当前用户名
+     * @param page 页数（第几页）
+     * @param limit 行数（展示多少行数据）
+     * */
     @RequestMapping("/getTitle")
     public void getTitle(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
@@ -41,13 +55,24 @@ public class ReflectiveController {
         int offset = (page - 1) * rows;
         printWriter(response, reflectiveService.queryTitle(username, offset, rows));
     }
-
+    /*
+     * 查询所有写作版本 展示评分
+     * @param username 当前用户名
+     * */
     @RequestMapping("/getScore")
     public void getScore(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, reflectiveService.queryScore(username));
     }
-
+    /*
+     * 模糊查询
+     * @param username 当前用户名
+     * @param title 标题
+     * @param start_date 起始时间
+     * @param end_date 结束时间
+     * @param page 页数（第几页）
+     * @param limit 行数（展示多少行数据）
+     * */
     @RequestMapping("/fuzzyQueryReflective")
     public void fuzzyQueryReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
@@ -59,14 +84,21 @@ public class ReflectiveController {
         int offset = (page - 1) * rows;
         printWriter(response, reflectiveService.fuzzyQuery(username, title, start_date, end_date, offset, rows));
     }
-
+    /*
+     * 删除一次写作版本
+     * @param username 当前用户名
+     * @param id 写作版本id
+     * */
     @RequestMapping("/deleteFromReflective")
     public void deleteFromReflective(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         int id = Integer.parseInt(request.getParameter("id"));
         printWriter(response, reflectiveService.delete(username, id));
     }
-
+    /*
+     * 返回json给ajax
+     * @param obj
+     * */
     public void printWriter(HttpServletResponse response, Object obj) throws IOException {
         PrintWriter out = response.getWriter();
         out.print(obj);

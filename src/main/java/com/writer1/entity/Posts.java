@@ -3,9 +3,11 @@ package com.writer1.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class Posts {
+public class Posts implements Serializable {
     private int id;
     private String author;
     private String sdate;
