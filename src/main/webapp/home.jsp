@@ -29,7 +29,7 @@
                 <i class="zfj-home" style="color: #fff; color: rgba(255,255,255,.7);"></i>
             </div>
             <div class="layui-anim site-desc site-desc-anim">
-                <p class="web-font-desc" style="font-family:jiashu">智能写作反馈系统</p>
+                <p class="web-font-desc" style="font-family:jiashu">智能写作分析系统</p>
                 <cite>待，秋风萧瑟时，散作满天星辰，看那四季轮回，是我不灭的执念。</cite>
             </div>
             <div class="site-download">
@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="site-version">
-                <span>当前版本：<cite>4.3.1</cite></span>
+                <span>当前版本：<cite>4.3.2</cite></span>
                 <span><a href="updatelog.jsp">更新日志</a></span>
                 <span>访问量：<cite id="visits"></cite></span>
             </div>
@@ -49,8 +49,7 @@
             <li style="margin-top: 30px">
                 <fieldset class="layui-elem-field layui-field-title">
                     <legend>开门见山</legend>
-                    <p>
-                        欢迎来到AcaWriter！该平台提供有关学术写作的自动反馈。大量的写作研究表明，许多学生发现很难用正式的学术语言表达自己的想法，并希望他们有更好，更快的反馈，AcaWriter可以帮助他们。</p>
+                    <p>智能写作分析系统，是一个提供写作智能分析的平台。大量的写作研究表明，很多学生很难用正式的学术语言表达自己的想法，并希望能够得到一些有利的反馈，智能写作分析系统可以帮助他们</p>
                 </fieldset>
             </li>
             <li style="margin-top: 30px">

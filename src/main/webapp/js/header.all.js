@@ -1,6 +1,6 @@
-layui.use(['layer', 'element'], function () {
+layui.use(['layer'], function () {
     var layer = layui.layer;
-    var element = layui.element;
+
     //获得当前用户名，在左侧导航栏显示
     $.get(
         'getUsername',
@@ -19,6 +19,9 @@ layui.use(['layer', 'element'], function () {
                 $('#user').append(user);
         }
     );
+    $('#user').click(function () {
+       $('#logout').toggle();
+    });
     //登出请求
     $('#logout').click(function () {
         layer.msg('确定要退出登录吗？', {

@@ -9,7 +9,7 @@ public interface PostsService {
 
     public String queryMy(String author) throws IOException;
 
-    public String queryByCategory(String category, String author) throws IOException;
+    public String queryByCategory(String category, String author,String key_words) throws IOException;
 
     public String fuzzyQuery(String key_words, String category, String author) throws IOException;
 }

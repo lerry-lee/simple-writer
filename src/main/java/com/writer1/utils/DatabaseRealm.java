@@ -29,6 +29,7 @@ public class DatabaseRealm extends AuthorizingRealm {
         String password = new String(t.getPassword());
         //获取数据库中的密码
         String passwordInDB = userService.getPassword(userName);
+
         //如果为空就是账号不存在，如果不相同就是密码错误，但是都抛出AuthenticationException，而不是抛出具体错误原因，免得给破解者提供帮助信息
         if (null == passwordInDB || !passwordInDB.equals(password))
             throw new AuthenticationException();

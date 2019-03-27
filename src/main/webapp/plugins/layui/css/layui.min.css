@@ -3646,7 +3646,7 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
-    background-color: #009688;
+    /*background-color: #009688;*/
     color: #fff
 }
 
@@ -3723,11 +3723,11 @@ body .layui-table-tips .layui-layer-content {
 }
 
 .layui-breadcrumb a {
-    color: whitesmoke !important
+    color: whitesmoke
 }
 
 .layui-breadcrumb a:hover {
-    color: skyblue !important
+    color: #5fb878 !important
 }
 
 .layui-breadcrumb a cite {

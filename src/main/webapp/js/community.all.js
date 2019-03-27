@@ -1,8 +1,8 @@
-layui.use(['layer', 'util', 'element', 'laypage'], function () {
+layui.use(['layer', 'util', 'laypage', 'element'], function () {
     var layer = layui.layer;
     var util = layui.util;
-    var element = layui.element;
     var laypage = layui.laypage;
+    var element = layui.element;
     //固定快
     util.fixbar({
         bar1: '&#xe611;'
@@ -52,7 +52,7 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
                             " Comments</a></span>" + "<span class='by-author'>" +
                             json[i].author + "</span></div>" +
                             "<hr class='layui-bg-gray'></header>" +
-                            "<p>" + json[i].content + "</article>");
+                            "<p>" + json[i].content + "</p></article>");
                     }
 
                 }
@@ -102,7 +102,7 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
                             " Comments</a></span>" + "<span class='by-author'>" +
                             json[i].author + "</span></div>" +
                             "<hr class='layui-bg-gray'></header>" +
-                            "<p>" + json[i].content + "</article>");
+                            "<p>" + json[i].content + "</p></article>");
                     }
 
                 }
@@ -157,7 +157,7 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
                             " Comments</a></span>" + "<span class='by-author'>" +
                             json[i].author + "</span></div>" +
                             "<hr class='layui-bg-gray'></header>" +
-                            "<p>" + json[i].content + "</article>");
+                            "<p>" + json[i].content + "</p></article>");
                     }
 
                 }
@@ -182,12 +182,13 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
         });
 
     });
-    //按类型快速检索
+    //按类型快速查找
     $("a[name='choose_category']").click(function () {
-        $("a[name='choose_category']").css('color', '#777');
-        $(this).css('color', '#5FB878');
+        $("a[name='choose_category']").css('color', "whitesmoke");
+        $(this).css('color', '#5fb878');
         var author = $('#search_posts').attr('author');
         var category = $(this).attr('category');
+        var key_words = $('#key_words').val();
         $('#search_posts').attr('category', category);
         var data = [];
         $.get({
@@ -195,7 +196,8 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
                 url: 'queryPostsByCategory',
                 data: {
                     'category': category,
-                    'author': author
+                    'author': author,
+                    'key_words': key_words
                 },
                 success: function (rst) {
                     var json = JSON.parse(rst);
@@ -213,7 +215,7 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
                             " Comments</a></span>" + "<span class='by-author'>" +
                             json[i].author + "</span></div>" +
                             "<hr class='layui-bg-gray'></header>" +
-                            "<p>" + json[i].content + "</article>");
+                            "<p>" + json[i].content + "</p></article>");
                     }
 
                 }
@@ -264,6 +266,8 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
             ,
             area: '300px;'
             ,
+            offset: '200px'
+            ,
             shade: 0.8
             ,
             id: 'LAY_layuipro' //设定一个id，防止重复弹出
@@ -276,7 +280,7 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
             ,
             moveType: 1 //拖拽模式，0或者1
             ,
-            content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">该项目在Github同步维护<br>如需访问请前往</div>'
+            content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">该项目在Github上维护<br>如需查看源码请前往</div>'
             ,
             success: function (layero) {
                 var btn = layero.find('.layui-layer-btn');
@@ -287,13 +291,17 @@ layui.use(['layer', 'util', 'element', 'laypage'], function () {
             }
         });
     });
-    //readmore插件
-
-    $('p').readmore(
-        {
-            maxHeight: 44
-        }
-    );
-
+    //绑定readmore事件
+    $('#main-listing').on("click", 'p', function () {
+        $(this).readmore(
+            {
+                maxHeight: 44
+            }
+        );
+    });
+    //默认展示所有帖子
+    $(function () {
+        $('#allPosts').trigger('click');
+    });
 
 });

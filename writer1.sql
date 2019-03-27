@@ -31,7 +31,7 @@ sdate varchar(10),
 category varchar(30),
 dianzan int,
 content text,
-title varchar(50)
+title varchar(80)
 )DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 -- 评论表

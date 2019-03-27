@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: jiashu;
-    src: url("font/hanyif3.ttf");
+    src: url("font/hanyi.ttf");
 }
 
 
@@ -269,46 +269,7 @@ h5 {
     color: rgba(255, 255, 255, .8);
 }
 
-.home-p {
-    text-align: center;
-    bottom: 20%;
-    position: absolute;
-    font-family: panel-;
-    font-size: 20px;
-    color: #333333;
+.category-choosed{
+    color: #5fb878;
 }
-
-.home-Carousel {
-    margin: 5%;
-}
-
-.home-Carousel div {
-    border-radius: 5px;
-}
-
-.header-acawriter {
-    position: relative;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    vertical-align: middle;
-    line-height: 80px;
-    margin-left: 20px;
-}
-
-.header-acawriter a {
-    font-family: jiashu;
-    font-size: 45px;
-    display: block;
-    padding: 0 20px;
-    color: #fff;
-    color: rgba(255, 255, 255, .7);
-    transition: all .3s;
-    -webkit-transition: all .3s
-}
-
-.header-acawriter a:hover {
-    color: #fff;
-}
-
 

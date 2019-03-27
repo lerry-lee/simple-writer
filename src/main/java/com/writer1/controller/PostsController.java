@@ -61,9 +61,10 @@ public class PostsController {
     public void queryPostsByCategory(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String category = request.getParameter("category");
         String author = request.getParameter("author");
+        String key_words=request.getParameter("key_words");
         if (author.equals("My"))
-            author = (String) request.getSession().getAttribute("username");
-        printWriter(response, postsService.queryByCategory(category, author));
+            author = (String) SecurityUtils.getSubject().getPrincipal();
+        printWriter(response, postsService.queryByCategory(category, author,key_words));
     }
     /*
      * 模糊查询
@@ -77,7 +78,7 @@ public class PostsController {
         String category = request.getParameter("category");
         String author = request.getParameter("author");
         if (author.equals("My"))
-            author = (String) request.getSession().getAttribute("username");
+            author = (String) SecurityUtils.getSubject().getPrincipal();
         printWriter(response, postsService.fuzzyQuery(key_words, category, author));
     }
     /*

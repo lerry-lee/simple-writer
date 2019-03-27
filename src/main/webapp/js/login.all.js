@@ -25,16 +25,16 @@ layui.use('layer', function () {
                 "password": password
             },
             function (rst) {
-                if (rst == 0) {
-                    layer.msg('用户名或密码错误');
-                    return;
-                } else {
+                console.log(rst);
+                if (rst == 1) {
                     $.get(
                         'addVisits',
                         function () {
                             window.location.href = 'home.jsp';
                         }
                     );
+                } else {
+                    layer.msg('用户名或密码错误');
                 }
             }
         );

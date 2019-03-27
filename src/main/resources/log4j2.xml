@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+       
+    <Appenders>
+        <!--  配置输出目的地和格式     -->
+        <Console name="Console" target="SYSTEM_OUT">         
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level - %msg%n"/>      
+        </Console>
+           
+    </Appenders>
+       
+    <Loggers>   
+        <!-- 日志输出的最低级别error，低于error的都不输出，包括info,debug,trace  -->
+        <Root level="info">           
+            <AppenderRef ref="Console"/>       
+        </Root>
+        <!--输出SQL语句-->
+        <logger name="com.writer1" level="debug" includeLocation="true" additivity="false">
+            <appender-ref ref="Console"/>
+        </logger>
+    </Loggers>
+
+</Configuration>

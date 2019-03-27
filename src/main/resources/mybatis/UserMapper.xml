@@ -13,7 +13,7 @@
     <update id="createTableR" parameterType="string">
         create table ${tableName}(
         id int primary key auto_increment,
-        title varchar(32),
+        title varchar(80),
         content text,
         self int,
         comparison int,

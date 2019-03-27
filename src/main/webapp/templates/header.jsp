@@ -24,9 +24,7 @@
     <li class="layui-nav-item" style="height: 85px;margin-bottom: 40px">
         <a id="user" style="line-height: 50px;cursor:pointer"><i class="layui-icon" id="user-icon" style="color: whitesmoke;font-size: 50px;">&#xe612;</i>
         </a>
-        <dl class="layui-nav-child" style="text-align: center">
-            <dd><a id="logout" style="cursor: pointer">登出</a></dd>
-        </dl>
+        <a id="logout" style="cursor: pointer;text-align: center;display: none">登出</a>
     </li>
     <li class="layui-nav-item"><a href="home.jsp">首页</a></li>
     <li class="layui-nav-item"><a href="analyse.jsp">写作</a></li>

@@ -17,7 +17,7 @@ import java.util.Map;
 public class PostsServiceImpl implements PostsService {
     private Posts posts;
     private List<Posts> list;
-    private Map<String, String> map_;
+    private Map<String, String> map;
     @Autowired
     private PostsMapper postsMapper;
 
@@ -43,23 +43,24 @@ public class PostsServiceImpl implements PostsService {
     }
 
     @Override
-    public String queryByCategory(String category, String author) throws IOException {
-        map_ = new HashMap<>();
-        map_.put("category", category);
-        map_.put("author", author);
+    public String queryByCategory(String category, String author,String key_words) throws IOException {
+        map = new HashMap<>();
+        map.put("category", category);
+        map.put("author", author);
+        map.put("key_words",key_words);
         list = new ArrayList<>();
-        list = postsMapper.queryByCategory(map_);
+        list = postsMapper.queryByCategory(map);
         return ToJson.toJson(list);
     }
 
     @Override
     public String fuzzyQuery(String key_words, String category, String author) throws IOException {
-        map_ = new HashMap<>();
-        map_.put("key_words", key_words);
-        map_.put("category", category);
-        map_.put("author", author);
+        map = new HashMap<>();
+        map.put("key_words", key_words);
+        map.put("category", category);
+        map.put("author", author);
         list = new ArrayList<>();
-        list = postsMapper.fuzzyQuery(map_);
+        list = postsMapper.fuzzyQuery(map);
         return ToJson.toJson(list);
     }
 }

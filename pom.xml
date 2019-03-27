@@ -40,21 +40,42 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <!--log4j2日志功能-->
+        <!-- log4j2所需jar包 -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <!-- slf4j所需jar包 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.6</version>
+            <version>1.7.25</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.6</version>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <!-- 用于与slf4j保持桥接 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <!-- web工程需要 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>2.11.1</version>
         </dependency>
 
         <dependency>
@@ -187,23 +208,23 @@
         <finalName>writer1</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
-              <!--  <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <configuration>
-                        <webResources>
-                            <resource>
-                                <directory>../writer1/lib</directory>
-                                <targetPath>WEB-INF/lib</targetPath>
-                                <filtering>false</filtering>
-                                <includes>
-                                    <include>**/*.jar</include>
-                                </includes>
-                            </resource>
-                        </webResources>
-                    </configuration>
-                    <version>2.1.1</version>
-                </plugin>-->
+                <!--  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-war-plugin</artifactId>
+                      <configuration>
+                          <webResources>
+                              <resource>
+                                  <directory>../writer1/lib</directory>
+                                  <targetPath>WEB-INF/lib</targetPath>
+                                  <filtering>false</filtering>
+                                  <includes>
+                                      <include>**/*.jar</include>
+                                  </includes>
+                              </resource>
+                          </webResources>
+                      </configuration>
+                      <version>2.1.1</version>
+                  </plugin>-->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>

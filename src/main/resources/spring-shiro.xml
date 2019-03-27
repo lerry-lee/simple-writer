@@ -22,20 +22,6 @@
             </util:map>
         </property>
         <!-- 权限配置 -->
-        <property name="filterChainDefinitions">
-            <value>
-                <!-- anon表示此地址不需要任何权限即可访问 -->
-                <!--/=anon-->
-                <!--/login.jsp=anon-->
-                <!--/register.jsp=anon-->
-                <!--/css/**=anon-->
-                <!--/js/**=anon-->
-                <!--/plugins/**=anon-->
-                <!--所有的请求(除去配置的静态资源请求或请求地址为anon的请求)都要通过登录验证,如果未登录则跳到/login -->
-                <!--/** = authc-->
-                /login=authc
-            </value>
-        </property>
     </bean>
     <!-- 退出过滤器 -->
     <bean id="logoutFilter" class="org.apache.shiro.web.filter.authc.LogoutFilter">

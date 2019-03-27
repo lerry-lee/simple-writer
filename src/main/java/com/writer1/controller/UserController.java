@@ -6,6 +6,8 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 @Controller
 public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
+    final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     /*
      * 检查用户名是否已存在
@@ -40,6 +41,7 @@ public class UserController {
     @RequestMapping("/getUsername")
     public void getUsername(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
+        logger.info("当前用户为{}",username);
         printWriter(response, username);
     }
 
@@ -50,15 +52,15 @@ public class UserController {
      * */
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         String username = request.getParameter("username"),
                 password = request.getParameter("password");
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+
         try {
             subject.login(token);
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-            String sdate = df.format(new Date());
-            System.out.println(username + "已登录 " + sdate);
+            logger.info(username + "已登录 ");
             Session session = subject.getSession();
             session.setAttribute("subject", subject);
             printWriter(response, 1);
