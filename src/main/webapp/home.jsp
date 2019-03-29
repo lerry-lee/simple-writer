@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="site-version">
-                <span>当前版本：<cite>4.3.2</cite></span>
+                <span>当前版本：<cite>4.4.2</cite></span>
                 <span><a href="updatelog.jsp">更新日志</a></span>
                 <span>访问量：<cite id="visits"></cite></span>
             </div>
@@ -49,7 +49,7 @@
             <li style="margin-top: 30px">
                 <fieldset class="layui-elem-field layui-field-title">
                     <legend>开门见山</legend>
-                    <p>智能写作分析系统，是一个提供写作智能分析的平台。大量的写作研究表明，很多学生很难用正式的学术语言表达自己的想法，并希望能够得到一些有利的反馈，智能写作分析系统可以帮助他们</p>
+                    <p>智能写作分析系统，是一个提供写作智能分析的平台。大量的写作研究表明，很多学生很难用正式的学术语言表达自己的想法，并希望能够得到一些有利的反馈，智能写作分析系统可以帮助他们。</p>
                 </fieldset>
             </li>
             <li style="margin-top: 30px">

@@ -9,7 +9,7 @@ import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class HttpRequestFilter implements Filter {
     final String CHARACTER_ENCODING = "utf-8";
 

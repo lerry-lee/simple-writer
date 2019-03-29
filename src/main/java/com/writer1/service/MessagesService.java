@@ -1,9 +1,11 @@
 package com.writer1.service;
 
+import com.writer1.bean.Msg;
+
 import java.io.IOException;
 
 public interface MessagesService {
-    public int save(String author, String commentator, int sid, String comment, String title);
+    public int save(String commentator, Msg m);
 
     public String query(String username) throws IOException;
 

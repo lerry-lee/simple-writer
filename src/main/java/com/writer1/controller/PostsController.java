@@ -1,93 +1,82 @@
 package com.writer1.controller;
 
+import com.writer1.entity.Posts;
 import com.writer1.service.impl.PostsServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/*
+ * @author lerry
+ * @style RESTful
+ * */
 
 @Controller
 public class PostsController {
     @Autowired
     private PostsServiceImpl postsService;
+
     /*
      * 保存发布的帖子
-     * @param author 当前用户名
-     * @param sdate 发布时间
-     * @param category 帖子的类型
-     * @param content 帖子的正文
-     * @param title 帖子的标题
+     * @method POST
+     * @param Posts
+     * @return int
      * */
-    @RequestMapping("/savePosts")
-    public void savePosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/posts", method = RequestMethod.POST)
+    public @ResponseBody
+    int
+    savePosts(@RequestBody Posts p) {
         String author = (String) SecurityUtils.getSubject().getPrincipal();
-        if (author == null) return;
+        if (author == null) return 0;
+        p.setAuthor(author);
         SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy");//设置日期格式
-        String sdate = df.format(new Date());
-        String category = request.getParameter("category");
-        String content = request.getParameter("content");
-        String title = request.getParameter("title");
-        printWriter(response, postsService.save(author, sdate, category, content, title));
+        p.setSdate(df.format(new Date()));
+        return postsService.save(p);
     }
+
     /*
-     * 查询所有帖子
+     * 获取所有帖子
+     * @method GET
+     * @return String
      * */
-    @RequestMapping("/queryAllPosts")
-    public void queryAllPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        printWriter(response, postsService.queryAll());
+    @RequestMapping(value = "/posts", method = RequestMethod.GET,produces = "text/html;charset=utf-8")
+    public @ResponseBody
+    String queryAllPosts() throws IOException {
+        return postsService.queryAll();
     }
+
     /*
-     * 查询当前用户发布的帖子
+     * 获取当前用户发布的帖子
+     * @method GET
      * @param author 当前用户名
+     * @return String
      * */
-    @RequestMapping("/queryMyPosts")
-    public void queryMyPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/posts/my", method = RequestMethod.GET,produces = "text/html;charset=utf-8")
+    public @ResponseBody
+    String queryMyPosts() throws IOException {
         String author = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, postsService.queryMy(author));
+        return postsService.queryMy(author);
     }
-    /*
-     * 按类型查询帖子
-     * @param category 帖子的类型
-     * @param author 帖子的作者
-     * */
-    @RequestMapping("/queryPostsByCategory")
-    public void queryPostsByCategory(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String category = request.getParameter("category");
-        String author = request.getParameter("author");
-        String key_words=request.getParameter("key_words");
-        if (author.equals("My"))
-            author = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, postsService.queryByCategory(category, author,key_words));
-    }
+
     /*
      * 模糊查询
+     * @method GET
      * @param key_words 标题/正文中的关键词
      * @param category 帖子类型
      * @param author 帖子的作者
+     * @return String
      * */
-    @RequestMapping("/fuzzyQueryPosts")
-    public void fuzzyQueryPosts(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String key_words = request.getParameter("key_words");
-        String category = request.getParameter("category");
-        String author = request.getParameter("author");
+    @RequestMapping(value = "/posts/fuzzy", method = RequestMethod.GET,produces = "text/html;charset=utf-8")
+    public @ResponseBody
+    String fuzzyQueryPosts(@RequestParam("category") String category, @RequestParam("author") String author, @RequestParam("key_words") String kw) throws IOException {
         if (author.equals("My"))
             author = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, postsService.fuzzyQuery(key_words, category, author));
+        return postsService.fuzzyQuery(kw, category, author);
     }
-    /*
-     * 返回json给ajax
-     * @param obj
-     * */
-    public void printWriter(HttpServletResponse response, Object obj) throws IOException {
-        PrintWriter out = response.getWriter();
-        out.print(obj);
-        out.close();
-    }
+
 }

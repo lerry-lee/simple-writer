@@ -14,8 +14,8 @@ public class ReportServiceImpl implements ReportService {
     private ReportMapper reportMapper;
 
     @Override
-    public int save(String username, String content) {
-        report = new Report(username, content);
+    public int save(Report r) {
+        report = r;
         if (reportMapper.insertOrUpdate(report) > 0) return 1;
         return 0;
     }

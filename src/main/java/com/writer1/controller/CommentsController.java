@@ -1,57 +1,54 @@
 package com.writer1.controller;
 
+import com.writer1.bean.Cmts;
 import com.writer1.service.impl.CommentsServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/*
+ * @author lerry
+ * @style RESTful
+ * */
 
 @Controller
 public class CommentsController {
     @Autowired
     private CommentsServiceImpl commentsService;
+
     /*
-    * 保存一次评论
-    * @param sid 帖子的id
-    * @param comment 评论内容
-    * @param niming 是否匿名
-    * @param commentator 评论者（正在登录的用户）
-    * @param sdate 评论时间 格式：日 月份 年
-    * */
-    @RequestMapping("/saveComments")
-    public void saveComments(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int sid = Integer.parseInt(request.getParameter("sid"));
-        String comment = request.getParameter("comment");
-        int niming = Integer.parseInt(request.getParameter("niming"));
-        String commentator = niming == 1 ? "匿名用户" : (String) SecurityUtils.getSubject().getPrincipal();
-        if (commentator == null) return;
+     * 保存一次评论
+     * @method POST
+     * @param Cmts{sid,comment,niming}
+     * @return int
+     * */
+    @RequestMapping(value = "/comments", method = RequestMethod.POST)
+    public @ResponseBody
+    int
+    saveComments(@RequestBody Cmts c) {
+        String commentator = c.getNiming() == 1 ? "匿名用户" : (String) SecurityUtils.getSubject().getPrincipal();
+        if (commentator == null) return 0;
         SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy");//设置日期格式
         String cdate = df.format(new Date());
-        printWriter(response, commentsService.save(sid, comment, cdate, commentator));
+        return commentsService.save(c.getSid(), c.getComment(), cdate, commentator);
     }
+
     /*
-     * 查询所有评论
+     * 获取所有评论
+     * @method GET
      * @param sid 帖子的id
+     * @return String
      * */
-    @RequestMapping("/queryComments")
-    public void queryComments(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int sid = Integer.parseInt(request.getParameter("sid"));
-        printWriter(response, commentsService.query(sid));
+    @RequestMapping(value = "/comments", method = RequestMethod.GET,produces = "text/html;charset=utf-8")
+    public @ResponseBody
+    String queryComments(@RequestParam("sid") String sid_) throws IOException {
+        int sid = Integer.parseInt(sid_);
+        return commentsService.query(sid);
     }
-    /*
-     * 返回json给ajax
-     * @param obj
-     * */
-    public void printWriter(HttpServletResponse response, Object obj) throws IOException {
-        PrintWriter out = response.getWriter();
-        out.print(obj);
-        out.close();
-    }
+
 }

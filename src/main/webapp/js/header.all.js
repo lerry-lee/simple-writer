@@ -2,9 +2,11 @@ layui.use(['layer'], function () {
     var layer = layui.layer;
 
     //获得当前用户名，在左侧导航栏显示
-    $.get(
-        'getUsername',
-        function (user) {
+    $.ajax({
+        type: 'get'
+        , url: 'login'
+        , data: {}
+        , success: function (user) {
             if (user == '' || user == 'null') {
                 layer.msg('登陆过期，请重新登录', {
                     shade: 0.8
@@ -18,9 +20,9 @@ layui.use(['layer'], function () {
             } else
                 $('#user').append(user);
         }
-    );
+    });
     $('#user').click(function () {
-       $('#logout').toggle();
+        $('#logout').toggle();
     });
     //登出请求
     $('#logout').click(function () {
@@ -30,12 +32,14 @@ layui.use(['layer'], function () {
             , offset: '200px'
             , btn: ['确定', '返回']
             , yes: function () {
-                $.get(
-                    'logout',
-                    function () {
+                $.ajax({
+                    type: 'get'
+                    , url: 'logout'
+                    , data: {}
+                    , success: function () {
                         window.location.href = 'login.jsp';
                     }
-                );
+                });
             }
         });
 

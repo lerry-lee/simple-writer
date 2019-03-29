@@ -10,20 +10,22 @@ layui.use(['layer', 'form'], function () {
             layer.msg('内容或标题不能为空');
             return;
         }
-
-        $.post(
-            'savePosts',
-            {
-                'content': content,
-                'title': share_title,
-                'category': category
-            },
-            function (rst) {
+        var data = {
+            'content': content,
+            'title': share_title,
+            'category': category
+        };
+        $.ajax({
+            type: 'post'
+            , url: 'posts'
+            , contentType: 'application/json;charset=utf-8'
+            , data: JSON.stringify(data)
+            , success: function (rst) {
                 if (rst == '1') {
                     layer.msg('分享成功');
                 }
             }
-        );
+        });
     });
 
 });

@@ -198,6 +198,7 @@
             <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
             <div class="layui-timeline-content layui-text">
                 <h3 class="layui-timeline-title">2019-3-16</h3>
+                <p>AcaWriter3.0版本开启</p>
                 <p>后端添加mybatis框架支持</p>
                 <p>
                     社区页面：
@@ -244,6 +245,7 @@
             <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
             <div class="layui-timeline-content layui-text">
                 <h3 class="layui-timeline-title">2019-3-21</h3>
+                <p>AcaWriter4.0版本开启</p>
                 <p>Spring整合Mybatis</p>
                 <p>项目结构优化</p>
             </div>
@@ -273,6 +275,14 @@
                 <h3 class="layui-timeline-title">2019-3-27</h3>
                 <p>log4j升级为log4j2，结合slf4j实现日志功能</p>
                 <p>前端微调整</p>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-3-29</h3>
+                <p>SpringMVC注解方式处理servlet请求</p>
+                <p>web服务改为RESTful风格</p>
             </div>
         </li>
         <%--最后一行--%>

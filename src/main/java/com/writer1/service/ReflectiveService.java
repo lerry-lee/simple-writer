@@ -1,9 +1,10 @@
 package com.writer1.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.writer1.entity.Reflective;
 
 public interface ReflectiveService {
-    public int add(String username, String title, String content, int self, int comparison, int summary, int automary, String sdate);
+    public int add(String username, Reflective r);
 
     public String queryTitle(String username, int offset, int rows) throws JsonProcessingException;
 

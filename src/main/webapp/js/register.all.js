@@ -19,16 +19,17 @@ layui.use('layer', function () {
             $('#error-umsg').html('用户名只能是4到16位且不包含特殊字符');
         }
         if (ulegal) {
-            $.get(
-                'checkUsername',
-                {'username': username},
-                function (rst) {
+            $.ajax({
+                type: 'get'
+                , url: 'register'
+                , data: {'username': username}
+                , success: function (rst) {
                     if (rst == 0)
                         $('#uValidation').css('opacity', '1');
                     else
                         $('#error-umsg').html('用户名已存在');
                 }
-            );
+            });
         }
     });
     //密码合法检测
@@ -70,14 +71,16 @@ layui.use('layer', function () {
         if (ulegal && plegal) {
             var username = $('#username').val();
             var password = $('#password').val();
-
-            $.post(
-                'register',
-                {
-                    'username': username,
-                    'password': password
-                },
-                function (rst) {
+            var data = {
+                'username': username,
+                'password': password
+            };
+            $.ajax({
+                type: 'put'
+                , url: 'register'
+                , data: JSON.stringify(data)
+                , contentType: 'application/json;charset=utf-8'
+                , success: function (rst) {
                     if (rst == 1) {
                         layer.msg('注册成功！即将跳转登录页面');
                         setTimeout(function () {
@@ -87,7 +90,8 @@ layui.use('layer', function () {
                         layer.msg('注册失败！');
                     }
                 }
-            );
+            })
+            ;
         }
     });
 

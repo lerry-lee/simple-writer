@@ -13,7 +13,7 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
                 layer.open({
                     type: 2,
                     offset: '200px',
-                    title: '编辑帖子分享到社区',
+                    title: '发布帖子到社区',
                     area: ['600px', '550px'],
                     content: 'editPosts.jsp'
                 });
@@ -21,20 +21,23 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
         }
     });
     //获得未读消息数量
-    $.get(
-        'countMessages'
-        , function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'messages/count'
+        , data: {}
+        , success: function (rst) {
             $('#totalMessages').html(rst);
         }
-    );
+    });
     //查询所有帖子
     $('#allPosts').click(function () {
         $('#search_posts').attr('author', 'All');
         $('#search_posts').attr('category', 'All');
         var data = [];
-        $.get({
+        $.ajax({
                 async: false,
-                url: 'queryAllPosts',
+                type: 'get',
+                url: 'posts',
                 data: {},
                 success: function (rst) {
                     var json = JSON.parse(rst);
@@ -82,9 +85,10 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
         $('#search_posts').attr('author', 'My');
         $('#search_posts').attr('category', 'All');
         var data = [];
-        $.get({
+        $.ajax({
                 async: false,
-                url: 'queryMyPosts',
+                type: 'get',
+                url: 'posts/my',
                 data: {},
                 success: function (rst) {
                     var json = JSON.parse(rst);
@@ -133,9 +137,10 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
         var key_words = $('#key_words').val();
         var category = $(this).attr('category');
         var data = [];
-        $.get({
+        $.ajax({
                 async: false,
-                url: 'fuzzyQueryPosts',
+                type: 'get',
+                url: 'posts/fuzzy',
                 data: {
                     'key_words': key_words,
                     'category': category,
@@ -191,9 +196,10 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
         var key_words = $('#key_words').val();
         $('#search_posts').attr('category', category);
         var data = [];
-        $.get({
+        $.ajax({
                 async: false,
-                url: 'queryPostsByCategory',
+                type: 'get',
+                url: 'posts/fuzzy',
                 data: {
                     'category': category,
                     'author': author,
@@ -293,7 +299,7 @@ layui.use(['layer', 'util', 'laypage', 'element'], function () {
     });
     //绑定readmore事件
     $('#main-listing').on("click", 'p', function () {
-        $(this).readmore(
+        $('p').readmore(
             {
                 maxHeight: 44
             }

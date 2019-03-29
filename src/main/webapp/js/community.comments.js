@@ -6,12 +6,14 @@ layui.use(['layer', 'form'], function () {
     var author = $.getUrlParam('author');
 
     //查询所有评论
-    $.post(
-        'queryComments',
-        {
-            'sid': sid
-        },
-        function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'comments'
+        , data:
+            {
+                'sid': sid
+            }
+        , success: function (rst) {
             if (rst == '[]')
                 return;
             var json = JSON.parse(rst);
@@ -23,7 +25,8 @@ layui.use(['layer', 'form'], function () {
                     "</p></article><hr class=\"layui-bg-gray\">");
             }
         }
-    );
+    })
+    ;
     //匿名选择
     var niming = 0;
     form.on('switch(niming)', function (data) {
@@ -37,27 +40,36 @@ layui.use(['layer', 'form'], function () {
             layer.msg('评论内容不能为空');
             return;
         }
-        $.post(
-            'saveComments',
-            {
-                'sid': sid,
-                'comment': comment,
-                'niming': niming
-            },
-            function (rst) {
+        var data = {
+            'sid': sid,
+            'comment': comment,
+            'niming': niming
+        };
+        $.ajax({
+            type: 'post'
+            , url: 'comments'
+            , contentType: 'application/json;charset=utf-8'
+            , data: JSON.stringify(data)
+            , success: function (rst) {
                 if (rst == '1')
                     layer.msg('成功');
             }
-        );
-        $.post(
-            'saveMessages',
-            {
-                'sid': sid,
-                'title': title,
-                'author': author,
-                'comment': comment
+        });
+        //向作者发送一条消息
+        var data_ = {
+            'sid': sid,
+            'title': title,
+            'author': author,
+            'comment': comment
+        };
+        $.ajax({
+            type: 'post'
+            , url: 'messages'
+            , contentType: 'application/json;charset=utf-8'
+            , data: JSON.stringify(data_)
+            , success: function () {
             }
-        )
+        });
     });
 });
 //封装一个方法用于获取url中参数

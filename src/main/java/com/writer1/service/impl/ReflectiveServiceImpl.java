@@ -21,16 +21,16 @@ public class ReflectiveServiceImpl implements ReflectiveService {
     private ReflectiveMapper reflectiveMapper;
 
     @Override
-    public int add(String username, String title, String content, int self, int comparison, int summary, int automary, String sdate) {
+    public int add(String username,Reflective r) {
         Map<String, Object> map = new HashMap<>();
         map.put("tableName", username + "_reflective");
-        map.put("title", title);
-        map.put("content", content);
-        map.put("self", self);
-        map.put("comparison", comparison);
-        map.put("summary", summary);
-        map.put("automatic", automary);
-        map.put("sdate", sdate);
+        map.put("title", r.getTitle());
+        map.put("content", r.getContent());
+        map.put("self", r.getSelf());
+        map.put("comparison", r.getComparison());
+        map.put("summary", r.getSummary());
+        map.put("automatic", r.getAutomatic());
+        map.put("sdate", r.getSdate());
         if (reflectiveMapper.add(map) > 0) return 1;
         return 0;
     }

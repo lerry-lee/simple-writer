@@ -1,5 +1,7 @@
 package com.writer1.service;
 
+import com.writer1.entity.Contact;
+
 public interface ContactService {
-    public int save(String username, String name, String email, String comments);
+    public int save(Contact c);
 }

@@ -9,8 +9,8 @@ public class Messages {
     private int id;
     private int sid;
     private String message;
-    private int isRead;
     private String comment;
+    private int isRead;
 
     public Messages(int sid, String message, String comment) {
         this.sid = sid;

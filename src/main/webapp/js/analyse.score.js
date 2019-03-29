@@ -59,23 +59,26 @@ layui.use(['rate', 'layer'], function () {
         } else if (self == undefined || comparison == undefined || summary == undefined || automatic == undefined) {
             layer.msg('请全部评分后再提交哦');
         } else {
-            $.post(
-                'saveReflective',
-                {
-                    'title': title,
-                    'content': content,
-                    'self': self,
-                    'comparison': comparison,
-                    'summary': summary,
-                    'automatic': automatic
-                },
-                function (rst) {
+            var data={
+                'title': title,
+                'content': content,
+                'self': self,
+                'comparison': comparison,
+                'summary': summary,
+                'automatic': automatic
+            };
+            $.ajax({
+                type: 'post'
+                , url: 'reflective'
+                , contentType: 'application/json;charset=utf-8'
+                , data: JSON.stringify(data)
+                , success: function (rst) {
                     if (rst == '1')
                         layer.msg('保存成功');
                     else
                         layer.msg('保存失败');
                 }
-            )
+            });
         }
     });
 

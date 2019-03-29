@@ -14,8 +14,8 @@ public class ContactServiceImpl implements ContactService {
     ContactMapper contactMapper;
 
     @Override
-    public int save(String username, String name, String email, String comments) {
-        contact = new Contact(username, name, email, comments);
+    public int save(Contact c) {
+        contact = c;
         if (contactMapper.add(contact) > 0) return 1;
         return 0;
     }

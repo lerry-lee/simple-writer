@@ -30,17 +30,19 @@ layui.use(['form'], function () {
             layer.msg('请确认邮箱正误', {offset: '200px'});
             return;
         }
-        $.post(
-            'saveContact'
-            , {
-                'name': name,
-                'email': email,
-                'comments': comments
-            }
-            , function (rst) {
+        var data = {
+            'name': name,
+            'email': email,
+            'comments': comments
+        };
+        $.ajax({
+            type: 'post'
+            , url: 'contact'
+            , data: JSON.stringify(data)
+            , success: function (rst) {
                 if (rst == 1)
                     layer.msg('发送成功！感谢您的宝贵建议！', {offset: '200px'});
             }
-        );
+        });
     });
 });

@@ -1,83 +1,95 @@
 package com.writer1.controller;
 
+import com.writer1.bean.Msg;
+import com.writer1.entity.Messages;
 import com.writer1.service.impl.MessagesServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+
+/*
+ * @author lerry
+ * @style RESTful
+ * */
 
 @Controller
 public class MessagesController {
     @Autowired
     MessagesServiceImpl messagesService;
+
+    /*
+     * 获取未读消息数量
+     * @method GET
+     * @param username 当前用户名
+     * @return int
+     * */
+    @RequestMapping(value = "/messages/count", method = RequestMethod.GET)
+    public @ResponseBody
+    int countMessages() {
+        String username = (String) SecurityUtils.getSubject().getPrincipal();
+        return messagesService.count(username);
+    }
+
     /*
      * 保存一次消息
-     * @param author 帖子的作者
-     * @param commentator 评论者
-     * @param sid 帖子的id
-     * @param comment 评论内容
-     * @param title 帖子的标题
+     * @method POST
+     * @param Messages
+     * @return int
      * */
-    @RequestMapping("/saveMessages")
-    public void saveMessages(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String author = request.getParameter("author");
+    @RequestMapping(value = "/messages", method = RequestMethod.POST)
+    public @ResponseBody
+    int
+    saveMessages(@RequestBody Msg m) throws UnsupportedEncodingException {
         String commentator = (String) SecurityUtils.getSubject().getPrincipal();
-        int sid = Integer.parseInt(request.getParameter("sid"));
-        String comment = request.getParameter("comment");
-        String title = URLDecoder.decode(request.getParameter("title"), "UTF-8");
-        printWriter(response, messagesService.save(author, commentator, sid, comment, title));
+        m.setTitle(URLDecoder.decode(m.getTitle(), "UTF-8"));
+        return messagesService.save(commentator, m);
     }
+
     /*
-     * 查询所有消息
+     * 列出所有消息
+     * @method GET
      * @param username 当前用户名
+     * @return String
      * */
-    @RequestMapping("/queryMessages")
-    public void queryMessages(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/messages", method = RequestMethod.GET,produces = "text/html;charset=utf-8")
+    public @ResponseBody
+    String queryMessages() throws IOException {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, messagesService.query(username));
+        return messagesService.query(username);
     }
+
     /*
      * 已读一条消息
-     * @param username 当前用户名
-     * @param id 消息的id
+     * @method PUT
+     * @param Messages.id
+     * @return int
      * */
-    @RequestMapping("/readMessages")
-    public void readMessages(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/messages", method = RequestMethod.PUT)
+    public @ResponseBody
+    int readMessages(@RequestBody Msg m) {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
-        int id = Integer.parseInt(request.getParameter("mid"));
-        printWriter(response, messagesService.read(username, id));
+        return messagesService.read(username, m.getId());
     }
-    /*
-     * 查询未读消息数量
-     * @param username 当前用户名
-     * */
-    @RequestMapping("/countMessages")
-    public void countMessages(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, messagesService.count(username));
-    }
+
     /*
      * 已读所有消息
+     * @method PUT
      * @param username 当前用户名
+     * @return int
      * */
-    @RequestMapping("/readAllMessages")
-    public void readAllMessages(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/messages/all", method = RequestMethod.PUT)
+    public @ResponseBody
+    int readAllMessages() {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
-        printWriter(response, messagesService.readAll(username));
+        return messagesService.readAll(username);
     }
-    /*
-     * 返回json给ajax
-     * @param obj
-     * */
-    public void printWriter(HttpServletResponse response, Object obj) throws IOException {
-        PrintWriter out = response.getWriter();
-        out.print(obj);
-        out.close();
-    }
+
 }

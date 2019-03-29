@@ -5,44 +5,43 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/*
+ * @author lerry
+ * @style RESTful
+ * */
 
 @Controller
 public class VisitsController {
     @Autowired
     private VisitsServiceImpl visitsServiceImpl;
+
     /*
-     * 访问量+1
-     * @param username 当前用户名
-     * @param vdate 访问时间 格式：年-月-日
+     * 单个用户每天的访问只记一次
+     * @return int
      * */
-    @RequestMapping("/addVisits")
-    public void addVisits(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/visits", method = RequestMethod.POST)
+    public @ResponseBody
+    int addVisits() {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         String vdate = df.format(new Date());
-        printWriter(response, visitsServiceImpl.add(username, vdate));
+        return visitsServiceImpl.add(username, vdate);
     }
+
     /*
-     * 获得总访问量
+     * 获取总访问量
+     * @return int
      * */
-    @RequestMapping("/getVisits")
-    public void getVisits(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        printWriter(response, visitsServiceImpl.queryTotal());
+    @RequestMapping(value = "/visits", method = RequestMethod.GET)
+    public @ResponseBody
+    int getVisits() {
+        return visitsServiceImpl.queryTotal();
     }
-    /*
-     * 返回json给ajax
-     * @param obj
-     * */
-    public void printWriter(HttpServletResponse response, Object obj) throws IOException {
-        PrintWriter out = response.getWriter();
-        out.print(obj);
-        out.close();
-    }
+
 }

@@ -16,5 +16,4 @@ public interface PostsMapper {
 
     public List<Posts> fuzzyQuery(Map<String, String> map);
 
-    public List<Posts> queryByCategory(Map<String, String> category);
 }

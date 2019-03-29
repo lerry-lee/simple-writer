@@ -1,12 +1,14 @@
 $(function () {
     //加载上次保存写作内容
-    $.get(
-        'queryReport',
-        function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'report'
+        , data: {}
+        , success: function (rst) {
             if (rst != 'null')
                 $('#txt').html(rst);
         }
-    );
+    });
 });
 layui.use(['layedit', 'util', 'layer', 'form'], function () {
     var util = layui.util;
@@ -25,7 +27,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                 layer.open({
                     type: 2,
                     offset: '200px',
-                    title: '编辑帖子分享到社区',
+                    title: '发布帖子到社区',
                     area: ['600px', '550px'],
                     content: 'editPosts.jsp'
                 });
@@ -42,14 +44,17 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
 
             if (content_last == content) ;
             else {
-                $.post(
-                    'saveReport',
-                    {'content': content},
-                    function (rst) {
-                        if (rst == '1') ;
+                var data = {'content': content};
+                $.ajax({
+                    type: 'put'
+                    , url: 'report'
+                    , data: JSON.stringify(data)
+                    , contentType: 'application/json;charset=utf-8'
+                    , success: function (rst) {
+                        if (rst == 1) ;
                         layer.msg('content saved', {icon: 1});
                     }
-                );
+                });
             }
 
         }, 4999);
@@ -143,15 +148,15 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                 },
                 'type': 'manual'
             });
-
             //向后端发起getFeedback请求
-            $.post(
-                'getFeedback',
-                {
+            $.ajax({
+                type: 'post'
+                , url: 'report'
+                , data: {
                     'param_json': data,
                     'feature': feature
-                },
-                function (result) {
+                }
+                , success: function (result) {
                     //得到结果，关闭加载层图标
                     layer.close(loading);
                     //类型为Civil Law Essay的返回结果处理
@@ -277,7 +282,7 @@ layui.use(['layedit', 'util', 'layer', 'form'], function () {
                     }
 
                 }
-            );
+            });
 
         }
     );

@@ -17,27 +17,33 @@ layui.use('layer', function () {
             layer.msg("用户名或密码不能为空！");
             return;
         }
-
-        $.post(
-            "login",
-            {
-                "username": username,
-                "password": password
-            },
-            function (rst) {
-                console.log(rst);
-                if (rst == 1) {
-                    $.get(
-                        'addVisits',
-                        function () {
-                            window.location.href = 'home.jsp';
-                        }
-                    );
-                } else {
-                    layer.msg('用户名或密码错误');
+        var data = {
+            'username': username,
+            'password': password
+        };
+        $.ajax({
+            type: 'post'
+            , url: 'login'
+            , contentType: 'application/json;charset=utf-8'
+            , data: JSON.stringify(data)
+            , success:
+                function (rst) {
+                    //登录成功或访问量+1
+                    if (rst == 1) {
+                        $.ajax({
+                            type: 'post'
+                            , url: 'visits'
+                            ,data:{}
+                            , success:
+                                function () {
+                                    window.location.href = 'home.jsp';
+                                }
+                        });
+                    } else {
+                        layer.msg('用户名或密码错误');
+                    }
                 }
-            }
-        );
-
+        });
     });
+
 });

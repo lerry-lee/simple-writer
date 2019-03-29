@@ -11,7 +11,7 @@ layui.use(['table', 'laydate'], function () {
     table.render({
         elem: '#demo',
         height: 312,
-        url: 'getTitle',
+        url: 'reflective/title',
         page: true,
         cols: [[
             {field: 'id', title: 'ID', align: 'center', width: 100, unresize: true, sort: true, fixed: 'left'},
@@ -29,17 +29,18 @@ layui.use(['table', 'laydate'], function () {
             layer.confirm('确定删除该行吗？', {offset: '200px'}, function (index) {
                 obj.del();
                 layer.close(index);
-                $.get(
-                    'deleteFromReflective',
-                    {
+                $.ajax({
+                    type: 'delete'
+                    , url: 'reflective'
+                    , data: {
                         'id': data.id
-                    },
-                    function (rst) {
+                    }
+                    , success: function (rst) {
                         if (rst == '1')
                             layer.msg('删除成功', {offset: '200px'});
                         else layer.msg('失败', {offset: '200px'});
                     }
-                );
+                });
             });
         } else if (layEvent === 'detail') {
             layer.alert(data.content, {title: data.title, offset: '200px'})
@@ -52,7 +53,7 @@ layui.use(['table', 'laydate'], function () {
         var start_date = date_time.substring(0, 19);
         var end_date = date_time.substring(22, 41);
         table.reload('demo', {
-            url: 'fuzzyQueryReflective',
+            url: 'reflective/fuzzy',
             where: {
                 "title": title,
                 "start_date": start_date,
@@ -62,9 +63,11 @@ layui.use(['table', 'laydate'], function () {
     });
 
     //评分数据请求
-    $.get(
-        'getScore',
-        function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'reflective/score'
+        , data: {}
+        , success: function (rst) {
             var data = JSON.parse(rst);
 
             var id_row1 = data[0][1];
@@ -143,7 +146,7 @@ layui.use(['table', 'laydate'], function () {
 
             });
         }
-    );
+    });
 
 });
 

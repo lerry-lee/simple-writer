@@ -1,5 +1,6 @@
 package com.writer1.service.impl;
 
+import com.writer1.bean.Msg;
 import com.writer1.entity.Messages;
 import com.writer1.mapper.MessagesMapper;
 import com.writer1.service.MessagesService;
@@ -19,13 +20,13 @@ public class MessagesServiceImpl implements MessagesService {
     private Map<String, Object> map;
 
     @Override
-    public int save(String author, String commentator, int sid, String comment, String title) {
+    public int save(String commentator, Msg m) {
         map = new HashMap<>();
-        map.put("tableName", author + "_messages");
-        map.put("sid", sid);
-        map.put("comment", comment);
-        String message = commentator + "评论了你的帖子《" + title + "》";
-        map.put("message", message);
+        map.put("tableName", m.getAuthor() + "_messages");
+        map.put("sid", m.getSid());
+        map.put("comment", m.getComment());
+        String message = commentator + "评论了你的帖子《" + m.getTitle() + "》";
+        map.put("message",message);
         if (messagesMapper.add(map) > 0) return 1;
         return 0;
     }

@@ -1,9 +1,11 @@
 //获得访问量
 $(function () {
-    $.get(
-        'getVisits',
-        function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'visits'
+        , data: {}
+        , success: function (rst) {
             $('#visits').append(rst);
         }
-    );
+    });
 });

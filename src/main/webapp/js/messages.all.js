@@ -1,30 +1,34 @@
 $(function () {
     //查询所有未读消息
-    $.get(
-        'queryMessages',
-        function (rst) {
+    $.ajax({
+        type: 'get'
+        , url: 'messages'
+        , data: []
+        , success: function (rst) {
             var json = JSON.parse(rst);
             for (var i in json) {
                 $('#messages').append("<div class='layui-colla-item'>" +
                     "<h2 class='msg-colla-title' mid='" + json[i].id + "'><i class='zhankai'></i>" + json[i].message + "<span class='layui-badge-dot'></span></h2>" +
-                    "<div class='msg-colla-content' mid='"+json[i].id+"'>" + json[i].comment + "</div></div>");
+                    "<div class='msg-colla-content' mid='" + json[i].id + "'>" + json[i].comment + "</div></div>");
             }
         }
-    );
+    });
     //为动态添加的h2元素添加点击事件，消除小红点标记为已读
     $('#messages').delegate("h2", 'click', function () {
 
-        var mid=$(this).attr('mid');
-        $("div.msg-colla-content[mid="+mid+"]").toggle();
+        var mid = $(this).attr('mid');
+        $("div.msg-colla-content[mid=" + mid + "]").toggle();
 
         // 去掉小红点,标记为已读
         var mid = $(this).attr('mid');
         var flag = false;
-
-        $.get({
+        var data = {'id': mid};
+        $.ajax({
             async: false
-            , url: 'readMessages'
-            , data: {'mid': mid}
+            , type: 'put'
+            , url: 'messages'
+            , contentType: 'application/json;charset=utf-8'
+            , data: JSON.stringify(data)
             , success: function (rst) {
                 if (rst == 1) {
                     flag = true;
@@ -40,13 +44,15 @@ $(function () {
             offset: '200px',
             btn: ['确定', '我再想想'] //按钮
         }, function (index) {
-            $.get(
-                'readAllMessages',
-                function (rst) {
+            $.ajax({
+                type: 'put'
+                , url: 'messages/all'
+                , data: {}
+                , success: function (rst) {
                     if (rst == 1)
                         $('span').css('visibility', 'hidden');
                 }
-            );
+            });
             layer.close(index);
         });
     });
