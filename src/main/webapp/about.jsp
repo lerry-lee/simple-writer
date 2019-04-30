@@ -15,43 +15,37 @@
 <body>
 <div style="padding-left: 160px">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <legend>About AcaWriter API</legend>
+        <legend>关于写作</legend>
     </fieldset>
 
     <div style="padding: 20px">
 
-        <div class="layui-card-header">UTS:CONNECTED INTELLIGENCE CENTRE AcaWriter</div>
+        <div class="layui-card-header">About AcaWriter</div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>AcaWriter works by looking for specific hallmarks of good academic writing</b> that signal (to your
-            audience, the reader) that there's a significant connection being made, or an important
-            development or contrast in ideas. This helps to demonstrate your critical thinking, skill in
-            argument, or development as a reflective professional.
+            AcaWriter通过寻找良好学术写作的特定标志来工作，这些标志向（向您的观众，读者）发出信号，表明存在重要的联系，或者是思想的重要发展或对比。这有助于展示您作为反思专业人士的批判性思维，论证技巧或发展。
         </div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>AcaWriter is not grading your writing.</b> Instead, it gives you feedback to improve your draft.
+            AcaWriter没有给你的写作评分。相反，它会为您提供反馈以改进您的草稿。
+        </div>
+
+        <div class="layui-card-header">关于反思性学习</div>
+        <div class="layui-card-body" style="font-size: 17px">
+            写作是语言的功能性教学的一个重要方面。随着教育教学改革的进一步深入，学生对自己的学习缺乏反思的习惯，将会影响创新意识的培养。指导学生进行反思性学习，已经成为当代教学改革的一项重要内容。
         </div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>Just give it a go with a short piece of writing</b> (your own, or perhaps an open access research
-            abstract): we’re not saving any texts on this demo, so take a screenshot if you want a record of
-            the output.
+            To learn is to use，学就是用。写作内容上紧扣所学，通过所写来体现所学，因此每一部分的写作，要尽可能的应用所学的单词、短语或句子。
         </div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>To install your own open source copy of AcaWriter</b> you will need technical support from a web
-            administrator. <a href="https://utscic.edu.au/open-source-writing-analytics/" target="_blank" style="color:blue">Open Source release</a>
+            在学生写作后，先自己批阅，找出自己认为写得比较好的句子，对于自己写的文章，应该有很深的印象。因此这一步的时间很短，学生能很快地选出自己用得比较好的单词、短语及句子，这一步是对自己的劳动成果进行反思，这一步在本系统称为自我反思。
         </div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>AcaWriter was created by</b> the <a href="https://utscic.edu.au/tools/awa/" target="_blank" style="color:blue">Academic Writing Analytics</a> project, at the UTS Connected
-            Intelligence Centre. Go there to learn about the ideas and tech behind the scenes, and what
-            we're learning as we test it with staff and students. The software is now being shared and
-            improved across universities in Australia and beyond, as part of the Higher Education Text
-            Analytics open source project.
+            在社区上将文章片段发布相互批阅，可以发现学生之间的闪光点，互相学习。这可以弥补个人能力的不足和自动反馈的局限性，有助于在互相讨论中进步和提高。这一步称为比较反思。
         </div>
         <div class="layui-card-body" style="font-size: 17px">
-            <b>If you have any suggestions or comments</b><br>
-            <a href="contact.jsp" style="color:blue"><i class="icon-offset youxiang"></i> Contact us</a>
+            如果你有任何建议或者意见，请<a href="contact.jsp" style="color:blue"><i class="icon-offset youxiang"></i>联系我们</a>
         </div>
         <div style="text-align: center">
-            <img src="css/img/utsimg.jpg">
+            <img src="css/icon/snail.png">
         </div>
 
     </div>

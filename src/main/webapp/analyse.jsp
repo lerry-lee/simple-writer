@@ -26,19 +26,16 @@
                         Demo Acawriter
                     </div>
                     <div class="layui-card-body">
-                        <div>Please keep the text short (not more than 500 words) for best results. Click <a
-                                style="color: #ffb800">Get Feedback</a> to
-                            fetch the feedback on the selected Genre. Click <a style="color: #009688">Score Commit</a>
-                            to save this writing and score for future backtracking
+                        <div>请保持文字简短（不超过500字）以获得最佳效果。点击<a
+                                style="color: #ffb800">Get Feedback</a>来获取所选类型的反馈.点击<a style="color: #009688">Score Commit</a>
+                          保存写作版本并为此次写作过程评分
                         </div>
 
                         <div style="margin: 20px 0"><textarea id="txt" style="display: none"></textarea></div>
 
                         <div class="layui-form">
                             <div class="layui-form-item">
-                                <div class="layui-input-block" style="margin-left: 0;display:block"> Select a Genre
-                                    &nbsp;&nbsp;(Empty the text field,changing the genre
-                                    will pre-populate preferred text for the Genre into the text editor.)
+                                <div class="layui-input-block" style="margin-left: 0;display:block">选择一种类型（清空文本编辑器内容，然后更改类型将预先填充首选文本到文本编辑器。）
                                 </div>
                                 <div class="layui-input-block" style="margin-left: 0;width: 50%" id="test_select">
                                     <select id="genre" lay-filter="genre">

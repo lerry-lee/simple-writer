@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.writer1.mapper.PostsMapper">
     <!-- 使用Redis二级缓存 -->
+<!--    <cache type="com.writer1.utils.RedisCache"/>-->
     <cache/>
     <insert id="add" parameterType="Posts">
         insert into posts (author,sdate,category,content,title)
