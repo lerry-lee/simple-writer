@@ -1,4 +1,4 @@
-# 智能写作分析系统 Intelligent writing analysis system
+# 写作分析系统 Writing analysis system
 
 ## 功能介绍 Function description：
 - 写作功能：对写作内容产生自动反馈
