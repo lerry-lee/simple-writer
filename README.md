@@ -1,5 +1,7 @@
 # 写作分析系统 Writing analysis system
 
+技术栈已升级SpringBoot，链接为[Gitee](https://gitee.com/lerry-lee/writer-demo)或[GitHub](https://github.com/lerry-lee/writer-demo)
+
 ## 功能介绍 Function description：
 - 写作功能：对写作内容产生自动反馈(API是外部的，可能会变)
 - 存档评分功能： 保存写作内容并添加标题和评分
